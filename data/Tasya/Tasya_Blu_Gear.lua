@@ -8,7 +8,7 @@ function user_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Tanmolada','Tanmothib','None','Nibirus','Vampirism')
+	state.Weapons:options('Naegling/Thibron','Naegling/Colada','None','Naegling/Nibiru','Vampirisms')
 
   state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','MP','SuppaBrutal','DWEarrings','DWMax'}
 
@@ -56,7 +56,7 @@ function init_gear_sets()
 
   sets.HPDown = {
     head="Pixie Hairpin +1", ear1="Mendicant's Earring", ear2="Evans Earring",
-    body="Jhakri Robe +1", hands="Jhakri Cuffs +2", -- ring1="Mephitas's Ring +1", ring2="Mephitas's Ring",
+    body="Jhakri Robe +2", hands="Jhakri Cuffs +2", -- ring1="Mephitas's Ring +1", ring2="Mephitas's Ring",
     back="Swith Cape +1", legs="Shedir Seraweels", feet="Jhakri Pigaches +1"}
 
 	sets.Kiting = {legs=gear.CarmineCuissesPlus1.D}
@@ -94,7 +94,7 @@ function init_gear_sets()
 
   -- The cure potency on the Nibiru Cudgels isn't needed. They're only here for the MND.
   sets.Healing = {
-    main=gear.NibiruCudgel.B1, sub=gear.NibiruCudgel.B2, ammo="Hasty Pinion +1",
+    main="Naegling", sub=gear.NibiruCudgel.B, ammo="Hasty Pinion +1",
     head=gear.CarmineMaskPlus1.D, neck="Phalaina Locket", ear1="Mendicant's Earring", ear2="Loquacious Earring",
     body="Vrikodara Jupon", hands="Leyline Gloves", ring1="Prolix Ring", ring2="Stikini Ring +1",
     back="Solemnity Cape", waist=gear.ElementalObi, legs="Gyve Trousers", feet="Medium's Sabots"}
@@ -111,7 +111,7 @@ function init_gear_sets()
     body=gear.AmalricDoubletPlus1.A, hands=gear.AmalricGagesPlus1.A, ring1="Shiva Ring +1", ring2="Shiva Ring +1",
     back="Cornflower Cape", waist=gear.ElementalObi, legs=gear.AmalricSlopsPlus1.A, feet=gear.AmalricNailsPlus1.A}
 
-  sets.MagicAttackWeapons = set_combine(sets.MagicAttack, {main=gear.NibiruCudgel.B1, sub=gear.NibiruCudgel.B2})
+  sets.MagicAttackWeapons = set_combine(sets.MagicAttack, {main="Naegling", sub=gear.NibiruCudgel.B})
 
 	sets.PlusEnmity = {
 		ammo="Sapience Orb",
@@ -134,7 +134,7 @@ function init_gear_sets()
   sets.idle = {
     main="Medeina Kilij", sub="Bolelabunga", ammo="Staunch Tathlum +1",
     head=gear.RawhideMask.A, neck="Bathy Choker +1", ear1="Infused Earring", ear2="Dawn Earring",
-    body=gear.AmalricDoubletPlus1.A, hands=gear.HerculeanGloves.Refresh, ring1="Stikini Ring +1", ring2="Stikini Ring +1", -- body="Jhakri Robe +2",
+    body="Jhakri Robe +2", hands=gear.HerculeanGloves.Refresh, ring1="Stikini Ring +1", ring2="Stikini Ring +1",
     back="Kumbira Cape", waist="Flume Belt +1", legs="Lengo Pants", feet="Serpentes Sabots"}
 
 	sets.idle.Sphere = set_combine(sets.idle, {body="Mekosuchinae Harness"})
@@ -145,7 +145,7 @@ function init_gear_sets()
     main="Medeina Kilij", sub="Bolelabunga", ammo="Staunch Tathlum +1",
     head=gear.RawhideMask.A, neck="Loricate Torque +1", ear1="Genmei Earring", ear2="Ethereal Earring",
     body="Hagondes Coat +1", hands=gear.HerculeanGloves.PDT, ring1="Defending Ring", ring2=gear.DarkRing.PDT,
-    back="Umbra Cape", waist="Flume Belt +1", legs="Lengo Pants", feet="Hagondes Sabots +1"}
+    back="Moonlight Cape", waist="Flume Belt +1", legs="Lengo Pants", feet="Hagondes Sabots +1"}
 
   sets.idle.DTHippo = set_combine(sets.idle.PDT, {legs=gear.CarmineCuissesPlus1.D, feet="Hippomenes Socks +1"})
 
@@ -160,7 +160,7 @@ function init_gear_sets()
     main="Medeina Kilij", sub="Bolelabunga", ammo="Staunch Tathlum +1",
     head="Dampening Tam", neck="Loricate Torque +1", ear1="Brutal Earring", ear2="Suppanomimi",
     body="Ayanmo Corazza +2", hands=gear.HerculeanGloves.PDT, ring1="Defending Ring", ring2=gear.DarkRing.PDT,
-    back="Umbra Cape", waist="Shetal Stone", legs=gear.HerculeanTrousers.HybridWhy, feet=gear.HerculeanBoots.TA}
+    back="Moonlight Cape", waist="Shetal Stone", legs=gear.HerculeanTrousers.HybridWhy, feet=gear.HerculeanBoots.TA}
 
   -- Assumes trust Shell V, MDT-24.
   sets.defense.MDT = {
@@ -183,24 +183,25 @@ function init_gear_sets()
   sets.resting = {
     main="Medeina Kilij", sub="Bolelabunga", ammo="Tsar's Egg",
     head=gear.RawhideMask.A, neck="Bathy Choker +1", ear1="Infused Earring", ear2="Dawn Earring",
-    body=gear.AmalricDoubletPlus1.A, hands=gear.HerculeanGloves.Refresh, ring1="Stikini Ring +1", ring2="Stikini Ring +1", -- body="Jhakri Robe +2"
+    body="Jhakri Robe +2", hands=gear.HerculeanGloves.Refresh, ring1="Stikini Ring +1", ring2="Stikini Ring +1",
     back="Kumbira Cape", waist="Flume Belt +1", legs="Lengo Pants", feet="Chelona Boots +1"}
+
+  --------------------------------------
+	-- Weapons
+	--------------------------------------
+
+  sets.weapons['Naegling/Thibron'] = {main="Naegling", sub="Machaera +3"}
+  sets.weapons['Naegling/Colada'] = {main="Naegling", sub=gear.Colada.DA}
+  sets.weapons['Naegling/Nibiru'] = {main="Naegling", sub=gear.NibiruCudgel.B}
+  sets.weapons['Vampirisms'] = {main=gear.Vampirism.High1, sub=gear.Vampirism.High2}
+  -- sets.weapons.MaccWeapons = {main="Iris", sub="Iris"}
 
   --------------------------------------
 	-- Engaged
 	--------------------------------------
 
-	-- Weapons sets
-	sets.weapons.Tanmolada = {main="Tanmogayi +1", sub=gear.Colada.DA}
-	sets.weapons.Tanmothib = {main="Tanmogayi +1", sub="Machaera +3"}
-	sets.weapons.Nibirus = {main=gear.NibiruCudgel.B1, sub=gear.NibiruCudgel.B2}
-	sets.weapons.Vampirism = {main="Vampirism", sub=gear.NibiruCudgel.B2}
-	-- sets.weapons.MaccWeapons = {main="Iris", sub="Iris"}
-
-  -- No hybrid
-
   sets.engaged = {
-    main="Tanmogayi +1", sub=gear.Colada.DA, ammo="Ginsen",
+    main="Naegling", sub="Machaera +3", ammo="Ginsen",
     head=gear.AdhemarBonnetPlus1.B, neck="Asperity Necklace", ear1="Brutal Earring", ear2="Cessance Earring",
     body=gear.AdhemarJacketPlus1.B, hands=gear.AdhemarWristbandsPlus1.B, ring1="Epona's Ring", ring2="Petrov Ring",
     back=gear.RosmertasCape.Crit, waist="Windbuffet Belt +1", legs=gear.TaeonTights.TA, feet=gear.HerculeanBoots.TA}
@@ -213,7 +214,7 @@ function init_gear_sets()
 
 	sets.engaged.HighAcc = set_combine(sets.engaged.Acc, {
     head=gear.CarmineMaskPlus1.D, -- ear1="Regal Earring"
-    ring1="Ramuh Ring +1"}) -- body="Assimilator's Jubbah +3", hands="Assimilator's Bazubands +3", ring2="Ilabrat Ring"
+    ring1="Ramuh Ring +1", ring2="Ilabrat Ring"}) -- body="Assimilator's Jubbah +3", hands="Assimilator's Bazubands +3"
 
   sets.engaged.FullAcc = set_combine(sets.engaged.HighAcc, {ring2="Ramuh Ring +1", waist="Olseni Belt"})
 
@@ -243,8 +244,8 @@ function init_gear_sets()
   sets.engaged.PDT = set_combine(sets.engaged, {
     ammo="Staunch Tathlum +1",
     head="Dampening Tam", neck="Loricate Torque +1", ear1="Dignitary's Earring", ear2="Suppanomimi",
-    hands=gear.HerculeanGloves.PDT, ring1="Defending Ring", ring2="Patricius Ring", -- body="Ayanmo Corazza +2", hands="Assimilator's Bazubands +3"
-    back="Umbra Cape", waist="Flume Belt +1", legs=gear.HerculeanTrousers.HybridWhy, feet=gear.HerculeanBoots.TA}) -- back="Moonlight Cape", feet="Ahosi Leggings"
+    body="Ayanmo Corazza +2", hands=gear.HerculeanGloves.PDT, ring1="Defending Ring", ring2="Patricius Ring", -- hands="Assimilator's Bazubands +3"
+    back="Moonlight Cape", waist="Flume Belt +1", legs=gear.HerculeanTrousers.HybridWhy, feet=gear.HerculeanBoots.TA}) -- feet="Ahosi Leggings"
 
   sets.engaged.MinAcc.PDT = set_combine(sets.engaged.PDT, {ammo="Ginsen"}) -- ear2="Telos Earring"
 
@@ -322,7 +323,7 @@ function init_gear_sets()
   sets.precast.WS = {
     ammo="Floestone",
     head="Lilitu Headpiece", neck="Caro Necklace", ear1="Brutal Earring", ear2="Cessance Earring",
-    body=gear.AdhemarJacketPlus1.B, hands=gear.AdhemarWristbandsPlus1.B, ring1="Epona's Ring", ring2="Ifrit Ring +1", -- ring2="Apate Ring",
+    body=gear.AdhemarJacketPlus1.B, hands=gear.AdhemarWristbandsPlus1.B, ring1="Epona's Ring", ring2="Ifrit Ring +1",
     back=gear.RosmertasCape.WSD, waist="Prosilio Belt +1", legs=gear.TaeonTights.TA, feet=gear.HerculeanBoots.WSD}
 
   sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {
@@ -330,7 +331,7 @@ function init_gear_sets()
 
   sets.precast.WS.Acc = set_combine(sets.precast.WS.SomeAcc, {
     head=gear.CarmineMaskPlus1.D, ear1="Dignitary's Earring", -- ear1="Telos Earring", ear2="Regal Earring"
-    -- body="Assimilator's Jubbah +2", hands="Assimilator's Bazubands +3", ring2="Ilabrat Ring"
+    ring2="Ilabrat Ring", -- body="Assimilator's Jubbah +2", hands="Assimilator's Bazubands +3"
     legs=gear.CarmineCuissesPlus1.D})
 
   sets.precast.WS.HighAcc = set_combine(sets.precast.WS.Acc, {
@@ -354,7 +355,7 @@ function init_gear_sets()
 
   sets.precast.WS.DEX.Acc = set_combine(sets.precast.WS.DEX.SomeAcc, {
     head=gear.CarmineMaskPlus1.D,
-    -- body="Assimilator's Jubbah +2", hands="Assimilator's Bazubands +3", ring2="Ilabrat Ring"
+    ring2="Ilabrat Ring", -- body="Assimilator's Jubbah +3", hands="Assimilator's Bazubands +3"
     legs=gear.CarmineCuissesPlus1.D})
 
   sets.precast.WS.DEX.HighAcc = set_combine(sets.precast.WS.DEX.Acc, {
@@ -377,7 +378,7 @@ function init_gear_sets()
 
   sets.precast.WS.DEX.Crit.Acc = set_combine(sets.precast.WS.DEX.Crit.SomeAcc, {
     head=gear.CarmineMaskPlus1.D,
-    -- body="Assimilator's Jubbah +3", hands="Assimilator's Bazubands +3", ring2="Ilabrat Ring"
+    ring2="Ilabrat Ring", -- body="Assimilator's Jubbah +3", hands="Assimilator's Bazubands +3"
     legs=gear.CarmineCuissesPlus1.D})
 
   sets.precast.WS.DEX.Crit.HighAcc = set_combine(sets.precast.WS.DEX.Crit.Acc, {
@@ -440,12 +441,12 @@ function init_gear_sets()
 
   sets.precast.WS['Realmrazer'] = set_combine(sets.precast.WS, {
     head="Jhakri Coronal +2", -- ear1="Regal Earring",
-    body="Jhakri Robe +1", ring2="Rufescent Ring",
+    body="Jhakri Robe +2", ring2="Rufescent Ring",
     legs="Jhakri Slops +1", feet="Jhakri Pigaches +1"})
 
   sets.precast.WS['Realmrazer'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {
     head="Jhakri Coronal +2", -- ear1="Regal Earring", ear2="Telos Earring",
-    body="Jhakri Robe +1", ring2="Rufescent Ring",
+    body="Jhakri Robe +2", ring2="Rufescent Ring",
     legs="Jhakri Slops +1", feet="Jhakri Pigaches +1"})
 
   sets.precast.WS['Realmrazer'].Acc = set_combine(sets.precast.WS.Acc, {
@@ -519,12 +520,12 @@ function init_gear_sets()
 
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
     ear1="Ishvara Earring", ear2="Moonshade Earring",
-    body="Assimilator's Jubbah +2", hands="Jhakri Cuffs +2", ring1="Rufescent Ring",
+    body="Assimilator's Jubbah +2", hands="Jhakri Cuffs +2", ring1="Rufescent Ring", ring2="Epaminondas's Ring",
     legs=gear.HerculeanTrousers.HybridWhy, feet=gear.HerculeanBoots.WSD}) -- back=gear.RosmertasCape.WSD
 
   sets.precast.WS['Savage Blade'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {
     head=gear.CarmineMaskPlus1.D, ear1="Moonshade Earring", ear2="Ishvara Earring",
-    body="Assimilator's Jubbah +2", hands="Jhakri Cuffs +2", ring1="Rufescent Ring",
+    body="Assimilator's Jubbah +2", hands="Jhakri Cuffs +2", ring1="Rufescent Ring", ring2="Epaminondas's Ring",
     back="Bleating Mantle", waist="Grunfeld Rope", legs=gear.HerculeanTrousers.HybridWhy, feet=gear.HerculeanBoots.WSD}) -- back=gear.RosmertasCape.WSD
 
   sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS.Acc, {
@@ -534,7 +535,7 @@ function init_gear_sets()
 
   sets.precast.WS['Savage Blade'].HighAcc = set_combine(sets.precast.WS.HighAcc, {
     ear2="Moonshade Earring",
-    hands="Jhakri Cuffs +2", ring1="Rufescent Ring", -- ring2="Ilabrat Ring"
+    hands="Jhakri Cuffs +2", ring1="Rufescent Ring", ring2="Ilabrat Ring",
     back="Bleating Mantle", waist="Grunfeld Rope", feet=gear.HerculeanBoots.WSD}) -- back=gear.RosmertasCape.WSD
 
   sets.precast.WS['Savage Blade'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
@@ -548,12 +549,12 @@ function init_gear_sets()
 
   sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {
     head="Jhakri Coronal +2", -- ear1="Regal Earring"
-    body="Jhakri Robe +1", ring2="Rufescent Ring",
+    body="Jhakri Robe +2", ring2="Rufescent Ring",
     legs="Jhakri Slops +1", feet="Jhakri Pigaches +1"})
 
   sets.precast.WS['Requiescat'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {
     head="Jhakri Coronal +2", -- ear1="Regal Earring", ear2="Telos Earring"
-    body="Jhakri Robe +1", ring2="Rufescent Ring",
+    body="Jhakri Robe +2", ring2="Rufescent Ring",
     legs="Jhakri Slops +1", feet="Jhakri Pigaches +1"})
 
   sets.precast.WS['Requiescat'].Acc = set_combine(sets.precast.WS.Acc, {
@@ -631,13 +632,13 @@ function init_gear_sets()
   	sets.precast.Step = {
       ammo="Falcon Eye",
       head=gear.CarmineMaskPlus1.D, neck="Sanctity Necklace", ear1="Mache Earring +1", ear2="Mache Earring +1", -- neck="Combatant's Torque" ? Does this work?
-      body=gear.AdhemarJacketPlus1.B, hands=gear.AdhemarWristbandsPlus1.B, ring1="Ramuh Ring +1", ring2="Ramuh Ring +1", -- body="Jhakri Robe +2", hands="Jhakri Cuffs +2"
+      body="Jhakri Robe +2", hands="Jhakri Cuffs +2", ring1="Ramuh Ring +1", ring2="Ramuh Ring +1",
       back=gear.RosmertasCape.Crit, waist="Olseni Belt", legs=gear.CarmineCuissesPlus1.D, feet="Jhakri Pigaches +1"}
 
   	sets.precast.Flourish1 = {
       ammo="Pemphredo Tathlum",
       head=gear.CarmineMaskPlus1.D, neck="Sanctity Necklace", ear1="Dignitary's Earring", ear2="Mache Earring +1",
-      body="Jhakri Robe +1", hands="Jhakri Cuffs +2", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
+      body="Jhakri Robe +2", hands="Jhakri Cuffs +2", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
       back="Cornflower Cape", waist="Eschan Stone", legs="Jhakri Slops +1", feet="Jhakri Pigaches +1"}
 
     sets.precast.Flourish1['Animated Flourish'] = set_combine(sets.PlusEnmity, {})
@@ -651,16 +652,14 @@ function init_gear_sets()
   -- Precast: Fast Cast
   --------------------------------------
 
-  --  -    -    -  2QC
-  --  14   5    2    2
-  --   9   8    2  2QC
-  -- 4QC   3+QC 8    5
+  -- Assuming Erratic Flutter, and no other FC spells set, which is probably usually true, a 1200+ JP BLU will have
+  -- FC+15 as a job trait.
 
-	sets.precast.FC = {
-    main="Tanmogayi +1", sub="Vampirism", ammo="Impatiens",
-    head=gear.CarmineMaskPlus1.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",
-    body=gear.TaeonTabard.PhalanxFC, hands="Leyline Gloves", ring1="Lebeche Ring", ring2="Prolix Ring", -- ring1="Kishar Ring",
-    back="Perimede Cape", waist="Witful Belt", legs="Enif Cosciales", feet=gear.CarmineGreavesPlus1.B}
+	sets.precast.FC = {                                                                                                 -- Current total: QC+7, FC+65
+    main=gear.Vampirism.High1, sub=gear.Vampirism.High2, ammo="Sapience Orb",                                         -- -,   -,    -,  +2
+    head=gear.CarmineMaskPlus1.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",   -- +14, +5,   +2, +2
+    body=gear.AdhemarJacketPlus1.D, hands="Leyline Gloves", ring1="Kishar Ring", ring2="Prolix Ring",                 -- +10, +8,   +4, +2
+    back="Perimede Cape", waist="Witful Belt", legs="Enif Cosciales", feet=gear.CarmineGreavesPlus1.D}                -- 4QC, 3+QC, +8, +5
 
 	sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {body="Hashishin Mintan +1"})
 
@@ -673,10 +672,10 @@ function init_gear_sets()
   --------------------------------------
 
 	sets.midcast.FastRecast = {
-    main="Tanmogayi +1", sub="Vampirism", ammo="Hasty Pinion +1",
-		head=gear.CarmineMaskPlus1.D, ear1="Enchanter Earring +1", ear2="Loquacious Earring",
-		body=gear.TaeonTabard.PhalanxFC, hands="Leyline Gloves", ring2="Prolix Ring", -- ring1="Kishar Ring"
-		back="Swith Cape +1", waist="Witful Belt", legs=gear.PsyclothLappas.D, feet=gear.CarmineGreavesPlus1.B}
+    main=gear.Vampirism.High1, sub=gear.Vampirism.High2, ammo="Hasty Pinion +1",
+		head=gear.CarmineMaskPlus1.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",
+		body=gear.AdhemarJacketPlus1.D, hands="Leyline Gloves", ring1="Kishar Ring", ring2="Prolix Ring",
+		back="Swith Cape +1", waist="Witful Belt", legs=gear.PsyclothLappas.D, feet=gear.CarmineGreavesPlus1.D}
 
   --------------------------------------
   -- Midcast: Blue Magic
@@ -697,7 +696,7 @@ function init_gear_sets()
 
 	sets.midcast['Blue Magic'].Physical.Resistant = set_combine(sets.midcast['Blue Magic'].Physical, { -- Add a 269 skill weapon MH when I get one.
     ammo="Mantoptera Eye",
-		head="Jhakri Coronal +1", neck="Combatant's Torque", ear1="Mache Earring +1", ear2="Mache Earring +1", -- ear1="Regal Earring", ear2="Telos Earring"
+		head="Jhakri Coronal +2", neck="Combatant's Torque", ear1="Mache Earring +1", ear2="Mache Earring +1", -- ear1="Regal Earring", ear2="Telos Earring"
     ring1="Ramuh Ring +1", ring2="Ramuh Ring +1", -- body="Assimilator's Jubbah +3", hands="Assimilator's Bazubands +3" ???
     back=gear.RosmertasCape.Crit}) -- back=gear.RosmertasCape.WSD
 
@@ -756,8 +755,8 @@ function init_gear_sets()
     back="Cornflower Cape", waist=gear.ElementalObi, legs=gear.AmalricSlopsPlus1.A, feet=gear.AmalricNailsPlus1.A}
 
 	sets.midcast['Blue Magic'].Magical = {
-    main=gear.NibiruCudgel.B1, sub=gear.NibiruCudgel.B2, ammo="Pemphredo Tathlum",
-    head="Jhakri Coronal +1", neck="Baetyl Pendant", ear1="Novio Earring", ear2="Friomisi Earring", -- ear1="Regal Earring"
+    main="Naegling", sub=gear.NibiruCudgel.B, ammo="Pemphredo Tathlum",
+    head="Jhakri Coronal +2", neck="Baetyl Pendant", ear1="Novio Earring", ear2="Friomisi Earring", -- ear1="Regal Earring"
     body=gear.AmalricDoubletPlus1.A, hands=gear.AmalricGagesPlus1.A, ring1="Shiva Ring +1", ring2="Shiva Ring +1",
     back="Cornflower Cape", waist=gear.ElementalObi, legs=gear.AmalricSlopsPlus1.A, feet=gear.AmalricNailsPlus1.A}
 
@@ -785,22 +784,22 @@ function init_gear_sets()
 
   -- Spells with added effects or that need unusual magic accuracy levels.
 	sets.midcast['Blue Magic'].MagicAccuracy = set_combine(sets.MagicAccuracy, {
-    main=gear.NibiruCudgel.B1, sub=gear.NibiruCudgel.B2})
+    main="Naegling", sub=gear.NibiruCudgel.B})
 
 	-- Breath spells, which scale based on current HP. Use relic head, magic accuracy, and +HP to avoid losing HP in the
   -- swap. Note that Jhakri is a suboptimal set here - all pieces of it have no +HP.
   -- TODO: make this swap +HP in first.
 	sets.midcast['Blue Magic'].Breath = {
-    main=gear.NibiruCudgel.B1, sub=gear.NibiruCudgel.B2, ammo="Pemphredo Tathlum",
+    main="Naegling", sub=gear.NibiruCudgel.B, ammo="Pemphredo Tathlum",
 		head="Luhlaza Keffiyeh +1", neck="Sanctity Necklace", ear1="Dignitary's Earring", ear2="Etiolation Earring", -- ear2="Regal Earring"?
 		body=gear.AmalricDoubletPlus1.A, hands="Leyline Gloves", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
 		back="Cornflower Cape", waist="Eschan Stone", legs=gear.PsyclothLappas.D, feet="Hashishin Basmak +1"}
 
 	-- Physical "added effect" spells, most notably "Stun" spells. Physical and magical accuracy both needed.
 	sets.midcast['Blue Magic'].Stun = {
-    main=gear.NibiruCudgel.B1, sub=gear.NibiruCudgel.B2, ammo="Pemphredo Tathlum",
-    head="Jhakri Coronal +1", neck="Sanctity Necklace", ear1="Dignitary's Earring", ear2="Gwati Earring", -- ear2="Regal Earring"
-    body="Jhakri Robe +1", hands="Jhakri Cuffs +2", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
+    main="Naegling", sub=gear.NibiruCudgel.B, ammo="Pemphredo Tathlum",
+    head="Jhakri Coronal +2", neck="Sanctity Necklace", ear1="Dignitary's Earring", ear2="Gwati Earring", -- ear2="Regal Earring"
+    body="Jhakri Robe +2", hands="Jhakri Cuffs +2", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
     back="Cornflower Cape", waist="Eschan Stone", legs="Jhakri Slops +1", feet="Jhakri Pigaches +1"}
 
   -- Better set probably possible with Menelaus Ring, etc.
@@ -832,7 +831,7 @@ function init_gear_sets()
 
   -- Over Iris, Iris, Regal, Cornflower (Why?)
 	sets.midcast['Dark Magic'] = set_combine(sets.MagicAccuracy, {
-    main=gear.NibiruCudgel.B1, sub=gear.NibiruCudgel.B2}) -- hands="Jhakri Cuffs +2", back=gear.mab_jse_back
+    main="Naegling", sub=gear.NibiruCudgel.B}) -- hands="Jhakri Cuffs +2", back=gear.mab_jse_back
 
   --------------------------------------
   -- Midcast: Divine Magic
@@ -866,7 +865,7 @@ function init_gear_sets()
 
   -- Over Iris, Iris, Cornflower, Jhakri, Jhakri
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.MagicAccuracy, {
-    main=gear.NibiruCudgel.B1, sub=gear.NibiruCudgel.B2, legs=gear.PsyclothLappas.D}) -- back=gear.mab_jse_back, feet="Skaoi Boots"
+    main="Naegling", sub=gear.NibiruCudgel.B, legs=gear.PsyclothLappas.D}) -- back=gear.mab_jse_back, feet="Skaoi Boots"
 
   --------------------------------------
   -- Midcast: Enhancing Magic
