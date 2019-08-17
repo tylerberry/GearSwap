@@ -70,9 +70,9 @@ function init_gear_sets()
 
   sets.idle = {
     ammo="Staunch Tathlum +1",
-    head="Meghanada Visor +1", neck="Bathy Choker +1", ear1="Infused Earring", ear2="Dawn Earring",
+    head="Meghanada Visor +2", neck="Bathy Choker +1", ear1="Infused Earring", ear2="Dawn Earring",
     body="Meghanada Cuirie +2", hands="Meghanada Gloves +2", ring1="Defending Ring", ring2="Sheltered Ring",
-    back="Moonlight Cape", waist="Flume Belt +1", legs="Meghanada Chausses +2", feet="Meghanada Jambeaux +1"}
+    back="Moonlight Cape", waist="Flume Belt +1", legs="Meghanada Chausses +2", feet="Meghanada Jambeaux +2"}
 
   sets.idle.Sphere = set_combine(sets.idle, {body="Mekosuchinae Harness"})
   sets.idle.Weak = set_combine(sets.idle, {})
@@ -109,9 +109,9 @@ function init_gear_sets()
   -- Full Meghanada +2 replaces Ocelomeh, Turms/+1 is even better.
   sets.resting = set_combine(sets.defense.PDT, {
     ammo="Tsar's Egg",
-    head="Meghanada Visor +1", neck="Bathy Choker +1", ear1="Infused Earring", ear2="Dawn Earring",
+    head="Meghanada Visor +2", neck="Bathy Choker +1", ear1="Infused Earring", ear2="Dawn Earring",
     body="Meghanada Cuirie +2", hands="Meghanada Gloves +2", ring1="Paguroidea Ring", ring2="Sheltered Ring",
-    legs="Meghanada Chausses +2", feet="Meghanada Jambeaux +1"})
+    legs="Meghanada Chausses +2", feet="Meghanada Jambeaux +2"})
 
   --------------------------------------
 	-- Weapons
@@ -217,7 +217,7 @@ function init_gear_sets()
   sets.precast.WS.DEX.Fodder = set_combine(sets.precast.WS.DEX, {}) -- body=gear.HerculeanVest.WSD
 
   sets.precast.WS.DEX.SA = set_combine(sets.precast.WS.DEX, {
-    ammo="Qirmiz Tathlum", head=gear.AdhemarBonnetPlus1.B, body="Meghanada Cuirie +2"}) -- ammo="Yetshila +1"
+    ammo="Yetshila +1", head=gear.AdhemarBonnetPlus1.B, body="Meghanada Cuirie +2"})
 
   sets.precast.WS.DEX.TA = set_combine(sets.precast.WS.DEX.SA, {})
   sets.precast.WS.DEX.SATA = set_combine(sets.precast.WS.DEX.SA, {})
@@ -241,7 +241,7 @@ function init_gear_sets()
   sets.precast.WS.DEXWSD.Fodder = set_combine(sets.precast.WS.DEXWSD, {}) -- body=gear.HerculeanVest.WSD
 
   sets.precast.WS.DEXWSD.SA = set_combine(sets.precast.WS.DEXWSD, {
-    ammo="Qirmiz Tathlum", head=gear.AdhemarBonnetPlus1.B, body="Meghanada Cuirie +2"}) -- ammo="Yetshila +1"
+    ammo="Yetshila +1", head=gear.AdhemarBonnetPlus1.B, body="Meghanada Cuirie +2"})
 
   sets.precast.WS.DEXWSD.TA = set_combine(sets.precast.WS.DEXWSD.SA, {})
   sets.precast.WS.DEXWSD.SATA = set_combine(sets.precast.WS.DEXWSD.SA, {})
@@ -249,7 +249,7 @@ function init_gear_sets()
   -- DEX-based weaponskills that can critical hit.
 
   sets.precast.WS.DEXCrit = {
-    ammo="Qirmiz Tathlum", -- ammo="Yetshila +1"
+    ammo="Yetshila +1",
     head=gear.AdhemarBonnetPlus1.B, neck="Caro Necklace", ear1="Sherida Earring", ear2="Mache Earring +1",
     body="Abnoba Kaftan", hands=gear.AdhemarWristbandsPlus1.B, ring1="Begrudging Ring", ring2="Ramuh Ring +1", -- body="Plunderer's Vest +3"
     back=gear.ToutatissCape.Crit, waist="Grunfeld Rope", legs=gear.LustratioSubligarPlus1.B, feet=gear.LustratioLeggingsPlus1.D} -- legs="Mummu Kecks +2" -> legs="Pillager's Culottes +3"
@@ -278,9 +278,9 @@ function init_gear_sets()
 
   sets.precast.WS.AGI = {
     ammo="Seething Bomblet +1",
-    head="Meghanada Visor +1", neck="Marked Gorget", ear1="Sherida Earring", ear2="Tati Earring +1", -- neck="Houyi Gorget"
+    head="Meghanada Visor +2", neck="Marked Gorget", ear1="Sherida Earring", ear2="Tati Earring +1", -- neck="Houyi Gorget"
     body="Meghanada Cuirie +2", hands="Meghanada Gloves +2", ring1="Apate Ring", ring2="Epona's Ring", -- ring1="Ilabrat Ring", ring2="Regal Ring"
-    back=gear.CannyCape.AGI, waist="Yemaya Belt", legs="Meghanada Chausses +2", feet="Meghanada Jambeaux +1"} -- waist="Elanid Belt"
+    back=gear.CannyCape.AGI, waist="Yemaya Belt", legs="Meghanada Chausses +2", feet="Meghanada Jambeaux +2"} -- waist="Elanid Belt"
 
   sets.precast.WS.AGI.SomeAcc = set_combine(sets.precast.WS.AGI, {
     ammo="Falcon Eye",
@@ -297,7 +297,7 @@ function init_gear_sets()
   sets.precast.WS.AGI.Fodder = set_combine(sets.precast.WS.AGI, {})
 
   sets.precast.WS.AGI.SA = set_combine(sets.precast.WS.AGI, {
-    ammo="Qirmiz Tathlum", head=gear.AdhemarBonnetPlus1.B, body="Meghanada Cuirie +2"}) -- ammo="Yetshila +1"
+    ammo="Yetshila +1", head=gear.AdhemarBonnetPlus1.B, body="Meghanada Cuirie +2"})
 
   sets.precast.WS.AGI.TA = set_combine(sets.precast.WS.AGI.SA, {})
   sets.precast.WS.AGI.SATA = set_combine(sets.precast.WS.AGI.SA, {})
@@ -349,9 +349,9 @@ function init_gear_sets()
 
   sets.precast.WS["Shadowstitch"] = {
     ammo="Falcon Eye",
-    head="Meghanada Visor +1", neck="Combatant's Torque", ear1="Mache Earring +1", ear2="Moonshade Earring",
+    head="Meghanada Visor +2", neck="Combatant's Torque", ear1="Mache Earring +1", ear2="Moonshade Earring",
     body="Meghanada Cuirie +2", hands="Meghanada Gloves +2", ring1="Ramuh Ring +1", ring2="Ramuh Ring +1",
-    back=gear.ToutatissCape.Crit, waist="Olseni Belt", legs="Meghanada Chausses +2", feet="Meghanada Jambeaux +1"}
+    back=gear.ToutatissCape.Crit, waist="Olseni Belt", legs="Meghanada Chausses +2", feet="Meghanada Jambeaux +2"}
 
   -- Viper Bite: physical 1-hit, 100% DEX, 1.0 fTP, TP affects duration of poison.
 
@@ -471,27 +471,27 @@ function init_gear_sets()
   -- Last Stand: physical 2-hit, 73~85% AGI, 2.0/3.0/4.0 fTP on all hits.
 
   sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS.Ranged, {
-    head="Meghanada Visor +1", neck="Fotia Gorget", ear1="Ishvara Earring", ear2="Moonshade Earring",
+    head="Meghanada Visor +2", neck="Fotia Gorget", ear1="Ishvara Earring", ear2="Moonshade Earring",
     body="Meghanada Cuirie +2", hands="Meghanada Gloves +2", ring1="Apate Ring", -- ring2="Regal Ring",
-    back="Sokolski Mantle", waist="Fotia Belt", legs="Meghanada Chausses +2", feet="Meghanada Jambeaux +1"})
+    back="Sokolski Mantle", waist="Fotia Belt", legs="Meghanada Chausses +2", feet="Meghanada Jambeaux +2"})
 
   --------------------------------------
   -- Precast: Job Abilities
   --------------------------------------
 
-  sets.precast.JA['Collaborator'] = {} --head="Skulker's Bonnet"
-  sets.precast.JA['Accomplice'] = {} --head="Skulker's Bonnet"
+  sets.precast.JA['Collaborator'] = {} --head="Skulker's Bonnet +1"
+  sets.precast.JA['Accomplice'] = {} --head="Skulker's Bonnet +1"
   sets.precast.JA['Flee'] = {} --feet="Pillager's Poulaines +1"
   sets.precast.JA['Hide'] = {} --body="Pillager's Vest +1"
-  sets.precast.JA['Conspirator'] = {} --body="Skulker's Vest"
+  sets.precast.JA['Conspirator'] = {} --body="Skulker's Vest +1"
   sets.precast.JA['Steal'] = {} -- hands="Pillager's Armlets +1"
 	sets.precast.JA['Mug'] = {}
-  sets.precast.JA['Despoil'] = {feet="Skulker's Poulaines +1"} -- legs="Skulker's Culottes"
+  sets.precast.JA['Despoil'] = {feet="Skulker's Poulaines +1"} -- legs="Skulker's Culottes +1"
   sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
-  sets.precast.JA['Feint'] = {} -- {legs="Assassin's Culottes +2"}
+  sets.precast.JA['Feint'] = {} -- {legs="Plunderer's Culottes +1"}
 
-  sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
-  sets.precast.JA['Trick Attack'] = sets.buff['Trick Attack']
+  sets.precast.JA['Sneak Attack'] = {}
+  sets.precast.JA['Trick Attack'] = {}
 
   -- Actions we want to use to tag TH.
   sets.precast.Step = {
@@ -561,22 +561,19 @@ function init_gear_sets()
   sets.midcast.FastRecast = {
     head=gear.HerculeanHelm.MAB, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",
     body=gear.TaeonTabard.PhalanxFC, hands="Leyline Gloves", ring1="Defending Ring", ring2="Prolix Ring",
-    back="Moonlight Cape", waist="Tempus Fugit", legs="Enif Cosciales", feet=gear.herculean_dt_feet}
+    back="Moonlight Cape", waist="Tempus Fugit", legs="Enif Cosciales", feet=gear.HerculeanBoots.TA}
 
   --------------------------------------
   -- Midcast: Dark Magic
   --------------------------------------
 
   sets.midcast.Bio = set_combine(sets.midcast.FastRecast, sets.TreasureHunter)
-  --sets.midcast['Bio II'] = set_combine(sets.midcast.FastRecast, sets.TreasureHunter)
 
   --------------------------------------
   -- Midcast: Enfeebling Magic
   --------------------------------------
 
 	sets.midcast.Dia = set_combine(sets.midcast.FastRecast, sets.TreasureHunter)
-	--sets.midcast.Diaga = set_combine(sets.midcast.FastRecast, sets.TreasureHunter)
-	--sets.midcast['Dia II'] = set_combine(sets.midcast.FastRecast, sets.TreasureHunter)
 
   --------------------------------------
   -- Midcast: Ninjutsu
@@ -591,8 +588,8 @@ function init_gear_sets()
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {head="Frenzy Sallet"}
 
-  sets.buff['Sneak Attack'] = {}
-  sets.buff['Trick Attack'] = {}
+  sets.buff['Sneak Attack'] = set_combine(sets.precast.JA['Sneak Attack'], {})
+  sets.buff['Trick Attack'] = set_combine(sets.precast.JA['Trick Attack'], {})
 end
 
 -- Select default macro book on initial load or subjob change.
