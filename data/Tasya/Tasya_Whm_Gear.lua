@@ -42,7 +42,7 @@ function user_setup()
 	send_command('bind @\\\\ input /ma "Shellra V" <me>')
 	send_command('bind !\\\\ input /ma "Reraise IV" <me>')
 
-    select_default_macro_book()
+  select_default_macro_book()
 end
 
 -- Define sets and vars used by this job file.
@@ -187,26 +187,26 @@ function init_gear_sets()
 
   sets.engaged = {
     ammo="Jukukik Feather",
-    head="Ayanmo Zucchetto +2", neck="Asperity Necklace", ear1="Brutal Earring", ear2="Cessance Earring",
-	  body="Ayanmo Corazza +2", hands="Ayanmo Manopolas +2", ring1="Rajas Ring", ring2="Petrov Ring", -- ring1="Ilabrat Ring"
+    head="Ayanmo Zucchetto +2", neck="Asperity Necklace", ear1="Telos Earring", ear2="Cessance Earring",
+	  body="Ayanmo Corazza +2", hands="Ayanmo Manopolas +2", ring1="Ilabrat Ring", ring2="Petrov Ring",
     back="Relucent Cape", waist="Windbuffet Belt +1", legs="Ayanmo Cosciales +2", feet="Ayanmo Gambieras +2"}
 
   sets.engaged.Acc = {
     ammo="Jukukik Feather",
     head="Ayanmo Zucchetto +2", neck="Combatant's Torque", ear1="Mache Earring +1", ear2="Mache Earring +1",
-	  body="Ayanmo Corazza +2", hands="Ayanmo Manopolas +2", ring1="Rajas Ring", ring2="Petrov Ring", -- ring1="Ilabrat Ring"
+	  body="Ayanmo Corazza +2", hands="Ayanmo Manopolas +2", ring1="Ilabrat Ring", ring2="Petrov Ring",
     back="Relucent Cape", waist="Olseni Belt", legs="Ayanmo Cosciales +2", feet="Ayanmo Gambieras +2"}
 
   sets.engaged.DW = {
     ammo="Jukukik Feather",
-    head="Ayanmo Zucchetto +2", neck="Asperity Necklace", ear1="Brutal Earring", ear2="Cessance Earring",
-  	body="Ayanmo Corazza +2", hands="Ayanmo Manopolas +2", ring1="Rajas Ring", ring2="Petrov Ring", -- ring1="Ilabrat Ring"
+    head="Ayanmo Zucchetto +2", neck="Asperity Necklace", ear1="Telos Earring", ear2="Cessance Earring",
+  	body="Ayanmo Corazza +2", hands="Ayanmo Manopolas +2", ring1="Ilabrat Ring", ring2="Petrov Ring",
     back="Relucent Cape", waist="Shetal Stone", legs="Ayanmo Cosciales +2", feet="Ayanmo Gambieras +2"}
 
   sets.engaged.DW.Acc = {
     ammo="Jukukik Feather",
     head="Ayanmo Zucchetto +2", neck="Combatant's Torque", ear1="Mache Earring +1", ear2="Suppanomimi",
-	  body="Ayanmo Corazza +2", hands="Ayanmo Manopolas +2", ring1="Rajas Ring", ring2="Petrov Ring", -- ring1="Ilabrat Ring"
+	  body="Ayanmo Corazza +2", hands="Ayanmo Manopolas +2", ring1="Ilabrat Ring", ring2="Petrov Ring",
     back="Relucent Cape", waist="Shetal Stone", legs="Ayanmo Cosciales +2", feet="Ayanmo Gambieras +2"}
 
   --------------------------------------
