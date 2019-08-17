@@ -213,7 +213,7 @@ function init_gear_sets()
     body="Meghanada Cuirie +2",
     legs="Meghanada Chausses +2", feet=gear.herculean_acc_feet})
 
-  sets.precast.WS.DEX.MaxAcc = set_combine(sets.precast.WS.DEX.Acc, {ear1=waist="Olseni Belt"})
+  sets.precast.WS.DEX.MaxAcc = set_combine(sets.precast.WS.DEX.Acc, {waist="Olseni Belt"})
 
   sets.precast.WS.DEX.Fodder = set_combine(sets.precast.WS.DEX, {}) -- body=gear.HerculeanVest.WSD
 
