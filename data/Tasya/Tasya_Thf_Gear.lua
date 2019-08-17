@@ -70,9 +70,9 @@ function init_gear_sets()
 
   sets.idle = {
     ammo="Staunch Tathlum +1",
-    head="Meghanada Visor +2", neck="Bathy Choker +1", ear1="Infused Earring", ear2="Dawn Earring",
-    body="Meghanada Cuirie +2", hands="Meghanada Gloves +2", ring1="Defending Ring", ring2="Sheltered Ring",
-    back="Moonlight Cape", waist="Flume Belt +1", legs="Meghanada Chausses +2", feet="Meghanada Jambeaux +2"}
+    head="Meghanada Visor +2", neck="Bathy Choker +1", ear1="Infused Earring", ear2="Dawn Earring", -- head="Turms Cap +1"
+    body="Meghanada Cuirie +2", hands="Meghanada Gloves +2", ring1="Defending Ring", ring2="Sheltered Ring", -- hands="Turms Mittens +1"
+    back="Moonlight Cape", waist="Flume Belt +1", legs="Meghanada Chausses +2", feet="Meghanada Jambeaux +2"} -- feet="Turms Leggings +1"
 
   sets.idle.Sphere = set_combine(sets.idle, {body="Mekosuchinae Harness"})
   sets.idle.Weak = set_combine(sets.idle, {})
@@ -94,13 +94,13 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",
     head="Dampening Tam", neck="Loricate Torque +1", ear1="Etiolation Earring", ear2="Sanare Earring",
     body="Meghanada Cuirie +2", hands="Floral Gauntlets", ring1="Defending Ring", ring2="Shadow Ring",
-    back="Engulfer Cape +1", waist="Engraved Belt", legs="Meghanada Chausses +2", feet=gear.HerculeanBoots.TA}
+    back="Engulfer Cape +1", waist="Engraved Belt", legs="Meghanada Chausses +2", feet=gear.HerculeanBoots.TA} -- feet="Turms Leggings +1"
 
 	sets.defense.MEVA = {
     ammo="Staunch Tathlum +1",
-		head=gear.HerculeanHelm.MAB, neck="Warder's Charm +1", ear1="Etiolation Earring", ear2="Sanare Earring",
-		body=gear.AdhemarJacketPlus1.B, hands="Leyline Gloves", ring1="Vengeful Ring", ring2="Purity Ring",
-		back="Mujin Mantle", waist="Engraved Belt", legs="Mummu Kecks +2", feet="Ahosi Leggings"}
+	  head=gear.HerculeanHelm.MAB, neck="Warder's Charm +1", ear1="Etiolation Earring", ear2="Sanare Earring", -- head="Turms Cap +1"
+		body=gear.AdhemarJacketPlus1.B, hands="Leyline Gloves", ring1="Vengeful Ring", ring2="Purity Ring", -- hands="Turms Mittens +1"
+		back="Mujin Mantle", waist="Engraved Belt", legs="Mummu Kecks +2", feet="Skulker's Poulaines +1"} -- feet="Turms Leggings +1"
 
   --------------------------------------
   -- Resting
