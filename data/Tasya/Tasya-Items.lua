@@ -21,8 +21,8 @@ gear.Kumbhakarna.Acc1 = {name="Kumbhakarna", augments={'Pet: Accuracy+20 Pet: Rn
 gear.Kumbhakarna.Acc2 = {name="Kumbhakarna", augments={'Pet: Accuracy+18 Pet: Rng. Acc.+18','Pet: Phys. dmg. taken -2%','Pet: TP Bonus+200'}}
 
 gear.Linos = {}
-gear.Linos.DT = {name="Linos", augments={}}
-gear.Linos.TP = {name="Linos", augments={'Accuracy+10','"Double Attack"+2','Quadruple Attack +2'}}
+gear.Linos.DT = {name="Linos", augments={'Mag. Evasion+15','Phys. dmg. taken -4%'}}
+gear.Linos.TP = {name="Linos", augments={'Accuracy+13 Attack+13','"Dbl.Atk."+2','Quadruple Attack +3'}}
 
 ---- Sinister Reign gear.
 
@@ -50,7 +50,7 @@ gear.Kali = {}
 gear.Kali.A = {name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15'}}
 
 gear.Solstice = {}
-gear.Solstice.B = {name="Solstice", augments={'MP+60','INT+15','Mac. Acc.+15'}}
+gear.Solstice.B = {name="Solstice", augments={'MP+60','INT+15','Mag. Acc.+15'}}
 
 ---- Reisenjima weapons.
 
@@ -75,11 +75,14 @@ gear.HeliosBand = {}
 gear.HeliosJacket = {}
 gear.HeliosBoots = {}
 
+-- Magic burst. Placeholder piece, really.
+
+gear.HeliosJacket.MB = {name="Helios Jacket", augments={'"Mag.Atk.Bns."+25','Spell interruption rate down -10%','Magic burst dmg.+9%'}}
+
 -- Blood Pact damage. Helios band and boots are used for physical BPs. Augments have to be basically perfect for this.
 -- Ideal augments are {'Pet: Accuracy+30' or 'Pet: Attack +30','Pet: "Dbl. Atk."+8','Blood Pact Damage+7'}.
 
-gear.HeliosBand.PhysBP = {name="Helios Band", augments={'Pet: Accuracy+22 Pet: Rng. Acc.+22','Pet: "Dbl. Atk."+7','Blood Pact Dmg.+7'}}
-gear.HeliosJacket.MB = {name="Helios Jacket", augments={'"Mag.Atk.Bns."+25','Spell interruption rate down -10%','Magic burst dmg.+9%'}}
+gear.HeliosBand.PhysBP = {name="Helios Band", augments={'Pet: Accuracy+22 Pet: Rng. Acc.+22','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+7'}}
 gear.HeliosBoots.PhysBP = {name="Helios Boots", augments={'Pet: Accuracy+28 Pet: Rng. Acc.+28','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+7'}}
 
 ---- Taeon armor.
@@ -104,7 +107,7 @@ gear.TaeonChapeau.DW = {name="Taeon Chapeau", augments={'Accuracy+20 Attack+20',
 gear.TaeonTabard.DW = {name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Dual Wield"+5','STR+5 DEX+5'}}
 gear.TaeonGloves.DW = {name="Taeon Gloves", augments={'Accuracy+18 Attack+18','"Dual Wield"+5','STR+5 DEX+5'}}
 gear.TaeonTights.DW = {name="Taeon Tights", augments={'Accuracy+19 Attack+19','"Dual Wield"+5','STR+7 DEX+7'}}
-gear.TaeonBoots.DW = {name="Taeon Boots", augments={'Accuracy+20 Attack+20','"Dual Wield"+4','STR+5 DEX+5'}}
+gear.TaeonBoots.DW = {name="Taeon Boots", augments={'Accuracy+20 Attack+20','"Dual Wield"+5','STR+5 DEX+5'}}
 
 -- Pet meva, regen, and DT. Head is not needed because of Anwig Salade. BST uses hands and feet, PUP uses all four.
 -- Ideal augments are {'Pet: Mag. Evasion+25','Pet: "Regen"+3','Pet: Damage taken -4%'}.
@@ -118,11 +121,16 @@ gear.TaeonBoots.Pet = {name="Taeon Boots", augments={'Pet: Mag. Evasion+23','Pet
 -- Phalanx is used by all jobs that can equip Taeon, since it is a 'received' effect.
 -- Ideal augments are {'Mag. Evasion+20','"Fast Cast"+5','Phalanx +3'}.
 
-gear.TaeonChapeau.PhalanxFC = {name="Taeon Chapeau", augments={'"Fast Cast"+5','Phalanx +1'}}
-gear.TaeonTabard.PhalanxFC = {name="Taeon Tabard", augments={'"Fast Cast"+5','Phalanx +3'}}
-gear.TaeonGloves.PhalanxFC = {name="Taeon Gloves", augments={'"Fast Cast"+5','Phalanx +3'}}
-gear.TaeonTights.PhalanxFC = {name="Taeon Tights", augments={'"Fast Cast"+4','Phalanx +3'}}
+gear.TaeonChapeau.PhalanxFC = {name="Taeon Chapeau", augments={'"Fast Cast"+5','Phalanx +3'}}
+gear.TaeonTabard.PhalanxFC = {name="Taeon Tabard", augments={'Mag. Evasion+18','"Fast Cast"+5','Phalanx +3'}}
+gear.TaeonGloves.PhalanxFC = {name="Taeon Gloves", augments={'Mag. Evasion+17','"Fast Cast"+5','Phalanx +3'}}
+gear.TaeonTights.PhalanxFC = {name="Taeon Tights", augments={'"Fast Cast"+5','Phalanx +3'}}
 gear.TaeonBoots.PhalanxSIRD = {name="Taeon Boots", augments={'Spell interruption rate down -10%','Phalanx +3'}}
+
+-- Snapshot. Only the head is relevant to RNG and COR.
+-- Ideal augments are {'Mag. Evasion+20','"Snapshot"+5','"Snapshot"+5'}.
+
+gear.TaeonChapeau.Snapshot = {name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5'}}
 
 ---- Telchine armor.
 
@@ -133,6 +141,8 @@ gear.TelchineBraconi = {}
 gear.TelchinePigaches = {}
 
 -- Enhancing magic effect duration.
+-- Ideal augments are {'Mag. Evasion+25','"Conserve MP"+5','Enh. Mag. eff. dur. +10'}, but the Leaf slot can vary.
+-- In particular, the hands are useful with Fast Cast for Summoner, and the feet are useful with Song spellcasting time for Bard.
 
 gear.TelchineCap.Enh = {name="Telchine Cap", augments={'Mag. Evasion+19','"Conserve MP"+3','Enh. Mag. eff. dur. +10'}}
 gear.TelchineChasuble.Enh = {name="Telchine Chasuble", augments={'Mag. Evasion+17','"Conserve MP"+3','Enh. Mag. eff. dur. +10'}}
@@ -143,10 +153,10 @@ gear.TelchinePigaches.Enh = {name="Telchine Pigaches", augments={'Mag. Evasion+2
 -- Pet meva, regen, and DT. Idris GEO uses probably hands and legs at most, pre-Idris GEO uses others.
 -- Ideal augments are {'Mag. Evasion+25','Pet: "Regen"+3','Pet: Damage taken -4%'}.
 
-gear.TelchineCap.Pet = {name="Telchine Cap", augments={'Pet: "Regen"+3','Pet: Damage taken -3%'}}
+gear.TelchineCap.Pet = {name="Telchine Cap", augments={'Mag. Evasion+22','Pet: "Regen"+3','Pet: Damage taken -3%'}}
 gear.TelchineChasuble.Pet = {name="Telchine Chasuble", augments={'Pet: "Regen"+3','Pet: Damage taken -3%'}}
-gear.TelchineGloves.Pet = {name="Telchine Gloves", augments={'Pet: "Regen"+3','Pet: Damage taken -4%'}}
-gear.TelchineBraconi.Pet = {name="Telchine Braconi", augments={'Pet: "Regen"+3','Pet: Damage taken -4%'}}
+gear.TelchineGloves.Pet = {name="Telchine Gloves", augments={'Mag. Evasion+21','Pet: "Regen"+3','Pet: Damage taken -4%'}}
+gear.TelchineBraconi.Pet = {name="Telchine Braconi", augments={'Mag. Evasion+20','Pet: "Regen"+3','Pet: Damage taken -4%'}}
 gear.TelchinePigaches.Pet = {name="Telchine Pigaches", augments={'Pet: "Subtle Blow"+3','Pet: Damage taken -3%'}}
 
 -- Despair armor.
@@ -274,14 +284,6 @@ gear.EmichoCoronet.C = {name="Emicho Coronet", augments={'Pet: Accuracy+15','Pet
 gear.EmichoHaubert = {}
 gear.EmichoHaubert.D = {name="Emicho Haubert", augments={'Pet: HP+100','Pet: INT+15','Pet: "Regen"+2'}}
 
----- Lustratio armor.
-
-gear.LustratioSubligarPlus1 = {}
-gear.LustratioSubligarPlus1.B = {name="Lustratio Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}}
-
-gear.LustratioLeggingsPlus1 = {}
-gear.LustratioLeggingsPlus1.B = {name="Lustratio Leggings +1", augments={'HP+65','STR+15','DEX+15'}}
-
 ---- Kaykaus armor.
 
 gear.KaykausMitraPlus1 = {}
@@ -298,6 +300,14 @@ gear.KaykausTightsPlus1.B = {name="Kaykaus Tights +1", augments={'MP+80','"Cure"
 
 gear.KaykausBootsPlus1 = {}
 gear.KaykausBootsPlus1.B = {name="Kaykaus Boots +1", augments={'MP+80','"Cure" spellcasting time -7%','Enmity-6'}}
+
+---- Lustratio armor.
+
+gear.LustratioSubligarPlus1 = {}
+gear.LustratioSubligarPlus1.B = {name="Lustratio Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}}
+
+gear.LustratioLeggingsPlus1 = {}
+gear.LustratioLeggingsPlus1.D = {name="Lustratio Leggings +1", augments={'HP+65','STR+15','DEX+15'}}
 
 -- Ryuo armor.
 
