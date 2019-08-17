@@ -2,6 +2,7 @@
 # Lines that start with '#' are comments.
 
 .DS_Store
+ccConfig.xml
 equip_processing.lua
 export.lua
 flow.lua
@@ -26,6 +27,7 @@ data/export/*
 data/common/*
 data/User/*
 libs/closetCleaner.lua
+report/
 Rename.bat
 Modes.lua
 organizer-lib.lua
