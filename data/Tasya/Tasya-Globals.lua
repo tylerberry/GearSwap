@@ -10,7 +10,7 @@
 --your Capacity Ring's recast, your time_offset is correct, set time_test to false and reload.
 
 time_offset = -43203
-time_test = true
+time_test = false
 latency = .75
 
 --If this is set to true it will prevent you from casting shadows when you have more up than that spell would generate.
