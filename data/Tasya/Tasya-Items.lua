@@ -225,6 +225,7 @@ gear.AdhemarBonnetPlus1.B = {name="Adhemar Bonnet +1", augments={'STR+12','DEX+1
 
 gear.AdhemarJacketPlus1 = {}
 gear.AdhemarJacketPlus1.B = {name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20'}}
+gear.AdhemarJacketPlus1.D = {name="Adhemar Jacket +1", augments={'HP+105','"Fast Cast"+10','Magic dmg. taken -4'}}
 
 gear.AdhemarWristbandsPlus1 = {}
 gear.AdhemarWristbandsPlus1.B = {name="Adhemar Wristbands +1", augments={'STR+12','DEX+12','Attack+20'}}
