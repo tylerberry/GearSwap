@@ -60,6 +60,7 @@ function init_gear_sets()
 	sets.Cure_Received = {neck="Phalaina Locket", ring1="Kunaji Ring", ring2="Asklepian Ring", waist="Gishdubar Sash"}
 	sets.Self_Refresh = {back="Grapevine Cape", waist="Gishdubar Sash", feet="Inspirited Boots"}
 
+  --[[
   sets.HPCure = {
     main="Queller Rod", sub="Ammurapi Shield", ammo="Pemphredo Tathlum",
     head="Blistering Sallet +1", neck="Nodens Gorget", ear1="Etiolation Earring", ear2="Ethereal Earring",
@@ -70,6 +71,7 @@ function init_gear_sets()
     head="Pixie Hairpin +1", ear1="Mendicant's Earring", ear2="Evans Earring",
     body="Zendik Robe", hands="Hieros Mittens", ring1="Mephitas's Ring +1", ring2="Mephitas's Ring",
     back="Swith Cape +1", waist="Flax Sash", legs="Shedir Seraweels"}
+  --]]
 
   sets.MagicBurst = {
     neck="Mizukage-no-Kubikazari",
@@ -89,7 +91,7 @@ function init_gear_sets()
   sets.MagicAccuracy = {
     main=gear.Grioavolr.MAB, sub="Enki Strap", ammo="Pemphredo Tathlum",
     head="Inyanga Tiara +1", neck="Erra Pendant", ear1="Dignitary's Earring", ear2="Gwati Earring",
-    body="Inyanga Jubbah +1", hands=gear.KaykausCuffsPlus1.A, ring1="Stikini Ring +1", ring2="Stikini Ring +1",
+    body="Inyanga Jubbah +2", hands=gear.KaykausCuffsPlus1.A, ring1="Stikini Ring +1", ring2="Stikini Ring +1",
     back=gear.AlaunussCape.FC, waist="Luminary Sash", legs=gear.ChironicHose.MAB, feet="Inyanga Crackows +1"}
 
   sets.MagicAttack = {
@@ -104,7 +106,7 @@ function init_gear_sets()
   sets.MinusEnmity = {
     main="Terra's Staff", sub="Achaq Grip", ammo="Esper Stone +1",                                              --  -,  4,  -,  5
     head="Gendewitha Caubeen +1", neck="Orunmila's Torque", ear1="Genmei Earring", ear2="Novia Earring",        --  8,  3,  -,  7
-    body="Inyanga Jubbah +1", hands="Ebers Mitts +1", ring1="Defending Ring", ring2="Kuchekula Ring",           --  -,  10, -,  7
+    body="Inyanga Jubbah +2", hands="Ebers Mitts +1", ring1="Defending Ring", ring2="Kuchekula Ring",           --  -,  10, -,  7
     back=gear.MendingCape.Healing, waist="Slipor Sash", legs="Inyanga Shalwar +2", feet="Inyanga Crackows +1"}  --  6,  -,  -,  -
 
   --------------------------------------
@@ -123,7 +125,7 @@ function init_gear_sets()
   sets.idle = {
     main="Contemplator +1", sub="Oneiros Grip", ammo="Homiliary",
     head="Befouled Crown", neck="Bathy Choker +1", ear1="Infused Earring", ear2="Dawn Earring",
-    body="Witching Robe", hands="Serpentes Cuffs", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
+    body=gear.KaykausBliautPlus1.D, hands="Serpentes Cuffs", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
     back="Kumbira Cape", waist="Slipor Sash", legs="Assiduity Pants +1", feet="Serpentes Sabots"}
 
   sets.idle.PDT = {
@@ -149,13 +151,13 @@ function init_gear_sets()
   sets.defense.MDT = {
     main="Mafic Cudgel", sub="Genmei Shield", ammo="Staunch Tathlum +1",
     head="Gendewitha Caubeen +1", neck="Loricate Torque +1", ear1="Etiolation Earring", ear2="Sanare Earring",
-    body="Inyanga Jubbah +1", hands="Inyanga Dastanas +1", ring1="Defending Ring", ring2="Shadow Ring",
+    body="Inyanga Jubbah +2", hands="Inyanga Dastanas +1", ring1="Defending Ring", ring2="Shadow Ring",
     back="Moonlight Cape", waist="Slipor Sash", legs="Inyanga Shalwar +2", feet="Gendewitha Galoshes +1"}
 
   sets.defense.MEVA = {
     main="Chatoyant Staff", sub="Oneiros Grip", ammo="Staunch Tathlum +1",
     head="Inyanga Tiara +1", neck="Warder's Charm +1", ear1="Etiolation Earring", ear2="Sanare Earring",
-    body="Inyanga Jubbah +1", hands="Inyanga Dastanas +1", ring1="Vengeful Ring", ring2="Purity Ring",
+    body="Inyanga Jubbah +2", hands="Inyanga Dastanas +1", ring1="Vengeful Ring", ring2="Purity Ring",
     back="Aurist's Cape +1", waist="Luminary Sash", legs="Inyanga Shalwar +2", feet="Inyanga Crackows +1"}
 
   --------------------------------------
@@ -259,7 +261,7 @@ function init_gear_sets()
   sets.precast.FC = {                                                                                           -- Current total: QC+10, FC+61~63
     main=gear.Grioavolr.MAB, sub="Clerisy Strap +1", ammo="Impatiens",                                          --  +4,  +3,  -,  QC
     head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",    --  +10, +5, +2, +2
-    body="Inyanga Jubbah +1", hands="Gendewitha Gages +1", ring1="Lebeche Ring", ring2="Prolix Ring",           --  +13, +7, QC, +2
+    body="Inyanga Jubbah +2", hands="Gendewitha Gages +1", ring1="Lebeche Ring", ring2="Prolix Ring",           --  +13, +7, QC, +2
     back="Perimede Cape", waist="Witful Belt", legs="Ayanmo Cosciales +2", feet="Regal Pumps +1"}               --  QC,  +3, +6, +5~7
 
   sets.precast.FC['Enhancing Magic'] = sets.precast.FC -- {waist="Siegel Sash"}                                 -- Currently prefer maxing QC.
@@ -302,7 +304,7 @@ function init_gear_sets()
   sets.midcast.FastRecast = {
     main=gear.Grioavolr.MAB, sub="Clerisy Strap +1", ammo="Sapience Orb",
     head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",
-    body="Inyanga Jubbah +1", hands="Gendewitha Gages +1", ring1="Defending Ring", ring2="Prolix Ring",
+    body="Inyanga Jubbah +2", hands="Gendewitha Gages +1", ring1="Defending Ring", ring2="Prolix Ring",
     back=gear.AlaunussCape.FC, waist="Witful Belt", legs="Ayanmo Cosciales +2", feet="Regal Pumps +1"}
 
   --------------------------------------

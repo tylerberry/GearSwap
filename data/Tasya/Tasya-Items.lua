@@ -287,8 +287,14 @@ gear.LustratioLeggingsPlus1.B = {name="Lustratio Leggings +1", augments={'HP+65'
 gear.KaykausMitraPlus1 = {}
 gear.KaykausMitraPlus1.B = {name="Kaykaus Mitra +1", augments={'MP+80','"Cure" spellcasting time -7%','Enmity-6'}}
 
+gear.KaykausBliautPlus1 = {}
+gear.KaykausBliautPlus1.D = {name="Kaykaus Bliaut +1", augments={'MP+80','"Cure" potency +6%','"Conserve MP"+7'}}
+
 gear.KaykausCuffsPlus1 = {}
 gear.KaykausCuffsPlus1.A = {name="Kaykaus Cuffs +1", augments={'MP+80','MND+12','Mac. Acc.+20'}}
+
+gear.KaykausTightsPlus1 = {}
+gear.KaykausTightsPlus1.B = {name="Kaykaus Tights +1", augments={'MP+80','"Cure" spellcasting time -7%','Enmity-6'}}
 
 gear.KaykausBootsPlus1 = {}
 gear.KaykausBootsPlus1.B = {name="Kaykaus Boots +1", augments={'MP+80','"Cure" spellcasting time -7%','Enmity-6'}}
