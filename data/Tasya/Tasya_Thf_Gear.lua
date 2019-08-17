@@ -139,7 +139,7 @@ function init_gear_sets()
   sets.engaged = {
     ammo="Ginsen",
     head=gear.AdhemarBonnetPlus1.B, neck="Anu Torque", ear1="Sherida Earring", ear2="Suppanomimi", -- ear2="Dedition Earring" (with 550 job gift)
-    body=gear.AdhemarJacketPlus1.B, hands=gear.AdhemarWristbandsPlus1.B, ring1="Hetairoi Ring", ring2="Epona's Ring",
+    body=gear.AdhemarJacketPlus1.B, hands=gear.AdhemarWristbandsPlus1.B, ring1="Gere Ring", ring2="Hetairoi Ring",
     back=gear.ToutatissCape.Crit, waist="Windbuffet Belt +1", legs=gear.TaeonTights.TA, feet=gear.HerculeanBoots.TA}
 
   sets.engaged.SomeAcc = {
@@ -148,10 +148,11 @@ function init_gear_sets()
 
   sets.engaged.Acc = {
     ear1="Telos Earring", ear2="Suppanomimi",
-    body="Mummu Jacket +2",hands="Floral Gauntlets", ring1="Ilabrat Ring", ring2="Regal Ring",
+    body="Mummu Jacket +2",hands="Floral Gauntlets", ring2="Ilabrat Ring", -- ring2="Regal Ring",
     waist="Olseni Belt", legs="Meghanada Chausses +2", feet=gear.herculean_acc_feet}
 
-  sets.engaged.MaxAcc = {ammo="Falcon Eye",
+  sets.engaged.MaxAcc = {
+    ammo="Falcon Eye",
     ear2="Dignitary's Earring",
     hands=gear.AdhemarWristbandsPlus1.B, ring1="Ramuh Ring +1", ring2="Ramuh Ring +1",
     legs="Mummu Kecks +2"}
@@ -182,7 +183,7 @@ function init_gear_sets()
   sets.precast.WS = {
     ammo="Seething Bomblet +1",
     head="Lilitu Headpiece", neck="Caro Necklace", ear1="Sherida Earring", ear2="Brutal Earring",
-    body=gear.AdhemarJacketPlus1.B, hands=gear.AdhemarWristbandsPlus1.B, ring1="Ifrit Ring +1", ring2="Ifrit Ring +1", -- ring1="Ilabrat Ring", ring2="Regal Ring",
+    body=gear.AdhemarJacketPlus1.B, hands=gear.AdhemarWristbandsPlus1.B, ring1="Ilabrat Ring", ring2="Shukuyu Ring", -- ring2="Regal Ring",
     back=gear.ToutatissCape.Crit, waist="Grunfeld Rope", legs="Meghanada Chausses +2", feet=gear.LustratioLeggingsPlus1.D}
 
   sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {
@@ -200,7 +201,7 @@ function init_gear_sets()
   sets.precast.WS.DEX = {
     ammo="Jukukik Feather",
     head=gear.AdhemarBonnetPlus1.B, neck="Caro Necklace", ear1="Sherida Earring", ear2="Mache Earring +1",
-    body=gear.AdhemarJacketPlus1.B, hands=gear.AdhemarWristbandsPlus1.B, ring1="Ramuh Ring +1", ring2="Ramuh Ring +1", -- ring1="Ilabrat Ring", ring2="Regal Ring",
+    body=gear.AdhemarJacketPlus1.B, hands=gear.AdhemarWristbandsPlus1.B, ring1="Ilabrat Ring", ring2="Ramuh Ring +1", -- ring2="Regal Ring",
     back=gear.ToutatissCape.Crit, waist="Grunfeld Rope", feet=gear.LustratioSubligarPlus1.B, feet=gear.LustratioLeggingsPlus1.D}
 
   sets.precast.WS.DEX.SomeAcc = set_combine(sets.precast.WS, {
@@ -208,11 +209,11 @@ function init_gear_sets()
     neck="Combatant's Torque"})
 
   sets.precast.WS.DEX.Acc = set_combine(sets.precast.WS.DEX.SomeAcc, {
-    ear1="Telos Earring",
+    ear1="Mache Earring +1",
     body="Meghanada Cuirie +2",
-    waist="Olseni Belt", legs="Meghanada Chausses +2", feet=gear.herculean_acc_feet})
+    legs="Meghanada Chausses +2", feet=gear.herculean_acc_feet})
 
-  sets.precast.WS.DEX.MaxAcc = set_combine(sets.precast.WS.DEX.Acc, {})
+  sets.precast.WS.DEX.MaxAcc = set_combine(sets.precast.WS.DEX.Acc, {ear1=waist="Olseni Belt"})
 
   sets.precast.WS.DEX.Fodder = set_combine(sets.precast.WS.DEX, {}) -- body=gear.HerculeanVest.WSD
 
@@ -227,7 +228,7 @@ function init_gear_sets()
   sets.precast.WS.DEXWSD = {
     ammo="Jukukik Feather",
     head=gear.AdhemarBonnetPlus1.B, neck="Caro Necklace", ear1="Sherida Earring", ear2="Mache Earring +1", -- head="Pillager's Bonnet +3"
-    body=gear.AdhemarJacketPlus1.B, hands="Meghanada Gloves +2", ring1="Ramuh Ring +1", ring2="Ramuh Ring +1", -- ring1="Ilabrat Ring", ring2="Regal Ring",
+    body=gear.AdhemarJacketPlus1.B, hands="Meghanada Gloves +2", ring1="Ilabrat Ring", ring2="Epaminondas's Ring",
     back=gear.ToutatissCape.Crit, waist="Grunfeld Rope", feet=gear.LustratioSubligarPlus1.B, feet=gear.HerculeanBoots.WSD} -- legs="Plunderer's Culottes +3"
 
   sets.precast.WS.DEXWSD.SomeAcc = set_combine(sets.precast.WS.DEXWSD, {ammo="Falcon Eye"})
@@ -251,14 +252,14 @@ function init_gear_sets()
   sets.precast.WS.DEXCrit = {
     ammo="Yetshila +1",
     head=gear.AdhemarBonnetPlus1.B, neck="Caro Necklace", ear1="Sherida Earring", ear2="Mache Earring +1",
-    body="Abnoba Kaftan", hands=gear.AdhemarWristbandsPlus1.B, ring1="Begrudging Ring", ring2="Ramuh Ring +1", -- body="Plunderer's Vest +3"
-    back=gear.ToutatissCape.Crit, waist="Grunfeld Rope", legs=gear.LustratioSubligarPlus1.B, feet=gear.LustratioLeggingsPlus1.D} -- legs="Mummu Kecks +2" -> legs="Pillager's Culottes +3"
+    body="Abnoba Kaftan", hands=gear.AdhemarWristbandsPlus1.B, ring1="Ilabrat Ring", ring2="Begrudging Ring", -- body="Plunderer's Vest +3"
+    back=gear.ToutatissCape.Crit, waist="Grunfeld Rope", legs="Mummu Kecks +2", feet=gear.LustratioLeggingsPlus1.D} -- legs="Pillager's Culottes +3"
 
   sets.precast.WS.DEXCrit.SomeAcc = set_combine(sets.precast.WS.DEXCrit, {
     ammo="Falcon Eye",
     neck="Combatant's Torque",
     -- hands="Mummu Wrists +2",
-    waist="Olseni Belt"}) -- legs="Mummu Kecks +2", feet="Mummu Gamashes +2"
+    waist="Olseni Belt", legs="Mummu Kecks +2"}) -- feet="Mummu Gamashes +2"
 
   sets.precast.WS.DEXCrit.Acc = set_combine(sets.precast.WS.DEXCrit.SomeAcc, {
     }) --head="Mummu Bonnet +2", ear2="Telos Earring", body="Sayadio's Kaftan"
@@ -266,10 +267,10 @@ function init_gear_sets()
   sets.precast.WS.DEXCrit.MaxAcc = set_combine(sets.precast.WS.DEXCrit.Acc, {
     body="Mummu Jacket +2", ring1="Ramuh Ring +1"})
 
-  sets.precast.WS.DEXCrit.Fodder = set_combine(sets.precast.WS.DEXCrit, {})
+  sets.precast.WS.DEXCrit.Fodder = set_combine(sets.precast.WS.DEXCrit, {ring1="Mummu Ring"})
 
   sets.precast.WS.DEXCrit.SA = set_combine(sets.precast.WS.DEXCrit, {
-    body="Meghanada Cuirie +2", ring1="Ramuh Ring +1"}) -- back=gear.ToutatissCape.WSD
+    body="Meghanada Cuirie +2", ring2="Ramuh Ring +1"}) -- ring2="Regal Ring", back=gear.ToutatissCape.WSD
 
   sets.precast.WS.DEXCrit.TA = set_combine(sets.precast.WS.DEXCrit.SA, {})
   sets.precast.WS.DEXCrit.SATA = set_combine(sets.precast.WS.DEXCrit.SA, {})
@@ -278,8 +279,8 @@ function init_gear_sets()
 
   sets.precast.WS.AGI = {
     ammo="Seething Bomblet +1",
-    head="Meghanada Visor +2", neck="Marked Gorget", ear1="Sherida Earring", ear2="Tati Earring +1", -- neck="Houyi Gorget"
-    body="Meghanada Cuirie +2", hands="Meghanada Gloves +2", ring1="Apate Ring", ring2="Epona's Ring", -- ring1="Ilabrat Ring", ring2="Regal Ring"
+    head="Meghanada Visor +2", neck="Marked Gorget", ear1="Sherida Earring", ear2="Tati Earring +1", -- neck="Houyi's Gorget"
+    body="Meghanada Cuirie +2", hands="Meghanada Gloves +2", ring1="Ilabrat Ring", ring2="Apate Ring", -- ring2="Regal Ring"
     back=gear.CannyCape.AGI, waist="Yemaya Belt", legs="Meghanada Chausses +2", feet="Meghanada Jambeaux +2"} -- waist="Elanid Belt"
 
   sets.precast.WS.AGI.SomeAcc = set_combine(sets.precast.WS.AGI, {
@@ -321,8 +322,8 @@ function init_gear_sets()
   -- Special sets for weaponskills.
 
   -- Swap to these on Moonshade using WS if at 3000 TP
-  sets.MaxTP = {ear1="Ishvara Earring", ear2="Sherida Earring"}
-  sets.AccMaxTP = {ear1="Zennaroi Earring", ear2="Sherida Earring"}
+  sets.MaxTP = {ear1="Sherida Earring", ear2="Ishvara Earring"}
+  sets.AccMaxTP = {ear1="Sherida Earring", ear2="Mache Earring +1"}
 
   --------------------------------------
   -- Precast: Dagger Weaponskills
