@@ -134,11 +134,11 @@ gear.TelchinePigaches = {}
 
 -- Enhancing magic effect duration.
 
-gear.TelchineCap.Enh = {name="Telchine Cap", augments={'"Conserve MP"+3','Enh. Mag. eff. dur. +10'}}
-gear.TelchineChasuble.Enh = {name="Telchine Chasuble", augments={'Mag. Evasion+13','Spell interruption rate down -7%','Enh. Mag. eff. dur. +10'}}
-gear.TelchineGloves.Enh = {name="Telchine Gloves", augments={'Mag. Evasion+17','"Fast Cast"+3','Enh. Mag. eff. dur. +10'}}
-gear.TelchineBraconi.Enh = {name="Telchine Braconi", augments={'Spell interruption rate down -3%','Enh. Mag. eff. dur. +10'}}
-gear.TelchinePigaches.Enh = {name="Telchine Pigaches", augments={'Mag. Evasion+2','Song spellcasting time -7%','Enh. Mag. eff. dur. +10'}}
+gear.TelchineCap.Enh = {name="Telchine Cap", augments={'Mag. Evasion+19','"Conserve MP"+3','Enh. Mag. eff. dur. +10'}}
+gear.TelchineChasuble.Enh = {name="Telchine Chasuble", augments={'Mag. Evasion+17','"Conserve MP"+3','Enh. Mag. eff. dur. +10'}}
+gear.TelchineGloves.Enh = {name="Telchine Gloves", augments={'Mag. Evasion+17','"Fast Cast"+5','Enh. Mag. eff. dur. +10'}}
+gear.TelchineBraconi.Enh = {name="Telchine Braconi", augments={'Mag. Evasion+20','"Conserve MP"+3','Enh. Mag. eff. dur. +10'}}
+gear.TelchinePigaches.Enh = {name="Telchine Pigaches", augments={'Mag. Evasion+24','Song spellcasting time -7%','Enh. Mag. eff. dur. +10'}}
 
 -- Pet meva, regen, and DT. Idris GEO uses probably hands and legs at most, pre-Idris GEO uses others.
 -- Ideal augments are {'Mag. Evasion+25','Pet: "Regen"+3','Pet: Damage taken -4%'}.
@@ -291,7 +291,7 @@ gear.KaykausBliautPlus1 = {}
 gear.KaykausBliautPlus1.D = {name="Kaykaus Bliaut +1", augments={'MP+80','"Cure" potency +6%','"Conserve MP"+7'}}
 
 gear.KaykausCuffsPlus1 = {}
-gear.KaykausCuffsPlus1.A = {name="Kaykaus Cuffs +1", augments={'MP+80','MND+12','Mac. Acc.+20'}}
+gear.KaykausCuffsPlus1.A = {name="Kaykaus Cuffs +1", augments={'MP+80','MND+12','Mag. Acc.+20'}}
 
 gear.KaykausTightsPlus1 = {}
 gear.KaykausTightsPlus1.B = {name="Kaykaus Tights +1", augments={'MP+80','"Cure" spellcasting time -7%','Enmity-6'}}

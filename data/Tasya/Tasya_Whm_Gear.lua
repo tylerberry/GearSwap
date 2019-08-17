@@ -483,7 +483,7 @@ function init_gear_sets()
   sets.midcast.Blink = set_combine(sets.midcast.EnhancingDuration, {})
 
   sets.midcast.Erase = set_combine(sets.midcast.FastRecast, {
-      main=gear.Grioavolr.MAB, sub="Clemency Grip", head="Ebers Cap +1", neck="Cleric's Torque"})
+    main="Yagrush", sub="Genmei Shield", head="Ebers Cap +1", neck="Cleric's Torque"})
 
   sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {ring2="Sheltered Ring"})
   sets.midcast.Protectra = set_combine(sets.midcast.Protect, {})
