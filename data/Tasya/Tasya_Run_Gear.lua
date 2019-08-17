@@ -36,10 +36,11 @@ end
 function init_gear_sets()
 
   gear.EvasionistsCape = {}
-  gear.EvasionistsCape.Enm = {name="Evasionist's Cape", augments={'Enmity+6','"Embolden"+9','"Dbl.Atk."+1','Damage taken-2%'}}
+  gear.EvasionistsCape.Embolden = {name="Evasionist's Cape", augments={'Enmity+6','"Embolden"+14','"Dbl.Atk."+2','Damage taken-3%'}}
 
   gear.OgmasCape = {}
-  gear.OgmasCape.Enm = {name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10'}}
+  gear.OgmasCape.Enm = {name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10'}}
+  gear.OgmasCape.FC = {name="Ogma's Cape", augments={'HP+60','HP+20','"Fast Cast"+10'}}
 
   sets.element.Dark = {head="Pixie Hairpin +1", ring2="Archon Ring"}
   sets.element.Earth = {neck="Quanpur Necklace"}
@@ -48,18 +49,28 @@ function init_gear_sets()
 	-- Base sets
 	--------------------------------------
 
-  -- +101 enmity.
-  sets.Enmity = {
-    ammo="Sapience Orb", -- ammo="Aqreqaq Bomblet"
-    head="Halitus Helm", neck="Moonlight Necklace", ear1="Friomisi Earring", ear2="Cryptic Earring", -- ear1="Trux Earring"
-    body="Emet Harness +1", hands="Kurys Gloves", ring1="Eihwaz Ring", ring2="Supershear Ring",
-    back=gear.OgmasCape.Enm, waist="Kasiri Belt", legs="Erilaz Leg Guards +1", feet="Rager Ledelsens +1"} -- feet="Ahosi Leggings"
+  -- Set priority is used to preserve Max HP.
+
+  sets.Enmity = {                                       -- +84 enmity.
+    ammo={name="Aqreqaq Bomblet", priority=8},
+    head={name="Halitus Helm", priority=3},
+    neck="Moonlight Necklace",
+    ear1={name="Cryptic Earring", priority=6},
+    ear2={name="Odnowa Earring +1", priority=14},
+    body={name="Emet Harness +1", priority=2},
+    hands={name="Kurys Gloves", priority=4},
+    ring1={name="Eihwaz Ring", priority=9},
+    ring2={name="Moonlight Ring", priority=10},
+    back={name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10'}, priority=5},
+    waist={name="Kasiri Belt", priority=11},
+    legs={name="Erilaz Leg Guards +1", priority=7},
+    feet={name="Rager Ledelsens +1", priority=1}} -- feet="Ahosi Leggings"
 
   -- Capped SIRD, assuming SIRD -10% merits. +59 enmity.
   sets.Enmity.SIRD = set_combine(sets.Enmity, {
     ammo="Staunch Tathlum +1",
     neck="Moonlight Necklace", ear1="Halasz Earring",
-    hands=gear.RawhideGloves.A, ring2="Evanescence Ring",
+    hands=gear.RawhideGloves.A, ring1="Evanescence Ring",
     waist="Rumination Sash", legs=gear.CarmineCuissesPlus1.D, feet=gear.TaeonBoots.PhalanxSIRD})
 
   sets.Enmity.DT = set_combine(sets.Enmity, {
@@ -101,15 +112,12 @@ function init_gear_sets()
 
 	sets.idle.Tank = {
     ammo="Staunch Tathlum +1",
-    head="Futhark Bandeau +1", neck="Loricate Torque +1", ear1="Genmei Earring", ear2="Ethereal Earring",
-    body="Runeist Coat +1", hands=gear.HerculeanGloves.PDT, ring1="Defending Ring", ring2=gear.DarkRing.PDT,
-    back="Shadow Mantle", waist="Flume Belt +1", legs="Erilaz Leg Guards +1", feet="Erilaz Greaves +1"}
+    head="Turms Cap +1", neck="Loricate Torque +1", ear1="Etiolation Earring", ear2="Odnowa Earring +1",
+    body="Erilaz Surcoat +1", hands="Turms Mittens +1", ring1="Defending Ring", ring2="Moonlight Ring",
+    back=gear.OgmasCape.Enm, waist="Flume Belt +1", legs="Erilaz Leg Guards +1", feet="Erilaz Greaves +1"}
 
-	sets.idle.KiteTank = {
-    ammo="Staunch Tathlum +1",
-    head="Futhark Bandeau +1", neck="Loricate Torque +1", ear1="Genmei Earring", ear2="Ethereal Earring",
-    body="Futhark Coat +1", hands=gear.HerculeanGloves.PDT, ring1="Defending Ring", ring2=gear.DarkRing.PDT, -- ring2="Moonbeam Ring"
-    back="Moonlight Cape", waist="Flume Belt +1", legs=gear.CarmineCuissesPlus1.D, feet="Hippomenes Socks +1"}
+	sets.idle.KiteTank = set_combine(sets.idle.Tank, {
+    legs=gear.CarmineCuissesPlus1.D, feet="Hippomenes Socks +1"})
 
 	sets.idle.Weak = {
     ammo="Homiliary",
@@ -157,9 +165,9 @@ function init_gear_sets()
   -- There are options for ear1, as well.
 	sets.defense.MEVA = {
     ammo="Staunch Tathlum +1",
-    head="Erilaz Galea +1", neck="Warder's Charm +1", ear2="Eabani Earring", -- ear1="Odnowa Earring +1"
-    body="Erilaz Surcoat +1", hands="Erilaz Gauntlets +1", -- ring1="Purity Ring", ring2="Vengeful Ring"
-    back=gear.OgmasCape.Enm, waist="Engraved Belt", legs="Runeist Trousers +1", feet="Erilaz Greaves +1"}
+    head="Turms Cap +1", neck="Warder's Charm +1", ear2="Eabani Earring", -- ear1="Odnowa Earring +1"
+    body="Erilaz Surcoat +1", hands="Turms Mittens +1", -- ring1="Purity Ring", ring2="Vengeful Ring"
+    back=gear.OgmasCape.Enm, waist="Engraved Belt", legs="Runeist Trousers +1", feet="Turms Leggings +1"}
 
 	sets.defense.MEVA_HP = set_combine (sets.defense.MEVA, {
     back="Moonlight Cape"}) --ring1="Moonbeam Ring", ring2="Moonbeam Ring"
@@ -180,8 +188,8 @@ function init_gear_sets()
   sets.resting = set_combine(sets.defense.PDT, {
     ammo="Homiliary",
     head=gear.RawhideMask.A, neck="Bathy Choker +1", ear1="Infused Earring", ear2="Dawn Earring",
-    body="Vrikodara Jupon", ring1="Stikini Ring +1", ring2="Stikini Ring +1", -- hands="Regal Gauntlets",
-    waist=gear.IdleBelt}) -- back="Scuta Cape", legs="Turms Subligar +1", feet="Turms Leggings +1"
+    body="Vrikodara Jupon", hands="Turms Mittens +1", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
+    waist=gear.IdleBelt, legs="Erilaz Leg Guards +1", feet="Turms Leggings +1"}) -- back="Scuta Cape", legs="Turms Subligar +1",
 
   sets.resting.Sphere = set_combine(sets.resting, {body="Mekosuchinae Harness"})
 
@@ -232,9 +240,9 @@ function init_gear_sets()
 
   sets.engaged.Tank = {
     ammo="Staunch Tathlum +1",
-    head="Meghanada Visor +1", neck="Loricate Torque +1", ear1="Genmei Earring", ear2="Ethereal Earring",
-    body="Futhark Coat +1", hands=gear.HerculeanGloves.PDT, ring1="Defending Ring", ring2="Shadow Ring",
-    back="Shadow Mantle", waist="Engraved Belt", legs="Erilaz Leg Guards +1", feet="Erilaz Greaves +1"}
+    head="Turms Cap +1", neck="Loricate Torque +1", ear1="Genmei Earring", ear2="Odnowa Earring +1",
+    body="Futhark Coat +1", hands="Turms Mittens +1", ring1="Defending Ring", ring2="Moonlight Ring",
+    back=gear.OgmasCape.Enm, waist="Flume Belt +1", legs="Erilaz Leg Guards +1", feet="Turms Leggings +1"}
 
   sets.engaged.SomeAcc.Tank = set_combine(sets.engaged.Tank, {})
 	sets.engaged.Acc.Tank = set_combine(sets.engaged.Tank, {})
@@ -447,21 +455,22 @@ function init_gear_sets()
   -- Precast: Fast Cast
   --------------------------------------
 
+  -- Priority ordering is used to preserve max HP.
   sets.precast.FC = {
     range=empty,
-    ammo="Sapience Orb", -- ammo="Impatiens", once I have more FC in other slots. HP still zero.
-    head=gear.CarmineMaskPlus1.D,
+    ammo="Sapience Orb",
+    head=gear.CarmineMaskPlus1.D, -- head={name="Runeist's Bandeau +3", priority=3}
     neck="Orunmila's Torque",
-    ear1={name="Etiolation Earring", priority=1},
-    ear2="Loquacious Earring",
-    body=gear.TaeonTabard.PhalanxFC,
-    hands="Leyline Gloves",
-    ring1=name="Lebeche Ring", -- ring1="Kishar Ring"
-    ring2=name="Prolix Ring", -- ring2="Rahab Ring"
-    -- back=gear.OgmasCape.FC
-    waist={name="Kasiri Belt", priority=16},
-    legs="Ayanmo Cosciales +2",
-    feet=gear.CarmineGreavesPlus1.D}
+    ear1={name="Etiolation Earring", priority=6},
+    ear2={name="Odnowa Earring +1", priority=8},
+    body={name="Adhemar Jacket +1", augments={'HP+105','"Fast Cast"+10','Magic dmg. taken -4'}, priority=5},
+    hands={name="Leyline Gloves", priority=1},
+    ring1="Kishar Ring",
+    ring2="Prolix Ring"
+    back={name="Ogma's Cape", augments={'HP+60','HP+20','"Fast Cast"+10'}, priority=7},
+    waist={name="Kasiri Belt", priority=9},
+    legs={name="Ayanmo Cosciales +2", priority=2}
+    feet={name="Carmine Greaves +1", augments={'HP+80','MP+80','Phys. dmg. taken -4'}, priority=4}}
 
   if player.sub_job == "WHM" or player.sub_job == "RDM" or player.sub_job == "SCH" or player.sub_job == "PLD" then
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {ear1="Mendicant's Earring", legs="Doyen Pants"})
@@ -568,7 +577,7 @@ function init_gear_sets()
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {head="Frenzy Sallet"}
 	sets.buff.Battuta = {}
-	sets.buff.Embolden = {back=gear.EvasionistsCape.Enm}
+	sets.buff.Embolden = {back=gear.EvasionistsCape.Embolden}
 
   --------------------------------------
 	-- Sets Used By Gearswap Rules
