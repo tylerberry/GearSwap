@@ -248,47 +248,69 @@ function init_gear_sets()
   -- Precast: Fast Cast
   --------------------------------------
 
-	sets.precast.FC = {
-    main=gear.Grioavolr.MAB, sub="Clerisy Strap +1", range=empty, ammo="Sapience Orb",                        --  4, 3,  -,  2
-		head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",  -- 10, 5,  2,  2
-		body="Inyanga Jubbah +2", hands="Leyline Gloves", ring1="Lebeche Ring", ring2="Kishar Ring",              -- 13, 8, QC,  4
-		back=gear.IntarabussCape.FC, waist="Witful Belt", legs="Ayanmo Cosciales +2", feet="Chelona Boots +1"}    -- 10, 3,  6,  5
+  if player.sub_job == 'DNC' or player.sub_job == 'NIN' then
+  	sets.precast.FC = {                                                                                           -- Total: 76 FC, 9 QC.
+      main=gear.Kali.A, sub=gear.Kali.D, range=empty, ammo="Sapience Orb",                                        --  7,  7,    -,   2
+  		head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",    -- 10,  5,    2,   2
+  		body="Inyanga Jubbah +2", hands="Leyline Gloves", ring1="Lebeche Ring", ring2="Kishar Ring",                -- 14,  8,    2QC, 4
+  		back="Perimede Cape", waist="Witful Belt", legs=gear.KaykausTightsPlus1.B, feet="Chelona Boots +1"}         -- 4QC, 3+QC, 7,   5
+
+    -- These Telchine Pigaches have -7% song casting time augment; Gendewitha Gages have -5% song casting time, and Gendewitha Spats have
+    -- -4% song casting time.
+  	sets.precast.FC.BardSong = {                                                                                  -- Total: 81 FC, 9 QC
+      main=gear.Kali.A, sub=gear.Kali.D, range="Gjallarhorn", ammo=empty,                                         -- 7,   7,    -,   -
+  		head=gear.VanyaHood.D, neck="Loricate Torque +1", ear1="Enchanter Earring +1", ear2="Loquacious Earring",   -- 10,  -,    2,   2
+  		body="Inyanga Jubbah +2", hands="Gendewitha Gages +1", ring1="Lebeche Ring", ring2="Kishar Ring",           -- 14,  12,   2QC, 4
+  		back="Perimede Cape", waist="Witful Belt", legs="Gendewitha Spats +1", feet=gear.TelchinePigaches.Enh}      -- 4QC, 3+QC, 9,   13
+  else
+    sets.precast.FC = {                                                                                           -- Total: 79 FC, 5 QC.
+      main=gear.Kali.A, sub="Genmei Shield", range=empty, ammo="Sapience Orb",                                    --  7, -,    -,   2
+  		head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",    -- 10, 5,    2,   2
+  		body="Inyanga Jubbah +2", hands="Leyline Gloves", ring1="Lebeche Ring", ring2="Kishar Ring",                -- 14, 8,    2QC, 4
+  		back=gear.IntarabussCape.FC, waist="Witful Belt", legs=gear.KaykausTightsPlus1.B, feet="Chelona Boots +1"}  -- 10, 3+QC, 7,   5
+
+    -- These Telchine Pigaches have -7% song casting time augment; Gendewitha Gages have -5% song casting time, and Gendewitha Spats have
+    -- -4% song casting time.
+    -- TODO: get -5% on the Gendewitha legs, we can add back Lebeche over Prolix.
+
+  	sets.precast.FC.BardSong = {                                                                                  -- Total: 81 FC, 7 QC
+      main=gear.Kali.A, sub="Genmei Shield", range="Gjallarhorn", ammo=empty,                                     -- 7,   -,    -, -
+  		head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",    -- 10,  5,    2, 2
+  		body="Inyanga Jubbah +2", hands="Gendewitha Gages +1", ring1="Prolix Ring", ring2="Kishar Ring",            -- 14,  12,   2, 4
+  		back="Perimede Cape", waist="Witful Belt", legs="Gendewitha Spats +1", feet=gear.TelchinePigaches.Enh}      -- 4QC, 3+QC, 9, 13
+  end
 
   if player.sub_job == "WHM" or player.sub_job == "RDM" or player.sub_job == "SCH" or player.sub_job == "PLD" then
-  	sets.precast.FC.Cure = set_combine(sets.precast.FC, {
-      head=gear.VanyaHood.D, neck="Loricate Torque +1", ear1="Enchanter Earring +1", ear2="Mendicant's Earring",
-      body="Inyanga Jubbah +2", hands="Leyline Gloves", ring1="Lebeche Ring", ring2="Kishar Ring",
-      back=gear.IntarabussCape.FC, waist="Witful Belt", legs="Doyen Pants", feet=gear.VanyaClogs.D})
+    sets.precast.FC.Cure = {                                                                                      -- Total: 80 FC, 10 QC
+      main=gear.Kali.A, sub="Genmei Shield", range=empty, ammo="Impatiens",                                       -- 7,   -,    -,   2QC
+      head=gear.VanyaHood.D, neck="Loricate Torque +1", ear1="Enchanter Earring +1", ear2="Mendicant's Earring",  -- 10,  -,    2,   5
+  		body="Inyanga Jubbah +2", hands="Leyline Gloves", ring1="Lebeche Ring", ring2="Kishar Ring",                -- 14,  8,    2QC, 4
+      back="Perimede Cape", waist="Witful Belt", legs="Doyen Pants", feet=gear.VanyaClogs.D}                      -- 4QC, 3+QC, 15,  15
   end
 
-	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
+  -- We don't need Siegel Sash, our FC is high enough, and using it would cost Quick Cast.
+	--sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
-  if player.sub_job == "WHM" or player.sub_job == "RDM" or player.sub_job == "SCH" then
-    sets.precast.FC['Stoneskin'] = set_combine(sets.precast.FC['Enhancing Magic'], {legs="Doyen Pants"})
+  if player.sub_job == "WHM" or player.sub_job == "RDM" or player.sub_job == "SCH" then                           -- Total: 82 FC, 5 QC
+    sets.precast.FC['Stoneskin'] = set_combine(sets.precast.FC, {legs="Doyen Pants"})                             -- Delta from base: +3 FC
   end
-
-  -- These Telchine Pigaches have -7% song casting time augment.
-	sets.precast.FC.BardSong = {
-    main=gear.Kali.A, sub="Genmei Shield", range="Gjallarhorn", ammo=empty,
-		head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",
-		body="Inyanga Jubbah +1", hands="Gendewitha Gages +1", ring1="Lebeche Ring", ring2="Kishar Ring",
-		back=gear.IntarabussCape.FC, waist="Witful Belt", legs="Gendewitha Spats +1", feet=gear.TelchinePigaches.Enh}
 
 	sets.precast.FC.SongDebuff = set_combine(sets.precast.FC.BardSong, {}) -- range="Marsyas"
-	sets.precast.FC.SongDebuff.Resistant = set_combine(sets.precast.FC.BardSong, {range="Gjallarhorn", ammo=empty})
+	sets.precast.FC.SongDebuff.Resistant = set_combine(sets.precast.FC.SongDebuff, {range="Gjallarhorn", ammo=empty})
 
-	sets.precast.FC.Lullaby = {} -- range="Marsyas"
+	sets.precast.FC.Lullaby = {} -- {range="Marsyas", ammo=empty}
 	sets.precast.FC.Lullaby.Resistant = {range="Gjallarhorn", ammo=empty}
 
-	sets.precast.FC['Horde Lullaby'] = {} -- range="Marsyas"
+	sets.precast.FC['Horde Lullaby'] = {} -- {range="Marsyas", ammo=empty}
 	sets.precast.FC['Horde Lullaby'].Resistant = {range="Gjallarhorn", ammo=empty}
 	sets.precast.FC['Horde Lullaby'].AoE = {range="Daurdabla", ammo=empty}
 
-	sets.precast.FC['Horde Lullaby II'] = {} -- range="Marsyas"
+	sets.precast.FC['Horde Lullaby II'] = {} -- {range="Marsyas", ammo=empty}
 	sets.precast.FC['Horde Lullaby II'].Resistant = {range="Gjallarhorn", ammo=empty}
 	sets.precast.FC['Horde Lullaby II'].AoE = {range="Daurdabla", ammo=empty}
 
-	sets.precast.FC.Mazurka = set_combine(sets.precast.FC.BardSong, {}) -- range="Marsyas"
+	sets.precast.FC.Mazurka = set_combine(sets.precast.FC.BardSong, {}) -- {range="Marsyas", ammo=empty}
+
 	--sets.precast.FC['Honor March'] = set_combine(sets.precast.FC.BardSong, {range="Marsyas"})
 
 	sets.precast.FC.Daurdabla = set_combine(sets.precast.FC.BardSong, {range="Daurdabla", ammo=empty})
@@ -301,7 +323,7 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {
     main=gear.Grioavolr.MAB, sub="Clerisy Strap +1", ammo="Hasty Pinion +1",
 		head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",
-		body="Inyanga Jubbah +1", hands="Leyline Gloves", ring1="Defending Ring", ring2="Prolix Ring",
+		body="Inyanga Jubbah +2", hands="Leyline Gloves", ring1="Defending Ring", ring2="Prolix Ring",
 		back=gear.IntarabussCape.FC, waist="Witful Belt", legs="Ayanmo Cosciales +2", feet="Gendewitha Galoshes +1"}
 
   --------------------------------------
@@ -310,16 +332,16 @@ function init_gear_sets()
 
 	sets.midcast.Ballad = {legs="Fili Rhingrave +1"}
 
-	sets.midcast.Lullaby = {range="Gjallarhorn", ammo=empty} -- {range="Marsyas", ammo=empty}
-	sets.midcast.Lullaby.Resistant = {range="Gjallarhorn", ammo=empty}
+	sets.midcast.Lullaby = {range="Gjallarhorn", ammo=empty, hands="Brioso Cuffs +3"} -- range="Marsyas"
+	sets.midcast.Lullaby.Resistant = {range="Gjallarhorn", ammo=empty, hands="Brioso Cuffs +3"}
 
-	sets.midcast['Horde Lullaby'] = {range="Gjallarhorn", ammo=empty} -- {range="Marsyas", ammo=empty}
-	sets.midcast['Horde Lullaby'].Resistant = {range="Gjallarhorn", ammo=empty}
-	sets.midcast['Horde Lullaby'].AoE = {range="Daurdabla", ammo=empty}
+	sets.midcast['Horde Lullaby'] = {range="Gjallarhorn", ammo=empty, hands="Brioso Cuffs +3"} -- range="Marsyas"
+	sets.midcast['Horde Lullaby'].Resistant = {range="Gjallarhorn", ammo=empty, hands="Brioso Cuffs +3"}
+	sets.midcast['Horde Lullaby'].AoE = {range="Daurdabla", ammo=empty, hands="Brioso Cuffs +3"}
 
-	sets.midcast['Horde Lullaby II'] = {range="Gjallarhorn", ammo=empty} -- {range="Marsyas", ammo=empty}
-	sets.midcast['Horde Lullaby II'].Resistant = {range="Gjallarhorn", ammo=empty}
-	sets.midcast['Horde Lullaby II'].AoE = {range="Daurdabla", ammo=empty}
+	sets.midcast['Horde Lullaby II'] = {range="Gjallarhorn", ammo=empty, hands="Brioso Cuffs +3"} -- range="Marsyas"
+	sets.midcast['Horde Lullaby II'].Resistant = {range="Gjallarhorn", ammo=empty, hands="Brioso Cuffs +3"}
+	sets.midcast['Horde Lullaby II'].AoE = {range="Daurdabla", ammo=empty, hands="Brioso Cuffs +3"}
 
 	sets.midcast.Madrigal = {head="Fili Calot +1"}
 	sets.midcast.Paeon = {} -- head="Brioso Roundlet +3"
@@ -333,7 +355,7 @@ function init_gear_sets()
 	sets.midcast.Carol = {}
 
 	sets.midcast['Magic Finale'] = {range="Gjallarhorn", ammo=empty}
-	sets.midcast["Sentinel's Scherzo"] = {} --feet="Fili Cothurnes +1", Brioso Slippers still provides more Duration
+	sets.midcast["Sentinel's Scherzo"] = {} --feet="Fili Cothurnes +1", but Brioso Slippers still provides more duration
 
 	-- For song buffs (duration and AF3 set bonus)
 	sets.midcast.SongEffect = {
@@ -403,8 +425,8 @@ function init_gear_sets()
   if player.sub_job == "PLD" or player.sub_job == "RDM" or player.sub_job == "SCH" or player.sub_job == "WHM" then
   	sets.midcast.Cure = {
       head=gear.KaykausMitraPlus1.B, neck="Incanter's Torque", ear1="Novia Earring", ear2="Mendicant's Earring",
-      body="Inyanga Jubbah +1", hands=gear.KaykausCuffsPlus1.A, ring1="Kuchekula Ring", ring2="Menelaus's Ring",
-      back="Thaumaturge's Cape", waist=gear.ElementalObi, legs="Gyve Trousers", feet=gear.KaykausBootsPlus1.B}
+      body=gear.KaykausBliautPlus1.D, hands=gear.KaykausCuffsPlus1.A, ring1="Kuchekula Ring", ring2="Menelaus's Ring",
+      back="Thaumaturge's Cape", waist=gear.ElementalObi, legs=gear.KaykausTightsPlus1.B, feet=gear.KaykausBootsPlus1.B}
   end
 
   if player.sub_job == "SCH" or player.sub_job == "WHM" then
