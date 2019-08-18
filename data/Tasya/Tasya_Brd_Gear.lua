@@ -2,7 +2,6 @@ function user_setup()
 	-- Options: Override default values
   state.OffenseMode:options('Normal','Acc')
   state.CastingMode:options('Normal','Resistant','AoE')
-  state.IdleMode:options('Normal','PDT')
 
   if player.sub_job == 'DNC' or player.sub_job == 'NIN' then
 	  state.Weapons:options('None', 'Aeneas/Sari', 'Aeneas/Odium', 'Aeneas/Blurred', 'Dual Vampirism', 'Dual Malevolence')
@@ -66,30 +65,24 @@ function init_gear_sets()
 	-- Idle
 	--------------------------------------
 
-	sets.idle = {
-    main="Terra's Staff", sub="Oneiros Grip", range=empty, ammo="Staunch Tathlum +1",
-		head=empty, neck="Loricate Torque +1", ear1="Etiolation Earring", ear2="Ethereal Earring",
-		body="Respite Cloak", hands="Serpentes Cuffs", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
-		back="Moonlight Cape", waist="Flume Belt +1", legs="Assiduity Pants +1", feet="Serpentes Sabots"}
-
-	sets.idle.PDT = {
-    main="Terra's Staff", sub="Oneiros Grip", range=empty, ammo="Staunch Tathlum +1",
-		head=empty, neck="Loricate Torque +1", ear1="Ethereal Earring", ear2="Etiolation Earring",
-		body="Respite Cloak", hands="Gendewitha Gages +1", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
-		back="Moonlight Cape", waist="Flume Belt +1", legs="Assiduity Pants +1", feet="Gendewitha Galoshes +1"}
+  sets.idle = {
+    main="Mafic Cudgel", sub="Genmei Shield", range=gear.Linos.DT, ammo=empty,
+		head="Inyanga Tiara +1", neck="Loricate Torque +1", ear1="Etiolation Earring", ear2="Ethereal Earring",
+		body=gear.KaykausBliautPlus1.D, hands="Inyanga Dastanas +1", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
+		back="Moonlight Cape", waist="Flume Belt +1", legs="Assiduity Pants +1", feet="Inyanga Crackows +1"}
 
 	--------------------------------------
 	-- Defense
 	--------------------------------------
 
 	sets.defense.PDT = {
-    main="Terra's Staff", sub="Oneiros Grip", range=empty, ammo="Staunch Tathlum +1",
+    main="Terra's Staff", sub="Oneiros Grip", range=gear.Linos.DT, ammo=empty,
 		head=empty, neck="Loricate Torque +1", ear1="Ethereal Earring", ear2="Etiolation Earring",
 		body="Respite Cloak", hands="Gendewitha Gages +1", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
 		back="Moonlight Cape", waist="Flume Belt +1", legs="Assiduity Pants +1", feet="Gendewitha Galoshes +1"}
 
 	sets.defense.MDT = {
-    main="Terra's Staff", sub="Oneiros Grip", range=empty, ammo="Staunch Tathlum +1",
+    main="Terra's Staff", sub="Oneiros Grip", range=gear.Linos.DT, ammo=empty,
 		head=empty, neck="Loricate Torque +1", ear1="Ethereal Earring", ear2="Etiolation Earring",
 		body="Respite Cloak", hands="Gendewitha Gages +1", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
 		back="Moonlight Cape", waist="Flume Belt +1", legs="Assiduity Pants +1", feet="Gendewitha Galoshes +1"}
@@ -99,7 +92,7 @@ function init_gear_sets()
 	--------------------------------------
 
 	sets.resting = {
-    main="Contemplator +1", sub="Oneiros Grip", range=empty, ammo="Tsar's Egg",
+    main="Contemplator +1", sub="Oneiros Grip", range=gear.Linos.DT, ammo=empty,
 		head=empty, neck="Bathy Choker +1", ear1="Infused Earring", ear2="Dawn Earring",
 		body="Respite Cloak", hands="Serpentes Cuffs", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
 		back="Kumbira Cape", waist="Flume Belt +1", legs="Assiduity Pants +1", feet="Chelona Boots +1"}
@@ -245,7 +238,7 @@ function init_gear_sets()
   --------------------------------------
 
 	sets.precast.JA.Nightingale = {feet="Bihu Slippers +1"}
-	sets.precast.JA.Troubadour = {body="Bihu Justaucorps +1"}
+	sets.precast.JA.Troubadour = {body="Bihu Justaucorps +3"}
 	sets.precast.JA['Soul Voice'] = {legs="Bihu Cannions +1"}
 
 	-- Waltz set (chr and vit)
@@ -258,13 +251,13 @@ function init_gear_sets()
 	sets.precast.FC = {
     main=gear.Grioavolr.MAB, sub="Clerisy Strap +1", range=empty, ammo="Sapience Orb",                        --  4, 3,  -,  2
 		head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",  -- 10, 5,  2,  2
-		body="Inyanga Jubbah +1", hands="Leyline Gloves", ring1="Lebeche Ring", ring2="Kishar Ring",              -- 13, 8, QC,  4
+		body="Inyanga Jubbah +2", hands="Leyline Gloves", ring1="Lebeche Ring", ring2="Kishar Ring",              -- 13, 8, QC,  4
 		back=gear.IntarabussCape.FC, waist="Witful Belt", legs="Ayanmo Cosciales +2", feet="Chelona Boots +1"}    -- 10, 3,  6,  5
 
   if player.sub_job == "WHM" or player.sub_job == "RDM" or player.sub_job == "SCH" or player.sub_job == "PLD" then
   	sets.precast.FC.Cure = set_combine(sets.precast.FC, {
       head=gear.VanyaHood.D, neck="Loricate Torque +1", ear1="Enchanter Earring +1", ear2="Mendicant's Earring",
-      body="Inyanga Jubbah +1", hands="Leyline Gloves", ring1="Lebeche Ring", ring2="Kishar Ring",
+      body="Inyanga Jubbah +2", hands="Leyline Gloves", ring1="Lebeche Ring", ring2="Kishar Ring",
       back=gear.IntarabussCape.FC, waist="Witful Belt", legs="Doyen Pants", feet=gear.VanyaClogs.D})
   end
 
@@ -355,7 +348,7 @@ function init_gear_sets()
 	sets.midcast.SongDebuff = {
     main=gear.Kali.A, sub="Genmei Shield", range="Gjallarhorn", ammo=empty, -- sub="Ammurapi Shield", range="Marsyas"
 		head="Brioso Roundlet +2", neck="Moonbow Whistle +1", ear1="Enchanter Earring +1", ear2="Dignitary's Earring",
-		body="Fili Hongreline +1", hands="Brioso Cuffs +2", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
+		body="Fili Hongreline +1", hands="Brioso Cuffs +3", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
 		back=gear.IntarabussCape.FC, waist="Luminary Sash", legs="Inyanga Shalwar +2", feet="Brioso Slippers +3"}
 
 	sets.midcast.SongDebuff.DW = {}
@@ -364,14 +357,14 @@ function init_gear_sets()
 	sets.midcast.SongDebuff.Resistant = {
     main=gear.Grioavolr.MAB, sub="Enki Strap", range="Gjallarhorn", ammo=empty, -- main="Kali", sub="Ammurapi Shield"
 		head="Brioso Roundlet +2", neck="Moonbow Whistle +1", ear1="Enchanter Earring +1", ear2="Dignitary's Earring",
-		body="Brioso Justaucorps +2", hands="Brioso Cuffs +2", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
+		body="Brioso Justaucorps +2", hands="Brioso Cuffs +3", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
 		back=gear.IntarabussCape.FC, waist="Luminary Sash", legs="Brioso Cannions +2", feet="Brioso Slippers +3"}
 
 	-- Song-specific recast reduction
 	sets.midcast.SongRecast = {
     main=gear.Grioavolr.MAB, sub="Clerisy Strap +1", range="Gjallarhorn", ammo=empty,
-		head="Nahtirah Hat", neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",
-		body="Inyanga Jubbah +1", hands="Gendewitha Gages +1", ring1="Kishar Ring", ring2="Prolix Ring",
+		head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",
+		body="Inyanga Jubbah +2", hands="Gendewitha Gages +1", ring1="Kishar Ring", ring2="Prolix Ring",
 		back=gear.IntarabussCape.FC, waist="Witful Belt", legs="Fili Rhingrave +1", feet="Ayanmo Gambieras +2"}
 
 	-- Cast spell with normal gear, except using Daurdabla instead
