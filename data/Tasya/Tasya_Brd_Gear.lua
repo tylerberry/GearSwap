@@ -4,7 +4,8 @@ function user_setup()
   state.CastingMode:options('Normal','Resistant','AoE')
 
   if player.sub_job == 'DNC' or player.sub_job == 'NIN' then
-	  state.Weapons:options('None', 'Aeneas/Sari', 'Aeneas/Odium', 'Aeneas/Blurred', 'Dual Vampirism', 'Dual Malevolence')
+	  state.Weapons:options('None', 'Aeneasari')
+	  --state.Weapons:options('None', 'Aeneas/Sari', 'Aeneas/Odium', 'Aeneas/Blurred', 'Dual Vampirism', 'Dual Malevolence')
   else
 	  state.Weapons:options('None', 'Aeneas', 'Vampirism', 'Malevolence')
   end
@@ -102,11 +103,14 @@ function init_gear_sets()
   --------------------------------------
 
   if player.sub_job == 'DNC' or player.sub_job == 'NIN' then
+    sets.weapons['Aeneasari'] = {main="Aeneas", sub=gear.TamingSari.High}
+    --[[
 	  sets.weapons['Aeneas/Sari'] = {main="Aeneas", sub=gear.TamingSari.High}
   	sets.weapons['Aeneas/Odium'] = {main="Aeneas", sub="Odium"}
   	sets.weapons['Aeneas/Blurred'] = {main="Aeneas", sub="Blurred Knife +1"}
 	  sets.weapons['Dual Vampirism'] = {main=gear.Vampirism.High1, sub=gear.Vampirism.High2}
 	  sets.weapons['Dual Malevolence'] = {main=gear.Malevolence.Max, sub=gear.Malevolence.High}
+    -]]
   else
     sets.weapons['Aeneas']= {main="Aeneas", sub="Genmei Shield"}
     sets.weapons['Vampirism']= {main=gear.Vampirism.High1, sub="Genmei Shield"}
@@ -250,7 +254,7 @@ function init_gear_sets()
 
   if player.sub_job == 'DNC' or player.sub_job == 'NIN' then
   	sets.precast.FC = {                                                                                           -- Total: 76 FC, 9 QC.
-      main=gear.Kali.A, sub=gear.Kali.C, range=empty, ammo="Sapience Orb",                                        --  7,  7,    -,   2
+      main=gear.Kali.C, sub=gear.Kali.A, range=empty, ammo="Sapience Orb",                                        --  7,  7,    -,   2
   		head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",    -- 10,  5,    2,   2
   		body="Inyanga Jubbah +2", hands="Leyline Gloves", ring1="Lebeche Ring", ring2="Kishar Ring",                -- 14,  8,    2QC, 4
   		back="Perimede Cape", waist="Witful Belt", legs=gear.KaykausTightsPlus1.B, feet="Chelona Boots +1"}         -- 4QC, 3+QC, 7,   5
@@ -258,13 +262,13 @@ function init_gear_sets()
     -- These Telchine Pigaches have -7% song casting time augment; Gendewitha Gages have -5% song casting time, and Gendewitha Spats have
     -- -4% song casting time.
   	sets.precast.FC.BardSong = {                                                                                  -- Total: 81 FC, 9 QC
-      main=gear.Kali.A, sub=gear.Kali.C, range="Gjallarhorn", ammo=empty,                                         -- 7,   7,    -,   -
+      main=gear.Kali.C, sub=gear.Kali.A, range="Gjallarhorn", ammo=empty,                                         -- 7,   7,    -,   -
   		head=gear.VanyaHood.D, neck="Loricate Torque +1", ear1="Enchanter Earring +1", ear2="Loquacious Earring",   -- 10,  -,    2,   2
   		body="Inyanga Jubbah +2", hands="Gendewitha Gages +1", ring1="Lebeche Ring", ring2="Kishar Ring",           -- 14,  12,   2QC, 4
   		back="Perimede Cape", waist="Witful Belt", legs="Gendewitha Spats +1", feet=gear.TelchinePigaches.Enh}      -- 4QC, 3+QC, 9,   13
   else
     sets.precast.FC = {                                                                                           -- Total: 79 FC, 5 QC.
-      main=gear.Kali.A, sub="Genmei Shield", range=empty, ammo="Sapience Orb",                                    --  7, -,    -,   2
+      main=gear.Kali.C, sub="Genmei Shield", range=empty, ammo="Sapience Orb",                                    --  7, -,    -,   2
   		head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",    -- 10, 5,    2,   2
   		body="Inyanga Jubbah +2", hands="Leyline Gloves", ring1="Lebeche Ring", ring2="Kishar Ring",                -- 14, 8,    2QC, 4
   		back=gear.IntarabussCape.FC, waist="Witful Belt", legs=gear.KaykausTightsPlus1.B, feet="Chelona Boots +1"}  -- 10, 3+QC, 7,   5
@@ -274,7 +278,7 @@ function init_gear_sets()
     -- TODO: get -5% on the Gendewitha legs, we can add back Lebeche over Prolix.
 
   	sets.precast.FC.BardSong = {                                                                                  -- Total: 81 FC, 7 QC
-      main=gear.Kali.A, sub="Genmei Shield", range="Gjallarhorn", ammo=empty,                                     -- 7,   -,    -, -
+      main=gear.Kali.C, sub="Genmei Shield", range="Gjallarhorn", ammo=empty,                                     -- 7,   -,    -, -
   		head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",    -- 10,  5,    2, 2
   		body="Inyanga Jubbah +2", hands="Gendewitha Gages +1", ring1="Prolix Ring", ring2="Kishar Ring",            -- 14,  12,   2, 4
   		back="Perimede Cape", waist="Witful Belt", legs="Gendewitha Spats +1", feet=gear.TelchinePigaches.Enh}      -- 4QC, 3+QC, 9, 13
@@ -282,7 +286,7 @@ function init_gear_sets()
 
   if player.sub_job == "WHM" or player.sub_job == "RDM" or player.sub_job == "SCH" or player.sub_job == "PLD" then
     sets.precast.FC.Cure = {                                                                                      -- Total: 80 FC, 10 QC
-      main=gear.Kali.A, sub="Genmei Shield", range=empty, ammo="Impatiens",                                       -- 7,   -,    -,   2QC
+      main=gear.Kali.C, sub="Genmei Shield", range=empty, ammo="Impatiens",                                       -- 7,   -,    -,   2QC
       head=gear.VanyaHood.D, neck="Loricate Torque +1", ear1="Enchanter Earring +1", ear2="Mendicant's Earring",  -- 10,  -,    2,   5
   		body="Inyanga Jubbah +2", hands="Leyline Gloves", ring1="Lebeche Ring", ring2="Kishar Ring",                -- 14,  8,    2QC, 4
       back="Perimede Cape", waist="Witful Belt", legs="Doyen Pants", feet=gear.VanyaClogs.D}                      -- 4QC, 3+QC, 15,  15
@@ -364,7 +368,8 @@ function init_gear_sets()
 		body="Fili Hongreline +1", hands="Fili Manchettes +1", ring1="Stikini Ring +1", ring2="Stikini Ring +1", -- Defensive rings with job mastery.
 		back=gear.IntarabussCape.FC, waist="Flume Belt +1", legs="Inyanga Shalwar +2", feet="Brioso Slippers +3"}
 
-	sets.midcast.SongEffect.DW = set_combine(sets.midcast.SongEffect, {})
+  -- Don't put a full set here, just weapons for dual wield scenarios.
+	sets.midcast.SongEffect.DW = {main=gear.Kali.C, sub=gear.Kali.A}
 
 	-- For song defbuffs (duration primary, accuracy secondary)
 	sets.midcast.SongDebuff = {
@@ -373,7 +378,8 @@ function init_gear_sets()
 		body="Fili Hongreline +1", hands="Brioso Cuffs +3", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
 		back=gear.IntarabussCape.FC, waist="Luminary Sash", legs="Inyanga Shalwar +2", feet="Brioso Slippers +3"}
 
-	sets.midcast.SongDebuff.DW = {}
+  -- Don't put a full set here, just weapons for dual wield scenarios.
+	sets.midcast.SongDebuff.DW = {main=gear.Kali.C, sub=gear.Kali.A}
 
 	-- For song debuffs (accuracy primary, duration secondary)
 	sets.midcast.SongDebuff.Resistant = {
