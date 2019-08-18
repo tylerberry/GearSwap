@@ -231,7 +231,7 @@ function init_gear_sets()
 
 	sets.weapons.Aettir = {main="Aettir", sub="Utu Grip"}
 	sets.weapons.Montante = {main="Montante +1", sub="Utu Grip"}
-	sets.weapons.Zulfiqar = {main="Zulfiqar", sub="Utu Grip"}
+	sets.weapons.Zulfiqar = {main=gear.Zulfiqar.DMG, sub="Utu Grip"}
 
 	if player.sub_job == 'DNC' or player.sub_job == 'NIN' then
     sets.weapons['Naegling/Reikiko'] = {main="Naegling", sub="Reikiko"}

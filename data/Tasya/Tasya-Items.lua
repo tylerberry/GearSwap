@@ -24,6 +24,9 @@ gear.Linos = {}
 gear.Linos.DT = {name="Linos", augments={'Mag. Evasion+15','Phys. dmg. taken -4%'}}
 gear.Linos.TP = {name="Linos", augments={'Accuracy+13 Attack+13','"Dbl.Atk."+2','Quadruple Attack +3'}}
 
+gear.Ohrmazd = {}
+gear.Ohrmazd.PetTank = {name="Ohrmazd", augments={'Pet: Mag. Evasion+12','Pet: Damage taken -4%','Pet: STR+12 Pet: DEX+12 Pet: VIT+12'}}
+
 ---- Sinister Reign gear.
 
 gear.Malevolence = {}
@@ -46,13 +49,29 @@ gear.NibiruCudgel.B = {name="Nibiru Cudgel", augments={'MP+50','INT+10','"Mag.At
 
 ---- Escha Ru'Aun weapons.
 
+gear.Espiritus = {}
+gear.Espiritus.B = {name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%'}}
+
+gear.Ichigohitofuri = {}
+gear.Ichigohitofuri.B = {name="Ichigohitofuri", augments={'DMG:+30','STR+20','Accuracy+15'}}
+
 gear.Kali = {}
 gear.Kali.A = {name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15'}}
+gear.Kali.C = {name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}}
+
+gear.Midnights = {}
+gear.Midnights.D = {name="Midnights", augments={'Pet: Attack+25','Pet: Accuracy+25','Pet: Damage taken -3%'}}
+
+gear.Skullrender = {}
+gear.Skullrender.C1 = {name="Skullrender", augments={'DMG:+15','Pet: Accuracy+20','Pet: Attack+20'}}
 
 gear.Solstice = {}
 gear.Solstice.B = {name="Solstice", augments={'MP+60','INT+15','Mag. Acc.+15'}}
 
 ---- Reisenjima weapons.
+
+gear.Aganoshe = {}
+gear.Aganoshe.DMG = {name="Aganoshe", augments={'Accuracy+14','Attack+23','DMG:+22'}}
 
 gear.Colada = {}
 gear.Colada.DA = {name="Colada", augments={'"Dbl.Atk."+3','STR+5','Accuracy+20','Attack+1'}}
@@ -66,8 +85,8 @@ gear.Grioavolr.MAB = {name="Grioavolr", augments={'Magic burst dmg.+4%','INT+13'
 gear.Holliday = {}
 gear.Holliday.MAB = {name="Holliday", augments={'"Mag.Atk.Bns."+20','MND+6','Rng.Atk.+22','DMG:+17'}}
 
-gear.Skinflayer = {}
-gear.Skinflayer.WSD = {name="Skinflayer", augments={'Weapon skill damage +2%','STR+9','Attack+18','DMG:+16'}}
+gear.Zulfiqar = {}
+gear.Zulfiqar.DMG = {name="Zulfiqar", augments={'Haste+3','STR+20','Attack+9','DMG:+22'}}
 
 ---- Helios armor.
 
@@ -320,6 +339,9 @@ gear.RyuoTekko.A = {name="Ryuo Tekko", augments={'STR+10','DEX+10','Accuracy+15'
 gear.ChironicHat = {}
 gear.ChironicHat.Nuke = {name="Chironic Hat", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Resist Silence"+5','MND+10','"Mag.Atk.Bns."+15'}}
 gear.ChironicHat.TP = {name="Chironic Hat", augments={'"Dbl.Atk."+3','STR+10','Accuracy+14','Attack+14'}}
+
+gear.ChironicDoublet = {}
+gear.ChironicDoublet.Nuke = {name="Chironic Doublet", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','"Resist Silence"+4','MND+9','Mag. Acc.+13','"Mag.Atk.Bns."+7'}}
 
 gear.ChironicGloves = {}
 gear.ChironicGloves.Nuke = {name="Chironic Gloves", augments={'Mag. Acc.+22 "Mag.Atk.Bns."+22','"Drain" and "Aspir" potency +2','INT+1','Mag. Acc.+7','"Mag.Atk.Bns."+7'}}
