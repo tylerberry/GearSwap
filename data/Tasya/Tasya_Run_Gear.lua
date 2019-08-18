@@ -7,7 +7,12 @@ function user_setup()
 	state.MagicalDefenseMode:options('MDT','MDT_HP','BDT','BDT_HP')
 	state.ResistDefenseMode:options('MEVA','MEVA_HP','Death','Charm','DTCharm')
 	state.IdleMode:options('Normal','Tank','KiteTank','Sphere')
-	state.Weapons:options('Aettir','Zulfiqar') -- 'Lionheart','DualWeapons'
+
+	if player.sub_job == 'DNC' or player.sub_job == 'NIN' then
+		state.Weapons:options('Aettir','Montante','Zulfiqar','Naegling/Reikiko') -- 'Firangi/Reikiko'
+	else
+		state.Weapons:options('Aettir','Montante','Zulfiqar')
+	end
 
 	state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP'}
 
@@ -225,8 +230,13 @@ function init_gear_sets()
 	--------------------------------------
 
 	sets.weapons.Aettir = {main="Aettir", sub="Utu Grip"}
+	sets.weapons.Montante = {main="Montante +1", sub="Utu Grip"}
 	sets.weapons.Zulfiqar = {main="Zulfiqar", sub="Utu Grip"}
-	--sets.weapons.DualSwords = {main="Firangi", sub="Reikiko"}
+
+	if player.sub_job == 'DNC' or player.sub_job == 'NIN' then
+    sets.weapons['Naegling/Reikiko'] = {main="Naegling", sub="Reikiko"}
+	  --sets.weapons['Firangi/Reikiko'] = {main="Firangi", sub="Reikiko"}
+	end
 
   --------------------------------------
 	-- Engaged
@@ -285,11 +295,18 @@ function init_gear_sets()
 	sets.AccMaxTP = {ear1="Dignitary's Earring"} -- ear1="Telos Earring"
 
 	sets.precast.WS = {
-    ammo="Knobkierrie",
-    head="Lilitu Headpiece", neck="Fotia Gorget", ear1="Sherida Earring", ear2="Moonshade Earring", --
-    body=gear.AdhemarJacketPlus1.B, hands="Meghanada Gloves +2", ring1="Ifrit Ring +1", ring2="Epona's Ring", -- ring1="Niqmaddu Ring", ring2="Regal Ring",
-    back="Bleating Mantle", waist="Fotia Belt", legs="Meghanada Chausses +2", feet=gear.HerculeanBoots.TA} -- back=gear.OgmasCape.DA
+    ammo="Seething Bomblet +1",
+    head=gear.AdhemarBonnetPlus1.B, neck="Caro Necklace", ear1="Brutal Earring", ear2="Sherida Earring",
+    body=gear.AdhemarJacketPlus1.B, hands=gear.HerculeanGloves.TA, ring1="Shukuyu Ring", ring2="Ifrit Ring +1", -- ring1="Niqmaddu Ring", ring2="Regal Ring",
+    back="Bleating Mantle", waist="Prosilio Belt +1", legs="Meghanada Chausses +2", feet=gear.LustratioLeggingsPlus1.D} -- back=gear.OgmasCape.DA
 
+	sets.precast.WS.DEXWSD = {
+    ammo="Knobkierrie",
+    head="Lilitu Headpiece", neck="Caro Necklace", ear1="Ishvara Earring", ear2="Sherida Earring",
+    body=gear.AdhemarJacketPlus1.B, hands="Meghanada Gloves +2", ring1="Ilabrat Ring", ring2="Ramuh Ring +1", -- ring2="Niqmaddu Ring"
+    back="Bleating Mantle", waist="Grunfeld Rope", feet=gear.LustratioSubligarPlus1.B, feet=gear.HerculeanBoots.WSD} -- legs="Plunderer's Culottes +3"
+
+  --[[
 	sets.precast.WS.SomeAcc = set_combine (sets.precast.WS, {
     ammo="Seething Bomblet +1", body="Ayanmo Corazza +2", back="Grounded Mantle +1"})
 
@@ -300,6 +317,7 @@ function init_gear_sets()
 	sets.precast.WS.FullAcc = {
     head=gear.CarmineMaskPlus1.D, neck="Combatant's Torque", ear1="Mache Earring +1", ear2="Mache Earring +1",
     body="Meghanada Cuirie +2", ring1="Ramuh Ring +1", ring2="Ramuh Ring +1"}  -- back=gear.OgmasCape.DA
+	--]]
 
   --------------------------------------
   -- Precast: Great Sword WS
@@ -352,22 +370,26 @@ function init_gear_sets()
   sets.precast.WS['Herculean Slash'] = set_combine(sets.MagicAttack, {})
 
   -- Resolution: physical 5-hit, 73~85% STR, 0.71875/1.5/2.25 fTP.
-  sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {})
-  sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {})
-  sets.precast.WS['Resolution'].HighAcc = set_combine(sets.precast.WS.HighAcc, {})
-	sets.precast.WS['Resolution'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
+  sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
+		neck="Fotia Gorget", ear1="Moonshade Earring", waist="Fotia Belt"})
+  sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {
+		neck="Fotia Gorget", ear1="Moonshade Earring", waist="Fotia Belt"})
+  sets.precast.WS['Resolution'].HighAcc = set_combine(sets.precast.WS.HighAcc, {
+		neck="Fotia Gorget", ear1="Moonshade Earring", waist="Fotia Belt"})
+	sets.precast.WS['Resolution'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
+		neck="Fotia Gorget", ear1="Moonshade Earring", waist="Fotia Belt"})
 
   -- Dimidiation: physical 2-hit, 80% DEX, 2.25/4.5/6.75 fTP.
-  sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {
-    feet=gear.HerculeanBoots.WSD})
+  sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS.DEXWSD, {
+    ear1="Moonshade Earring"})
 
-  sets.precast.WS['Dimidiation'].Acc = set_combine(sets.precast.WS.Acc, {
-    head="Lilitu Headpiece", feet=gear.HerculeanBoots.WSD})
+  sets.precast.WS['Dimidiation'].Acc = set_combine(sets.precast.WS.DEXWSD.Acc, {
+    ear1="Moonshade Earring"})
 
-	sets.precast.WS['Dimidiation'].HighAcc = set_combine(sets.precast.WS.HighAcc, {
-    feet=gear.HerculeanBoots.WSD})
+	sets.precast.WS['Dimidiation'].HighAcc = set_combine(sets.precast.WS.DEXWSD.HighAcc, {
+    ear1="Moonshade Earring"})
 
-	sets.precast.WS['Dimidiation'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
+	sets.precast.WS['Dimidiation'].FullAcc = set_combine(sets.precast.WS.DEXWSD.FullAcc, {})
 
   --[[
   --------------------------------------
