@@ -66,7 +66,7 @@ function init_gear_sets()
 	--------------------------------------
 
   sets.idle = {
-    main="Mafic Cudgel", sub="Genmei Shield", range=gear.Linos.DT, ammo=empty,
+    main=gear.Kali.C, sub="Genmei Shield", range=gear.Linos.DT, ammo=empty,
 		head="Inyanga Tiara +1", neck="Loricate Torque +1", ear1="Etiolation Earring", ear2="Ethereal Earring",
 		body=gear.KaykausBliautPlus1.D, hands="Inyanga Dastanas +1", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
 		back="Moonlight Cape", waist="Flume Belt +1", legs="Assiduity Pants +1", feet="Inyanga Crackows +1"}
@@ -250,7 +250,7 @@ function init_gear_sets()
 
   if player.sub_job == 'DNC' or player.sub_job == 'NIN' then
   	sets.precast.FC = {                                                                                           -- Total: 76 FC, 9 QC.
-      main=gear.Kali.A, sub=gear.Kali.D, range=empty, ammo="Sapience Orb",                                        --  7,  7,    -,   2
+      main=gear.Kali.A, sub=gear.Kali.C, range=empty, ammo="Sapience Orb",                                        --  7,  7,    -,   2
   		head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",    -- 10,  5,    2,   2
   		body="Inyanga Jubbah +2", hands="Leyline Gloves", ring1="Lebeche Ring", ring2="Kishar Ring",                -- 14,  8,    2QC, 4
   		back="Perimede Cape", waist="Witful Belt", legs=gear.KaykausTightsPlus1.B, feet="Chelona Boots +1"}         -- 4QC, 3+QC, 7,   5
@@ -258,7 +258,7 @@ function init_gear_sets()
     -- These Telchine Pigaches have -7% song casting time augment; Gendewitha Gages have -5% song casting time, and Gendewitha Spats have
     -- -4% song casting time.
   	sets.precast.FC.BardSong = {                                                                                  -- Total: 81 FC, 9 QC
-      main=gear.Kali.A, sub=gear.Kali.D, range="Gjallarhorn", ammo=empty,                                         -- 7,   7,    -,   -
+      main=gear.Kali.A, sub=gear.Kali.C, range="Gjallarhorn", ammo=empty,                                         -- 7,   7,    -,   -
   		head=gear.VanyaHood.D, neck="Loricate Torque +1", ear1="Enchanter Earring +1", ear2="Loquacious Earring",   -- 10,  -,    2,   2
   		body="Inyanga Jubbah +2", hands="Gendewitha Gages +1", ring1="Lebeche Ring", ring2="Kishar Ring",           -- 14,  12,   2QC, 4
   		back="Perimede Cape", waist="Witful Belt", legs="Gendewitha Spats +1", feet=gear.TelchinePigaches.Enh}      -- 4QC, 3+QC, 9,   13
