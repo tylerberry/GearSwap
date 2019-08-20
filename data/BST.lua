@@ -164,9 +164,6 @@ function job_setup()
 							['SharpwitHermes']='Head Butt',['AcuexFamiliar']='Pestilent Plume',['FluffyBredo']='Pestilent Plume',
 							['MosquitoFamiliar']='Infected Leech',['Left-HandedYoko']='Infected Leech',}
 
-	--List of which WS you plan to use TP bonus WS with.
-	moonshade_ws = S{'Rampage','Calamity'}
-
 	state.AutoFightMode = M(true, 'Auto Fight Mode')
 	state.AutoReadyMode = M(false, 'Auto Ready Mode')
 	state.AutoCallPet = M(false, 'Auto Call Pet')
@@ -360,6 +357,7 @@ end
 function job_aftercast(spell, spellMap, eventArgs)
 	if type(spell.type) == 'string' and spell.type == 'Monster' and state.DefenseMode.value == 'None' then
 		equip(get_pet_midcast_set(spell, spellMap))
+		petWillAct = os.clock()
 		eventArgs.handled = true
 	elseif pet_midaction() or spell.english == "Bestial Loyalty" or spell.english == 'Call Beast' then
 		eventArgs.handled = true
@@ -564,7 +562,7 @@ function check_ready()
 				return true
 			elseif pet.status == "Idle" and player.target.type == "MONSTER" then
 				windower.chat.input('/pet Fight <t>')
-				tickdelay = framerate
+				tickdelay = os.clock() + 1.8
 				return true
 			else
 				return false

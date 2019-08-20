@@ -18,9 +18,6 @@ function job_setup()
     state.Buff.Seigan = buffactive.Seigan or false
 	state.Stance = M{['description']='Stance','Hasso','Seigan','None'}
 	state.AutoJumpMode = M(false, 'Auto Jump Mode')
-	
-	--List of which WS you plan to use TP bonus WS with.
-	moonshade_ws = S{'Stardiver'}
 
 	autows = 'Stardiver'
 	autofood = 'Soy Ramen'
@@ -88,9 +85,11 @@ end
 function job_aftercast(spell, spellMap, eventArgs)
 	if pet.isvalid then
 		if (spell.action_type == 'Magic' and player.hpp < Breath_HPP) then
-			eventArgs.handled = true
+			petWillAct = os.clock()
 			equip(sets.HealingBreath)
+			eventArgs.handled = true
 		elseif (spell.english == 'Restoring Breath' or spell.english == 'Smiting Breath' or spell.english == 'Steady Wing') then
+			petWillAct = os.clock()
 			eventArgs.handled = true
 		end
 	end
