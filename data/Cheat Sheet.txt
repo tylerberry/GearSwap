@@ -82,11 +82,10 @@ name them Character_Job.lua.
 :Macro:		/console gs c toggle Kiting
 		
 		
-[Win+F7]	= Automatic ranged attacks, right now only set up for RNG and COR, this uses a different internal
-			  "clock" from other automatic modes, so they aren't completely friendly, to change what weaponskill
-			  it uses automatically you can edit the files in libs or use: gs rh set "Weaponskill Name"
+[Win+F7]	= Automatic ranged attacks, to change what weaponskill, use //gs c autows while Rnghelper is active
+			  as well as using //gs c toggle autowsmode to turn on and off auto WS during Rnghelper
 			  
-:Macro:		/console gs rh toggle
+:Macro:		/console gs c toggle rnghelper
 		
 [Win+F10]	= Toggle job specific modes, different depending on jobs some examples:
 				Also sometimes Ctrl/Alt/Win + Grave/Tilde (` or ~) or even Backspace, Backslash, Delete, Dash or Equals.
@@ -283,6 +282,7 @@ helix - Elemental Helix
 weather - Scholar Weather
 skillchain1 - Tier 1 skillchain
 skillchain2 - Tier 2 skillchain
+skillchain3 - Only works on Fire element, does Liquefaction > Fusion
 skillchain4 - 4 Step skillchain for popping Perfidion
 skillchain6 - 6 Step Skillchain for popping Pluton (Requires you have a strategem up and 5 strategem charges to start)
 wsskillchain - Attempts to start skillchain with a weaponskill and finish with a spell (for conserving stratagems).

@@ -14,6 +14,9 @@ elements.list = S{'Light','Dark','Fire','Ice','Wind','Earth','Lightning','Water'
 elements.nuke = {['Fire']='Fire', ['Ice']='Blizzard', ['Wind']='Aero', ['Earth']='Stone',
         ['Lightning']='Thunder', ['Water']='Water', ['Light']='Banish', ['Dark']='Bio',}
 		
+elements.quickdraw = {['Fire']='Fire', ['Ice']='Ice', ['Wind']='Wind', ['Earth']='Earth',
+        ['Lightning']='Thunder', ['Water']='Water', ['Light']='Light', ['Dark']='Dark',}
+		
 elements.enspell = {['Fire']='Fire', ['Ice']='Blizzard', ['Wind']='Aero', ['Earth']='Stone',
         ['Lightning']='Thunder', ['Water']='Water', ['Light']='Light', ['Dark']='Dark',}
 		
@@ -78,6 +81,8 @@ elements.recast_staff_of = {['Light']='Arka II', ['Dark']='Xsaeta II', ['Fire']=
 elements.perpetuance_staff_of = {['Light']='Arka III', ['Dark']='Xsaeta III', ['Fire']='Atar III', ['Ice']='Vourukasha III',
     ['Wind']='Vayuvata III', ['Earth']='Vishrava III', ['Lightning']='Apamajas III', ['Water']='Haoma III', ['Thunder']='Apamajas III'}
 
+--Cursna actions
+cursna_exceptions = S{'Cursna','Accession','Divine Caress','Hallowed Water','Holy Water'}
 
 -- Elements for skillchain names
 skillchain_elements = {}
@@ -116,7 +121,7 @@ data.weaponskills.relic = {
     ["Kikoku"] = "Blade: Metsu",
     ["Amanomurakumo"] = "Tachi: Kaiten",
     ["Mjollnir"] = "Randgrith",
-    ["Claustrum"] = "Gates of Tartarus",
+    ["Claustrum"] = "Gate of Tartarus",
     ["Annihilator"] = "Coronach",
     ["Yoichinoyumi"] = "Namas Arrow"}
 data.weaponskills.mythic = {
@@ -235,7 +240,8 @@ spell_maps = {
     ['Regen']='Regen',['Regen II']='Regen',['Regen III']='Regen',['Regen IV']='Regen',['Regen V']='Regen',
     ['Refresh']='Refresh',['Refresh II']='Refresh',['Refresh III']='Refresh',
     ['Teleport-Holla']='Teleport',['Teleport-Dem']='Teleport',['Teleport-Mea']='Teleport',['Teleport-Altep']='Teleport',['Teleport-Yhoat']='Teleport',
-    ['Teleport-Vahzl']='Teleport',['Recall-Pashh']='Teleport',['Recall-Meriph']='Teleport',['Recall-Jugner']='Teleport',['Warp']='Teleport',['Escape']='Teleport',['Retrace']='Teleport',
+    ['Teleport-Vahzl']='Teleport',['Recall-Pashh']='Teleport',['Recall-Meriph']='Teleport',['Recall-Jugner']='Teleport',['Warp']='Teleport',['Escape']='Teleport',
+	['Retrace']='TeleportOther',['Tractor']='TeleportOther',['Warp II']='TeleportOther',
 	['Temper']='Temper',['Temper II']='Temper',
     ['Valor Minuet']='Minuet',['Valor Minuet II']='Minuet',['Valor Minuet III']='Minuet',['Valor Minuet IV']='Minuet',['Valor Minuet V']='Minuet',
     ["Knight's Minne"]='Minne',["Knight's Minne II"]='Minne',["Knight's Minne III"]='Minne',["Knight's Minne IV"]='Minne',["Knight's Minne V"]='Minne',
@@ -279,7 +285,10 @@ spell_maps = {
 }
 
 
-no_skill_spells_list = S{'Raise','Raise II','Raise III','Reraise','Arise','Tractor'}
+no_skill_spells_list = S{'Reraise','Reraise II','Reraise III','Reraise IV','Raise','Raise II','Raise III','Reraise','Arise',
+	'Tractor','Warp','Warp II','Tractor','Escape','Teleport-Holla','Teleport-Dem','Teleport-Mea','Teleport-Altep',
+	'Teleport-Yhoat','Teleport-Vahzl','Recall-Pashh','Recall-Meriph','Recall-Jugner','Retrace',
+}
 
 white_stratagems = S{'Penury','Celerity','Accession','Rapture','Perpetuance','Altruism','Tranquility','Addendum: White'}
 
@@ -310,6 +319,8 @@ dualWieldJobs = S{'THF','BLU','NIN','DNC'}
 -- Item related Mappings.
 bayld_items = {}
 
+slot_names = S{'main','sub','range','ranged','ammo','head','neck','ear1','lear','left_ear','ear2','rear','right_ear','ring1','lring','left_ring','ring2','rring','right_ring','back','waist','legs','feet'}
+
 --[[
 bayld_items = {'Tlalpoloani','Macoquetza','Camatlatia','Icoyoca','Tlamini','Suijingiri Kanemitsu','Zoquittihuitz',
 'Quauhpilli Helm','Chocaliztli Mask','Xux Hat','Quauhpilli Gloves','Xux Trousers','Chocaliztli Boots','Maochinoli',
@@ -318,7 +329,7 @@ bayld_items = {'Tlalpoloani','Macoquetza','Camatlatia','Icoyoca','Tlamini','Suij
 'Uk\'uxkaj Cap'}
 ]]
 	
-cprings = L{"Trizek Ring","Vocation Ring","Capacity Ring","Facility Ring"}
+cprings = L{"Endorsement Ring","Trizek Ring","Vocation Ring","Capacity Ring","Facility Ring"}
 xprings = L{"Echad Ring","Calibur Ring","Emperor Band","Empress Band","Resolution Ring"}
 cprings_count = 1
 

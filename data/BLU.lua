@@ -121,7 +121,12 @@ function job_setup()
     blue_magic_maps.MagicalDex = S{
         'Charged Whisker','Gates of Hades'
     }
-            
+
+    -- Magical spells with an Agi stat mod
+    blue_magic_maps.MagicalAgi = S{
+        'Crashing Thunder'
+    }
+
     -- Magical spells (generally debuffs) that we want to focus on magic accuracy over damage.
     -- Add Int for damage where available, though.
     blue_magic_maps.MagicAccuracy = S{
@@ -171,6 +176,9 @@ function job_setup()
         'Zephyr Mantle'
     }
     
+    aoe_blue_magic_healing = S{
+        'Healing Breeze','White Wind'
+    }
     
     -- Spells that require Unbridled Learning to cast.
     unbridled_spells = S{
@@ -297,20 +305,11 @@ function job_post_midcast(spell, spellMap, eventArgs)
 			if spell.element == 'None' and sets.NonElementalCure then
 				equip(sets.NonElementalCure)
 			end
-			if spell.target.type == 'SELF' then
-				if ((player.equipment.main == 'Nibiru Cudgel' and player.equipment.sub == 'Nibiru Cudgel') or state.OffenseMode.value == 'None') and sets.Self_Healing_DWClub then
-					equip(sets.Self_Healing_DWClub)
-				elseif player.equipment.main == 'Nibiru Cudgel' or player.equipment.main == 'Nibiru Cudgel' and sets.Self_Healing_Club then
-					equip(sets.Self_Healing_Club)
-				elseif sets.Self_Healing then
-					equip(sets.Self_Healing)
-				end
-			elseif player.equipment.main == 'Nibiru Cudgel' and player.equipment.main == 'Nibiru Cudgel' and sets.Healing_DWClub then
-				equip(sets.Healing_DWClub)
-			elseif player.equipment.main == 'Nibiru Cudgel' or player.equipment.main == 'Nibiru Cudgel' and sets.Healing_Club then
-				equip(sets.Healing_Club)
+		
+			if spell.target.type == 'SELF' and sets.Self_Healing and not aoe_blue_magic_healing:contains(spell.english) then
+				equip(sets.Self_Healing)
 			end
-			
+				
 		elseif spellMap:contains('Magical') then
 			if state.MagicBurstMode.value ~= 'Off' and (state.Buff['Burst Affinity'] or state.Buff['Azure Lore']) then
 					equip(sets.MagicBurst)
@@ -472,9 +471,11 @@ function check_buff()
 		local spell_recasts = windower.ffxi.get_spell_recasts()
 		for i in pairs(buff_spell_lists['Auto']) do
 			if not buffactive[buff_spell_lists['Auto'][i].Buff] and (buff_spell_lists['Auto'][i].When == 'Always' or (buff_spell_lists['Auto'][i].When == 'Combat' and (player.in_combat or being_attacked)) or (buff_spell_lists['Auto'][i].When == 'Engaged' and player.status == 'Engaged') or (buff_spell_lists['Auto'][i].When == 'Idle' and player.status == 'Idle') or (buff_spell_lists['Auto'][i].When == 'OutOfCombat' and not (player.in_combat or being_attacked))) and spell_recasts[buff_spell_lists['Auto'][i].SpellID] < latency and silent_can_use(buff_spell_lists['Auto'][i].SpellID) then
-				windower.chat.input('/ma "'..buff_spell_lists['Auto'][i].Name..'" <me>')
-				tickdelay = os.clock() + 2
-				return true
+				if not unbridled_spells:contains(buff_spell_lists['Auto'][i].Name) or unbridled_ready() then
+					windower.chat.input('/ma "'..buff_spell_lists['Auto'][i].Name..'" <me>')
+					tickdelay = os.clock() + 2
+					return true
+				end
 			end
 		end
 	else
