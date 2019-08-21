@@ -4,8 +4,7 @@ function user_setup()
   state.CastingMode:options('Normal','Resistant','AoE')
 
   if player.sub_job == 'DNC' or player.sub_job == 'NIN' then
-	  state.Weapons:options('None', 'Aeneasari')
-	  --state.Weapons:options('None', 'Aeneas/Sari', 'Aeneas/Odium', 'Aeneas/Blurred', 'Dual Vampirism', 'Dual Malevolence')
+	  state.Weapons:options('None', 'Aeneas/Sari', 'Aeneas/Odium', 'Aeneas/Blurred', 'Dual Vampirism', 'Dual Malevolence')
   else
 	  state.Weapons:options('None', 'Aeneas', 'Vampirism', 'Malevolence')
   end
@@ -29,8 +28,8 @@ function user_setup()
 	send_command('bind @` gs c cycle MagicBurstMode')
 	send_command('bind @f10 gs c cycle RecoverMode')
 	send_command('bind @f8 gs c toggle AutoNukeMode')
-	send_command('bind !q gs c weapons NukeWeapons;gs c update')
-	send_command('bind ^q gs c weapons Swords;gs c update')
+	--send_command('bind !q gs c weapons NukeWeapons;gs c update')
+	--send_command('bind ^q gs c weapons Swords;gs c update')
 
 	select_default_macro_book()
 end
@@ -51,13 +50,13 @@ function init_gear_sets()
   -- Base sets
   --------------------------------------
 
-  -- FIXME: Augment Chironic Body and Feet?
+  -- FIXME: Augment Chironic Feet?
 
   sets.MagicAttackNW = {
     range=empty, ammo="Pemphredo Tathlum",
-    head=gear.ChironicHat.Nuke, neck="Sanctity Necklace", ear1="Novio Earring", ear2="Friomisi Earring", -- ear1="Regal Earring"
-    body="Chironic Doublet", hands=gear.ChironicGloves.Nuke, ring1="Shiva Ring +1", ring2="Shiva Ring +1",
-    back="Toro Cape", waist=gear.ElementalObi, legs=gear.ChironicHose.Nuke, feet="Brioso Slippers +3"}
+    head=gear.ChironicHat.MAB, neck="Sanctity Necklace", ear1="Novio Earring", ear2="Friomisi Earring", -- ear1="Regal Earring"
+    body=gear.ChironicDoublet.MAB, hands=gear.ChironicGloves.MAB, ring1="Shiva Ring +1", ring2="Shiva Ring +1",
+    back="Toro Cape", waist=gear.ElementalObi, legs=gear.ChironicHose.MAB, feet="Brioso Slippers +3"}
 
   sets.MagicAttack = set_combine(sets.MagicAttackNW, {
     main=gear.Grioavolr.MAB, sub="Enki Strap"})
@@ -103,14 +102,11 @@ function init_gear_sets()
   --------------------------------------
 
   if player.sub_job == 'DNC' or player.sub_job == 'NIN' then
-    sets.weapons['Aeneasari'] = {main="Aeneas", sub=gear.TamingSari.High}
-    --[[
 	  sets.weapons['Aeneas/Sari'] = {main="Aeneas", sub=gear.TamingSari.High}
   	sets.weapons['Aeneas/Odium'] = {main="Aeneas", sub="Odium"}
   	sets.weapons['Aeneas/Blurred'] = {main="Aeneas", sub="Blurred Knife +1"}
 	  sets.weapons['Dual Vampirism'] = {main=gear.Vampirism.High1, sub=gear.Vampirism.High2}
 	  sets.weapons['Dual Malevolence'] = {main=gear.Malevolence.Max, sub=gear.Malevolence.High}
-    -]]
   else
     sets.weapons['Aeneas']= {main="Aeneas", sub="Genmei Shield"}
     sets.weapons['Vampirism']= {main=gear.Vampirism.High1, sub="Genmei Shield"}
@@ -170,7 +166,7 @@ function init_gear_sets()
 
   sets.precast.WS.MaxMND = {
     ammo="Quartz Tathlum +1",
-    head=gear.ChironicHat.Nuke, neck="Phalaina Locket", ear1="Lifestorm Earring", ear2="Moonshade Earring", -- neck="Aife's Medal"
+    head=gear.ChironicHat.MAB, neck="Phalaina Locket", ear1="Lifestorm Earring", ear2="Moonshade Earring", -- neck="Aife's Medal"
     body=gear.VanyaRobe.C, hands="Inyanga Dastanas +1", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
     back="Aurist's Cape +1", waist="Luminary Sash", legs="Inyanga Shalwar +2", feet="Inyanga Crackows +1"}
 

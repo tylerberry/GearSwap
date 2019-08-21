@@ -113,7 +113,7 @@ function init_gear_sets()
 
   sets.MagicAttack = {
     ammo="Seething Bomblet +1",
-    head=gear.HerculeanHelm.Nuke, neck="Sanctity Necklace", ear1="Friomisi Earring", ear2="Novio Earring",
+    head=gear.HerculeanHelm.MAB, neck="Sanctity Necklace", ear1="Friomisi Earring", ear2="Novio Earring",
     body="Samnuha Coat", hands="Leyline Gloves", ring1="Fenrir Ring +1", ring2="Fenrir Ring +1",
     back=gear.EvasionistsCape.Enm, waist="Eschan Stone", legs="Limbo Trousers", feet=gear.HerculeanBoots.WSD}
 

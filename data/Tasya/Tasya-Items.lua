@@ -81,6 +81,7 @@ gear.Gada.Enh = {name="Gada", augments={'Enh. Mag. eff. dur. +5','VIT+5','Mag. A
 
 gear.Grioavolr = {}
 gear.Grioavolr.MAB = {name="Grioavolr", augments={'Magic burst dmg.+4%','INT+13','Mag. Acc.+30','"Mag.Atk.Bns."+26'}}
+gear.Grioavolr.MagicBP = {name="Grioavolr", augments={'Blood Pact Dmg.+6','Pet: Mag. Acc.+1','Pet: "Mag.Atk.Bns."+25','DMG:+3'}}
 
 gear.Holliday = {}
 gear.Holliday.MAB = {name="Holliday", augments={'"Mag.Atk.Bns."+20','MND+6','Rng.Atk.+22','DMG:+17'}}
@@ -337,23 +338,23 @@ gear.RyuoTekko.A = {name="Ryuo Tekko", augments={'STR+10','DEX+10','Accuracy+15'
 ---- Chironic armor.
 
 gear.ChironicHat = {}
-gear.ChironicHat.Nuke = {name="Chironic Hat", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Resist Silence"+5','MND+10','"Mag.Atk.Bns."+15'}}
+gear.ChironicHat.MAB = {name="Chironic Hat", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Resist Silence"+5','MND+10','"Mag.Atk.Bns."+15'}}
 gear.ChironicHat.TP = {name="Chironic Hat", augments={'"Dbl.Atk."+3','STR+10','Accuracy+14','Attack+14'}}
 
 gear.ChironicDoublet = {}
-gear.ChironicDoublet.Nuke = {name="Chironic Doublet", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','"Resist Silence"+4','MND+9','Mag. Acc.+13','"Mag.Atk.Bns."+7'}}
+gear.ChironicDoublet.MAB = {name="Chironic Doublet", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','"Resist Silence"+4','MND+9','Mag. Acc.+13','"Mag.Atk.Bns."+7'}}
 
 gear.ChironicGloves = {}
-gear.ChironicGloves.Nuke = {name="Chironic Gloves", augments={'Mag. Acc.+22 "Mag.Atk.Bns."+22','"Drain" and "Aspir" potency +2','INT+1','Mag. Acc.+7','"Mag.Atk.Bns."+7'}}
+gear.ChironicGloves.MAB = {name="Chironic Gloves", augments={'Mag. Acc.+22 "Mag.Atk.Bns."+22','"Drain" and "Aspir" potency +2','INT+1','Mag. Acc.+7','"Mag.Atk.Bns."+7'}}
 gear.ChironicGloves.WSD = {name="Chironic Gloves", augments={'Accuracy+12 Attack+12','"Subtle Blow"+5','Weapon skill damage +7%','Mag. Acc.+9 "Mag.Atk.Bns."+9'}}
 
 gear.ChironicHose = {}
-gear.ChironicHose.Nuke = {name="Chironic Hose", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','INT+10','"Mag.Atk.Bns."+7'}}
+gear.ChironicHose.MAB = {name="Chironic Hose", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','INT+10','"Mag.Atk.Bns."+7'}}
 
 ---- Herculean armor.
 
 gear.HerculeanHelm = {}
-gear.HerculeanHelm.Nuke = {name="Herculean Helm", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','"Fast Cast"+1','INT+6','"Mag.Atk.Bns."+9'}}
+gear.HerculeanHelm.MAB = {name="Herculean Helm", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','"Fast Cast"+1','INT+6','"Mag.Atk.Bns."+9'}}
 gear.HerculeanHelm.PDT = {name="Herculean Helm", augments={'Attack+12','Phys. dmg. taken -4%','STR+10'}}
 
 gear.HerculeanVest = {}
@@ -376,7 +377,7 @@ gear.HerculeanBoots.Spare = {name="Herculean Boots", augments={'Rng.Atk.+11','"T
 ---- Merlinic armor.
 
 gear.MerlinicHood = {}
-gear.MerlinicHood.MAB = {name="Merlinic Hood", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','Enmity-3','VIT+2','Mag. Acc.+15','"Mag.Atk.Bns."+11'}}
+gear.MerlinicHood.MAB = {name="Merlinic Hood", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','"Drain" and "Aspir" potency +1','CHR+4','Mag. Acc.+11','"Mag.Atk.Bns."+11'}}
 
 gear.MerlinicJubbah = {}
 gear.MerlinicJubbah.DrainAspir = {name="Merlinic Jubbah", augments={'Mag. Acc.+17 "Mag.Atk.Bns."+17','"Drain" and "Aspir" potency +8','CHR+6','Mag. Acc.+10','"Mag.Atk.Bns."+14'}}
@@ -384,6 +385,7 @@ gear.MerlinicJubbah.MAB = {name="Merlinic Jubbah", augments={'Mag. Acc.+20 "Mag.
 gear.MerlinicJubbah.MAB2 = {name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic Damage +1','INT+3','Mag. Acc.+10','"Mag.Atk.Bns."+10'}}
 
 gear.MerlinicDastanas = {}
+gear.MerlinicDastanas.MagicBP = {name="Merlinic Dastanas", augments={'Pet: "Mag.Atk.Bns."+26','Blood Pact Dmg.+10','Pet: CHR+5'}}
 gear.MerlinicDastanas.PhysBP = {name="Merlinic Dastanas", augments={'Pet: Accuracy+22 Pet: Rng. Acc.+22','Blood Pact Dmg.+10','Pet: Mag. Acc.+5'}}
 
 gear.MerlinicShalwar = {}
