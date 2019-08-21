@@ -218,7 +218,7 @@ function init_gear_sets()
   sets.precast.WS = {
     ammo="Jukukik Feather",
     head="Ayanmo Zucchetto +2", neck="Caro Necklace", ear1="Brutal Earring", ear2="Vulcan's Pearl",
-	  body="Ayanmo Corazza +2", hands="Ayanmo Manopolas +2", ring1="Rajas Ring", ring2="Ifrit Ring +1", -- ring1="Ilabrat Ring"
+	  body="Piety Briault +3", hands="Ayanmo Manopolas +2", ring1="Ilabrat Ring", ring2="Ifrit Ring +1",
     back="Relucent Cape", waist="Grunfeld Rope", legs="Ayanmo Cosciales +2", feet="Ayanmo Gambieras +2"}
 
 	sets.MaxTP = {ear1="Brutal Earring", ear2="Vulcan's Pearl"}
@@ -245,12 +245,12 @@ function init_gear_sets()
   -- Precast: Job Abilities
   --------------------------------------
 
-  sets.precast.JA.Benediction = {body="Piety Briault +1"}
+  sets.precast.JA.Benediction = {body="Piety Briault +3"}
 
   -- Waltz set (chr and vit)
   sets.precast.Waltz = {
   	head=gear.VanyaHood.D, ear1="Roundel Earring",
-  	body="Piety Briault +1", hands="Telchine Gloves",
+  	body="Piety Briault +3", hands="Telchine Gloves",
   	waist="Chaac Belt", back="Aurist's Cape +1"}
 
   --------------------------------------
@@ -493,7 +493,7 @@ function init_gear_sets()
   sets.midcast.Regen = set_combine(sets.midcast.EnhancingDuration, {
     main="Bolelabunga", sub="Genbu's Shield",
     head="Inyanga Tiara +1",
-    body="Piety Briault +1", hands="Ebers Mitts +1",
+    body="Piety Briault +3", hands="Ebers Mitts +1",
     legs="Theophany Pantaloons +1", feet=gear.TelchinePigaches.Enh})
 
   sets.midcast.Shell = set_combine(sets.midcast.EnhancingDuration, {ring2="Sheltered Ring"})

@@ -331,6 +331,8 @@ function init_gear_sets()
   --------------------------------------
 
 	sets.midcast.Ballad = {legs="Fili Rhingrave +1"}
+	sets.midcast.Carol = {} -- hands="Mousai Gages +1"
+  sets.midcast.Etude = {} -- head="Mousai Turban +1"
 
 	sets.midcast.Lullaby = {range="Gjallarhorn", ammo=empty, hands="Brioso Cuffs +3"} -- range="Marsyas"
 	sets.midcast.Lullaby.Resistant = {range="Gjallarhorn", ammo=empty, hands="Brioso Cuffs +3"}
@@ -344,18 +346,19 @@ function init_gear_sets()
 	sets.midcast['Horde Lullaby II'].AoE = {range="Daurdabla", ammo=empty, hands="Brioso Cuffs +3"}
 
 	sets.midcast.Madrigal = {head="Fili Calot +1"}
-	sets.midcast.Paeon = {} -- head="Brioso Roundlet +3"
+  sets.midcast.Mambo = {} -- feet="Mousai Crackows +1"
 
 	sets.midcast.March = {hands="Fili Manchettes +1"}
 	--sets.midcast['Honor March'] = set_combine(sets.midcast.March, {range="Marsyas", ammo=empty})
 
 	--sets.midcast.Mazurka = {range="Marsyas", ammo=empty}
 	sets.midcast.Minuet = {body="Fili Hongreline +1"}
-	sets.midcast.Minne = {}
-	sets.midcast.Carol = {}
+	sets.midcast.Minne = {} -- legs="Mousai Seraweels +1"
+	sets.midcast.Paeon = {head="Brioso Roundlet +3"}
+  sets.midcast.Threnody = {} -- body="Mousai Manteel +1"
 
 	sets.midcast['Magic Finale'] = {range="Gjallarhorn", ammo=empty}
-	sets.midcast["Sentinel's Scherzo"] = {} --feet="Fili Cothurnes +1", but Brioso Slippers still provides more duration
+	sets.midcast["Sentinel's Scherzo"] = {} --feet="Fili Cothurnes +1", but Brioso Slippers provide more duration and are probably better.
 
 	-- For song buffs (duration and AF3 set bonus)
 	sets.midcast.SongEffect = {
@@ -370,7 +373,7 @@ function init_gear_sets()
 	-- For song defbuffs (duration primary, accuracy secondary)
 	sets.midcast.SongDebuff = {
     main=gear.Kali.A, sub="Genmei Shield", range="Gjallarhorn", ammo=empty, -- sub="Ammurapi Shield", range="Marsyas"
-		head="Brioso Roundlet +2", neck="Moonbow Whistle +1", ear1="Enchanter Earring +1", ear2="Dignitary's Earring",
+		head="Brioso Roundlet +3", neck="Moonbow Whistle +1", ear1="Enchanter Earring +1", ear2="Dignitary's Earring",
 		body="Fili Hongreline +1", hands="Brioso Cuffs +3", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
 		back=gear.IntarabussCape.FC, waist="Luminary Sash", legs="Inyanga Shalwar +2", feet="Brioso Slippers +3"}
 
@@ -380,7 +383,7 @@ function init_gear_sets()
 	-- For song debuffs (accuracy primary, duration secondary)
 	sets.midcast.SongDebuff.Resistant = {
     main=gear.Grioavolr.MAB, sub="Enki Strap", range="Gjallarhorn", ammo=empty, -- main="Kali", sub="Ammurapi Shield"
-		head="Brioso Roundlet +2", neck="Moonbow Whistle +1", ear1="Enchanter Earring +1", ear2="Dignitary's Earring",
+		head="Brioso Roundlet +3", neck="Moonbow Whistle +1", ear1="Enchanter Earring +1", ear2="Dignitary's Earring",
 		body="Brioso Justaucorps +2", hands="Brioso Cuffs +3", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
 		back=gear.IntarabussCape.FC, waist="Luminary Sash", legs="Brioso Cannions +2", feet="Brioso Slippers +3"}
 
