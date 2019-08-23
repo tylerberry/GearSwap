@@ -190,7 +190,7 @@ function init_gear_sets()
 	-- Weapons
 	--------------------------------------
 
-  sets.weapons['Naegling/Thibron'] = {main="Naegling", sub="Machaera +3"}
+  sets.weapons['Naegling/Thibron'] = {main="Naegling", sub="Thibron"}
   sets.weapons['Naegling/Colada'] = {main="Naegling", sub=gear.Colada.DA}
   sets.weapons['Naegling/Nibiru'] = {main="Naegling", sub=gear.NibiruCudgel.B}
   sets.weapons['Vampirisms'] = {main=gear.Vampirism.High1, sub=gear.Vampirism.High2}
@@ -404,7 +404,7 @@ function init_gear_sets()
   -- Shining Strike: magic, light ele., 40% STR 40% MND, 1.625/3.0/4.625 fTP.
 	sets.precast.WS['Shining Strike'] = set_combine(sets.precast.MagicWS, {ear2="Moonshade Earring"})
 
-    -- Seraph Strike: magic, light ele., 40% STR 40% MND, 2.125/3.675/6.125 fTP.
+  -- Seraph Strike: magic, light ele., 40% STR 40% MND, 2.125/3.675/6.125 fTP.
 	sets.precast.WS['Shining Strike'] = set_combine(sets.precast.MagicWS, {ear2="Moonshade Earring"})
 
 	-- Brainshaker: physical 1-hit, 100% STR, 1.0 fTP, TP affects chance to stun.
