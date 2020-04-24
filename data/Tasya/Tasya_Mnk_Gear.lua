@@ -30,7 +30,7 @@ function init_gear_sets()
 
   sets.FootworkWS = {feet="Shukuyu Sune-Ate"}
   sets.DayIdle = {}
-	sets.Kiting = {feet="Herald's Gaiters"}
+	sets.Kiting = {feet="Crier's Gaiters"}
   sets.Knockback = {}
   sets.NightIdle = {}
   sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
@@ -123,7 +123,7 @@ function init_gear_sets()
 
   -- Normal melee sets
   sets.engaged = {
-    ammo="Ginsen",
+    ammo="Aurgelmir Orb",
     head="Dampening Tam", neck="Moonbeam Nodowa", ear1="Brutal Earring", ear2="Sherida Earring",
     body="Ken. Samue", hands=gear.AdhemarWristbandsPlus1.B, ring1="Niqmaddu Ring", ring2="Epona's Ring",
     back="Segomo's Mantle", waist="Windbuffet Belt +1", legs="Samnuha Tights", feet=gear.HerculeanBoots.TA}
@@ -140,7 +140,7 @@ function init_gear_sets()
 
   -- Defensive melee hybrid sets
   sets.engaged.PDT = {
-    ammo="Ginsen",
+    ammo="Aurgelmir Orb",
     head="Genmei Kabuto", neck="Loricate Torque +1", ear1="Brutal Earring", ear2="Sherida Earring",
     body="Emet Harness +1", hands=gear.herculean_dt_hands, ring1="Defending Ring", ring2="Dark Ring",
     back="Moonlight Cape", waist="Black Belt", legs=gear.herculean_dt_legs, feet="Hippomenes Socks +1"}
@@ -161,7 +161,7 @@ function init_gear_sets()
     back="Moonlight Cape", waist="Black Belt", legs=gear.herculean_dt_legs, feet="Hippomenes Socks +1"}
 
   sets.engaged.PDTOnly = {
-    ammo="Ginsen",
+    ammo="Aurgelmir Orb",
     head="Genmei Kabuto", neck="Moonbeam Nodowa", ear1="Brutal Earring", ear2="Sherida Earring",
     body="Emet Harness +1", hands=gear.AdhemarWristbandsPlus1.B, ring1="Niqmaddu Ring", ring2="Patricius Ring",
     back="Solemnity Cape", waist="Black Belt", legs="Hesychast's Hose +1", feet="Sokushitsu Sune-Ate"}
@@ -176,7 +176,7 @@ function init_gear_sets()
     ring1="Ramuh Ring +1"}
 
   sets.engaged.Fodder.PDTOnly = {
-    ammo="Ginsen",
+    ammo="Aurgelmir Orb",
     head="Genmei Kabuto", neck="Moonbeam Nodowa", ear1="Brutal Earring", ear2="Sherida Earring",
     body="Emet Harness +1", hands=gear.AdhemarWristbandsPlus1.B, ring1="Niqmaddu Ring", ring2="Patricius Ring",
     back="Solemnity Cape", waist="Black Belt", legs="Hesychast's Hose +1", feet="Sokushitsu Sune-Ate"}
@@ -194,7 +194,7 @@ function init_gear_sets()
   --------------------------------------
 
   sets.precast.WS = {
-    ammo="Ginsen",
+    ammo="Aurgelmir Orb",
     head="Adhemar Bonnet +1", neck="Fotia Gorget", ear1="Brutal Earring", ear2="Sherida Earring",
     body="Ken. Samue", hands=gear.AdhemarWristbandsPlus1.B, ring1="Niqmaddu Ring", ring2="Regal Ring",
     back="Segomo's Mantle", waist="Fotia Belt", legs="Tatena. Haidate +1", feet=gear.herculean_ta_feet}
@@ -288,7 +288,7 @@ function init_gear_sets()
 	sets.precast.JA['Chakra'] = {
 		head="Dampening Tam",
 		body="Emet Harness +1", hands="Hesychast's Gloves +1",
-		legs="Hes. Hose +1", feet="Anch. Gaiters +1"}
+		legs="Hesychast'sB Hose +1", feet="Anch. Gaiters +1"}
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {}
@@ -313,8 +313,8 @@ function init_gear_sets()
   --------------------------------------
 
 	sets.precast.FC = {
-    ammo="Impatiens",
-  	head=gear.herculean_fc_head, neck="Voltsurge Torque", ear1="Enchntr. Earring +1", ear2="Loquacious Earring",
+    ammo="Sapience Orb",
+  	head=gear.herculean_fc_head, neck="Orunmila's Torque", ear1="Enchntr. Earring +1", ear2="Loquacious Earring",
   	body="Dread Jupon", hands="Leyline Gloves", ring2="Lebeche Ring", ring2="Kishar Ring",
   	legs="Rawhide Trousers"}
 
@@ -325,8 +325,8 @@ function init_gear_sets()
   --------------------------------------
 
 	sets.midcast.FastRecast = {
-    ammo="Staunch Tathlum +1",
-		head=gear.herculean_fc_head, neck="Voltsurge Torque", ear1="Enchntr. Earring +1", ear2="Loquacious Earring",
+    ammo="Sapience Orb",
+		head=gear.herculean_fc_head, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",
 		body="Dread Jupon", hands="Leyline Gloves", ring2="Defending Ring", ring2="Prolix Ring",
 		back="Moonlight Cape", waist="Black Belt", legs=gear.herculean_dt_legs, feet="Hippomenes Socks +1"}
 
