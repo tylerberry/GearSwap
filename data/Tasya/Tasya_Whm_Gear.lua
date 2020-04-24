@@ -6,7 +6,7 @@ function user_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None','Sindri')
+	state.Weapons:options('None','Sindri','Yagrush')
 
   gear.AlaunussCape = {}
   gear.AlaunussCape.FC = {name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
@@ -90,24 +90,24 @@ function init_gear_sets()
 
   sets.MagicAccuracy = {
     main=gear.Grioavolr.MAB, sub="Enki Strap", ammo="Pemphredo Tathlum",
-    head="Inyanga Tiara +1", neck="Erra Pendant", ear1="Dignitary's Earring", ear2="Gwati Earring",
-    body="Inyanga Jubbah +2", hands=gear.KaykausCuffsPlus1.A, ring1="Stikini Ring +1", ring2="Stikini Ring +1",
-    back=gear.AlaunussCape.FC, waist="Luminary Sash", legs=gear.ChironicHose.MAB, feet="Inyanga Crackows +1"}
+    head="Inyanga Tiara +2", neck="Erra Pendant", ear1="Malignance Earring", ear2="Dignitary's Earring",
+    body="Theophany Briault +3", hands=gear.KaykausCuffsPlus1.A, ring1="Stikini Ring +1", ring2="Stikini Ring +1",
+    back=gear.AlaunussCape.FC, waist="Luminary Sash", legs=gear.ChironicHose.MAB, feet="Inyanga Crackows +2"}
 
-  sets.MagicAttack = {
+  sets.MagicAttackNW = {
     ammo="Pemphredo Tathlum",
-    head=gear.ChironicHat.MAB, neck="Saevus Pendant +1", ear1="Friomisi Earring", ear2="Novio Earring",
-    body="Witching Robe", hands=gear.ChironicGloves.MAB, ring1="Fenrir Ring +1", ring2="Fenrir Ring +1",
-    back="Toro Cape", waist=gear.ElementalObi, legs=gear.ChironicHose.MAB, feet=gear.HeliosBoots.MAB}
+    head=gear.ChironicHat.MAB, neck="Saevus Pendant +1", ear1="Malignance Earring", ear2="Friomisi Earring",
+    body=gear.ChironicDoublet.MAB, hands=gear.ChironicGloves.MAB, ring1="Fenrir Ring +1", ring2="Fenrir Ring +1",
+    back="Izdubar Mantle", waist=gear.ElementalObi, legs=gear.ChironicHose.MAB, feet=gear.HeliosBoots.MAB}
 
-  sets.MagicAttackWeapons = set_combine (sets.MagicAttack, {
+  sets.MagicAttack = set_combine (sets.MagicAttack, {
     main=gear.Grioavolr.MAB, sub="Enki Strap"})
 
   sets.MinusEnmity = {
     main="Terra's Staff", sub="Achaq Grip", ammo="Esper Stone +1",                                              --  -,  4,  -,  5
     head="Gendewitha Caubeen +1", neck="Orunmila's Torque", ear1="Genmei Earring", ear2="Novia Earring",        --  8,  3,  -,  7
     body="Inyanga Jubbah +2", hands="Ebers Mitts +1", ring1="Defending Ring", ring2="Kuchekula Ring",           --  -,  10, -,  7
-    back=gear.MendingCape.Healing, waist="Slipor Sash", legs="Inyanga Shalwar +2", feet="Inyanga Crackows +1"}  --  6,  -,  -,  -
+    back=gear.MendingCape.Healing, waist="Slipor Sash", legs="Inyanga Shalwar +2", feet="Inyanga Crackows +2"}  --  6,  -,  -,  -
 
   --------------------------------------
   -- Elemental Affinity
@@ -123,16 +123,16 @@ function init_gear_sets()
   --------------------------------------
 
   sets.idle = {
-    main="Contemplator +1", sub="Oneiros Grip", ammo="Homiliary",
-    head="Befouled Crown", neck="Bathy Choker +1", ear1="Infused Earring", ear2="Dawn Earring",
-    body=gear.KaykausBliautPlus1.D, hands="Serpentes Cuffs", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
-    back="Kumbira Cape", waist="Slipor Sash", legs="Assiduity Pants +1", feet="Serpentes Sabots"}
+    main="Daybreak", sub="Genmei Shield", ammo="Homiliary",
+    head="Inyanga Tiara +2", neck="Bathy Choker +1", ear1="Etiolation Earring", ear2="Hearty Earring",
+    body=gear.KaykausBliautPlus1.D, hands="Inyanga Dastanas +2", ring1="Stikini Ring +1", ring2="Inyanga Ring",
+    back="Kumbira Cape", waist="Carrier Sash", legs="Inyanga Shalwar +2", feet="Inyanga Crackows +2"}
 
   sets.idle.PDT = {
-    main="Bolelabunga", sub="Genmei Shield", ammo="Staunch Tathlum +1",
-    head="Gendewitha Caubeen +1", neck="Loricate Torque +1", ear1="Etiolation Earring", ear2="Ethereal Earring",
-    body="Vrikodara Jupon", hands="Gendewitha Gages +1", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
-    back="Moonlight Cape", waist="Slipor Sash", legs="Assiduity Pants +1", feet=gear.chironic_refresh_feet}
+    main="Malignance Pole", sub="Oneiros Grip", ammo="Homiliary",
+    head="Inyanga Tiara +2", neck="Loricate Torque +1", ear1="Etiolation Earring", ear2="Hearty Earring",
+    body=gear.KaykausBliautPlus1.D, hands="Inyanga Dastanas +2", ring1="Defending Ring", ring2="Inyanga Ring",
+    back="Kumbira Cape", waist="Carrier Sash", legs="Inyanga Shalwar +2", feet="Inyanga Crackows +2"}
 
   --sets.idle.TPEat = set_combine(sets.idle, {neck="Chrys. Torque"})
 
@@ -143,29 +143,29 @@ function init_gear_sets()
   --------------------------------------
 
   sets.defense.PDT = {
-    main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+    main="Daybreak", sub="Genmei Shield", ammo="Staunch Tathlum +1",
     head="Gendewitha Caubeen +1", neck="Loricate Torque +1", ear1="Etiolation Earring", ear2="Ethereal Earring",
     body="Vrikodara Jupon", hands="Gendewitha Gages +1", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
-    back="Moonlight Cape", waist="Slipor Sash", legs="Assiduity Pants +1", feet="Inyanga Crackows +1"}
+    back="Moonlight Cape", waist="Slipor Sash", legs="Assiduity Pants +1", feet="Inyanga Crackows +2"}
 
   sets.defense.MDT = {
     main="Mafic Cudgel", sub="Genmei Shield", ammo="Staunch Tathlum +1",
     head="Gendewitha Caubeen +1", neck="Loricate Torque +1", ear1="Etiolation Earring", ear2="Sanare Earring",
-    body="Inyanga Jubbah +2", hands="Inyanga Dastanas +1", ring1="Defending Ring", ring2="Shadow Ring",
+    body="Inyanga Jubbah +2", hands="Inyanga Dastanas +2", ring1="Defending Ring", ring2="Shadow Ring",
     back="Moonlight Cape", waist="Slipor Sash", legs="Inyanga Shalwar +2", feet="Gendewitha Galoshes +1"}
 
   sets.defense.MEVA = {
     main="Chatoyant Staff", sub="Oneiros Grip", ammo="Staunch Tathlum +1",
-    head="Inyanga Tiara +1", neck="Warder's Charm +1", ear1="Etiolation Earring", ear2="Sanare Earring",
-    body="Inyanga Jubbah +2", hands="Inyanga Dastanas +1", ring1="Vengeful Ring", ring2="Purity Ring",
-    back="Aurist's Cape +1", waist="Luminary Sash", legs="Inyanga Shalwar +2", feet="Inyanga Crackows +1"}
+    head="Inyanga Tiara +2", neck="Warder's Charm +1", ear1="Etiolation Earring", ear2="Sanare Earring",
+    body="Inyanga Jubbah +2", hands="Inyanga Dastanas +2", ring1="Vengeful Ring", ring2="Purity Ring",
+    back="Aurist's Cape +1", waist="Luminary Sash", legs="Inyanga Shalwar +2", feet="Inyanga Crackows +2"}
 
   --------------------------------------
   -- Resting
   --------------------------------------
 
   sets.resting = {
-    main="Chatoyant Staff", sub="Oneiros Grip", ammo="Homiliary",
+    main="Contemplator +1", sub="Oneiros Grip", ammo="Homiliary",
     head="Befouled Crown", neck="Eidolon Pendant +1", ear1="Infused Earring", ear2="Dawn Earring", -- neck="Chrysopoeia Torque"
     body="Witching Robe", hands="Serpentes Cuffs", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
     back="Kumbira Cape", waist="Fucho-no-Obi", legs="Assiduity Pants +1", feet="Chelona Boots +1"} -- waist=gear.IdleBelt
@@ -175,6 +175,7 @@ function init_gear_sets()
 	--------------------------------------
 
 	sets.weapons.Sindri = {main="Sindri", sub="Genmei Shield"}
+  sets.weapons.Yagrush = {main="Yagrush", sub="Genmei Shield"}
 
   --------------------------------------
 	-- Engaged
@@ -186,25 +187,25 @@ function init_gear_sets()
   -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
   sets.engaged = {
-    ammo="Jukukik Feather",
+    ammo="Amar Cluster",
     head="Ayanmo Zucchetto +2", neck="Asperity Necklace", ear1="Telos Earring", ear2="Cessance Earring",
 	  body="Ayanmo Corazza +2", hands="Ayanmo Manopolas +2", ring1="Ilabrat Ring", ring2="Petrov Ring",
     back="Relucent Cape", waist="Windbuffet Belt +1", legs="Ayanmo Cosciales +2", feet="Ayanmo Gambieras +2"}
 
   sets.engaged.Acc = {
-    ammo="Jukukik Feather",
+    ammo="Amar Cluster",
     head="Ayanmo Zucchetto +2", neck="Combatant's Torque", ear1="Mache Earring +1", ear2="Mache Earring +1",
 	  body="Ayanmo Corazza +2", hands="Ayanmo Manopolas +2", ring1="Ilabrat Ring", ring2="Petrov Ring",
     back="Relucent Cape", waist="Olseni Belt", legs="Ayanmo Cosciales +2", feet="Ayanmo Gambieras +2"}
 
   sets.engaged.DW = {
-    ammo="Jukukik Feather",
+    ammo="Amar Cluster",
     head="Ayanmo Zucchetto +2", neck="Asperity Necklace", ear1="Telos Earring", ear2="Cessance Earring",
   	body="Ayanmo Corazza +2", hands="Ayanmo Manopolas +2", ring1="Ilabrat Ring", ring2="Petrov Ring",
     back="Relucent Cape", waist="Shetal Stone", legs="Ayanmo Cosciales +2", feet="Ayanmo Gambieras +2"}
 
   sets.engaged.DW.Acc = {
-    ammo="Jukukik Feather",
+    ammo="Amar Cluster",
     head="Ayanmo Zucchetto +2", neck="Combatant's Torque", ear1="Mache Earring +1", ear2="Suppanomimi",
 	  body="Ayanmo Corazza +2", hands="Ayanmo Manopolas +2", ring1="Ilabrat Ring", ring2="Petrov Ring",
     back="Relucent Cape", waist="Shetal Stone", legs="Ayanmo Cosciales +2", feet="Ayanmo Gambieras +2"}
@@ -216,10 +217,14 @@ function init_gear_sets()
   -- Default, STR weaponskills
 
   sets.precast.WS = {
-    ammo="Jukukik Feather",
+    ammo="Amar Cluster",
     head="Ayanmo Zucchetto +2", neck="Caro Necklace", ear1="Brutal Earring", ear2="Vulcan's Pearl",
 	  body="Piety Briault +3", hands="Ayanmo Manopolas +2", ring1="Ilabrat Ring", ring2="Ifrit Ring +1",
     back="Relucent Cape", waist="Grunfeld Rope", legs="Ayanmo Cosciales +2", feet="Ayanmo Gambieras +2"}
+
+  -- Magical weaponskills.
+
+  sets.precast.WS.Magic = set_combine(sets.MagicAttackNW, {})
 
 	sets.MaxTP = {ear1="Brutal Earring", ear2="Vulcan's Pearl"}
 	sets.MaxTP.Dagan = {ear1="Etiolation Earring", ear2="Evans Earring"}
@@ -247,41 +252,44 @@ function init_gear_sets()
 
   sets.precast.JA.Benediction = {body="Piety Briault +3"}
 
-  -- Waltz set (chr and vit)
-  sets.precast.Waltz = {
-  	head=gear.VanyaHood.D, ear1="Roundel Earring",
-  	body="Piety Briault +3", hands="Telchine Gloves",
-  	waist="Chaac Belt", back="Aurist's Cape +1"}
+  if player.sub_job == "DNC" then
+    -- Waltz set (chr and vit)
+    sets.precast.Waltz = {
+    	head=gear.VanyaHood.D, ear1="Roundel Earring",
+    	body="Piety Briault +3", hands="Telchine Gloves",
+    	waist="Chaac Belt", back="Aurist's Cape +1"}
+  end
 
   --------------------------------------
   -- Precast: Fast Cast
   --------------------------------------
 
   -- Total casting time reduction caps at 80%.
-  sets.precast.FC = {                                                                                           -- Current total: QC+10, FC+61~63
-    main=gear.Grioavolr.MAB, sub="Clerisy Strap +1", ammo="Impatiens",                                          --  +4,  +3,  -,  QC
-    head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",    --  +10, +5, +2, +2
-    body="Inyanga Jubbah +2", hands="Gendewitha Gages +1", ring1="Lebeche Ring", ring2="Prolix Ring",           --  +13, +7, QC, +2
-    back="Perimede Cape", waist="Witful Belt", legs="Ayanmo Cosciales +2", feet="Regal Pumps +1"}               --  QC,  +3, +6, +5~7
+  sets.precast.FC = {                                                                                           -- Current total: QC+11, FC+75~77
+    main=gear.Grioavolr.FC, sub="Clerisy Strap +1", ammo="Impatiens",                                           --  +11,   +3,      -,     +2 QC
+    head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Malignance Earring", ear2="Loquacious Earring",      --  +10,   +5,      +4,    +2
+    body="Inyanga Jubbah +2", hands="Gendewitha Gages +1", ring1="Lebeche Ring", ring2="Kishar Ring",           --  +14,   +7,      +2 QC, +4
+    back="Perimede Cape", waist="Witful Belt", legs=gear.KaykausTightsPlus1.B, feet="Regal Pumps +1"}           --  +4 QC, +3 & QC, +7,    +5~7
 
   sets.precast.FC['Enhancing Magic'] = sets.precast.FC -- {waist="Siegel Sash"}                                 -- Currently prefer maxing QC.
 
   sets.precast.FC.Stoneskin = set_combine(sets.precast.FC['Enhancing Magic'], {                                 -- Delta from precast.FC['Enhancing Magic']:
-    head="Umuthi Hat", legs="Doyen Pants"})                                                                     -- +5, +5 = Total: FC+71-73
+    head="Umuthi Hat", legs="Doyen Pants"})                                                                     -- +5, +3 = Total: FC+83~85
 
   -- WHM gets healing magic spellcasting time -8% from gifts.                     .                             -- Delta from precast.FC:
-  sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, {legs="Ebers Pantaloons +1"})                 -- +8, +8 JP = Total: FC+77~79
-  sets.precast.FC.StatusRemoval = sets.precast.FC['Healing Magic']
+  --sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, {})                                         -- +8 from JP = Total: well past cap
+  --sets.precast.FC.StatusRemoval = sets.precast.FC['Healing Magic']
 
-  sets.precast.FC.CurePlain = set_combine(sets.precast.FC['Healing Magic'], {                                   -- Delta from precast.FC['Healing Magic']:
-    sub="Genbu's Shield"})                                                                                      -- +7 = capped
+  --sets.precast.FC.CurePlain = set_combine(sets.precast.FC['Healing Magic'], {                                 -- Delta from precast.FC['Healing Magic']:
+  --  sub="Genbu's Shield"})
 
+  -- Needed by various rules. I think. FIXME: test this?
+  sets.precast.FC.CurePlain = set_combine(sets.precast.FC, {})
   sets.precast.FC.CureWeather = sets.precast.FC.CurePlain
   sets.precast.FC.CureSolace = sets.precast.FC.CurePlain
   sets.precast.FC.CureSolaceWeather = sets.precast.FC.CurePlain
   sets.precast.FC.CuragaPlain = sets.precast.FC.CurePlain
   sets.precast.FC.CuragaWeather = sets.precast.FC.CurePlain
-
   sets.precast.FC.CureMelee = sets.precast.FC.CurePlain
   sets.precast.FC.CureMeleeWeather = sets.precast.FC.CurePlain
   sets.precast.FC.CureMeleeSolace = sets.precast.FC.CurePlain
@@ -293,7 +301,8 @@ function init_gear_sets()
 	--	neck="Loricate Torque +1",ear2="Genmei Earring",
 	--	body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring"}
 
-	sets.precast.FC.Impact =  set_combine(sets.precast.FC, {head=empty, body="Twilight Cloak"})
+	sets.precast.FC.Impact =  set_combine(sets.precast.FC, {head=empty, body="Twilight Cloak", back=gear.AlaunussCape.FC})
+  sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak", sub="Genmei Shield"}) -- sub="Chanter's Shield" maybe?
 
   --------------------------------------
   -- Midcast: Fast Recast
@@ -302,10 +311,10 @@ function init_gear_sets()
   -- Fast recast: fast cast and haste both contribute to this.
   -- Defending ring is filler.
   sets.midcast.FastRecast = {
-    main=gear.Grioavolr.MAB, sub="Clerisy Strap +1", ammo="Sapience Orb",
-    head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",
-    body="Inyanga Jubbah +2", hands="Gendewitha Gages +1", ring1="Defending Ring", ring2="Prolix Ring",
-    back=gear.AlaunussCape.FC, waist="Witful Belt", legs="Ayanmo Cosciales +2", feet="Regal Pumps +1"}
+    main=gear.Grioavolr.FC, sub="Clerisy Strap +1", ammo="Sapience Orb",
+    head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Malignance Earring", ear2="Loquacious Earring",
+    body="Inyanga Jubbah +2", hands="Gendewitha Gages +1", ring1="Defending Ring", ring2="Kishar Ring",
+    back=gear.AlaunussCape.FC, waist="Witful Belt", legs=gear.KaykausTightsPlus1.B, feet="Regal Pumps +1"}
 
   --------------------------------------
   -- Midcast: Dark Magic
@@ -331,12 +340,12 @@ function init_gear_sets()
 
   sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
     ammo="Hasty Pinion +1", -- sub="Clerisy Strap +1"
-    head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",
-    hands="Fanatic Gloves", ring2="Prolix Ring",
+    head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Malignance Earring", ear2="Loquacious Earring",
+    body="Inyanga Jubbah +2", hands="Fanatic Gloves", ring2="Prolix Ring",
     waist="Witful Belt", legs="Lengo Pants", feet="Regal Pumps +1"})
 
   sets.midcast.Stun.Resistant = set_combine(sets.midcast['Dark Magic'], {
-    head=gear.VanyaHood.D, hands="Fanatic Gloves"})
+    head=gear.VanyaHood.D, bodyhands="Fanatic Gloves"})
 
   if player.sub_job == 'SCH' then
       sets.midcast.Klimaform = sets.midcast.FastRecast  -- Skill has no effect on Klimaform.
@@ -352,14 +361,14 @@ function init_gear_sets()
   -- Banish and Holy spells are low base damage, so +magic damage is preferred over +MAB.
 
   sets.midcast.Banish = set_combine(sets.MagicAttack, {
-    main=gear.Grioavolr.MAB, sub="Enki Strap", ammo="Ghastly Tathlum +1"})
+    main="Daybreak", sub="Thuellaic Ecu +1", ammo="Ghastly Tathlum +1"})
   sets.midcast.Holy = set_combine(sets.MagicAttack, {
-    main=gear.Grioavolr.MAB, sub="Enki Strap", ammo="Ghastly Tathlum +1"})
+    main="Daybreak", sub="Thuellaic Ecu +1", ammo="Ghastly Tathlum +1"})
 
   sets.midcast.Banish.Resistant = set_combine(sets.MagicAttack, {
-    main=gear.Grioavolr.MAB, sub="Enki Strap", neck="Sanctity Necklace", waist="Eschan Stone"})
+    main="Daybreak", sub="Thuellaic Ecu +1", neck="Sanctity Necklace", waist="Eschan Stone"})
   sets.midcast.Holy.Resistant = set_combine(sets.MagicAttack, {
-    main=gear.Grioavolr.MAB, sub="Enki Strap", neck="Sanctity Necklace", waist="Eschan Stone"})
+    main="Daybreak", sub="Thuellaic Ecu +1", neck="Sanctity Necklace", waist="Eschan Stone"})
 
   --------------------------------------
   -- Midcast: Elemental Magic
@@ -370,14 +379,14 @@ function init_gear_sets()
   sets.midcast['Elemental Magic'] = set_combine(sets.MagicAttack, {
     main=gear.Grioavolr.MAB, sub="Enki Strap", ammo="Ghastly Tathlum +1"})
 
-  sets.midcast['Elemental Magic'].Resistant = set_combine(sets.MagicAttackWeapons, {
+  sets.midcast['Elemental Magic'].Resistant = set_combine(sets.MagicAttack, {
     neck="Sanctity Necklace", waist="Eschan Stone"})
 
   sets.midcast.ElementalEnfeeble = set_combine(sets.MagicAccuracy, {})
   sets.midcast.ElementalEnfeeble.Resistant = set_combine(sets.MagicAccuracy, {})
 
   if player.sub_job == 'SCH' then
-    sets.midcast.Helix = set_combine(sets.MagicAttackWeapons, {})
+    sets.midcast.Helix = set_combine(sets.MagicAttack, {})
   end
 
   sets.midcast.Impact = set_combine(sets.MagicAccuracy, {head=empty, body="Twilight Cloak"})
@@ -438,6 +447,9 @@ function init_gear_sets()
   sets.midcast.MndEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {})
   sets.midcast.MndEnfeebles.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {})
 
+  sets.precast.FC.Dispelga = set_combine(sets.midcast['Enfeebling Magic'], {
+    main="Daybreak", sub="Thuellaic Ecu +1"}) -- sub="Ammurapi Shield"
+
   --------------------------------------
   -- Midcast: Enhancing Magic
   --------------------------------------
@@ -474,11 +486,11 @@ function init_gear_sets()
     body="Ebers Bliaud +1", hands="Ebers Mitts +1", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
     waist="Fi Follet Cape +1", waist="Olympus Sash", legs="Piety Pantaloons +1", feet="Ebers Duckbills +1"})
 
-  sets.midcast.BarElementLightArts = {
+  sets.midcast.BarElementLightArts = set_combine(sets.ConserveMP, {
     main="Beneficus", sub="Genmei Shield", -- sub="Ammurapi Shield"
     head="Ebers Cap +1", neck="Incanter's Torque", ear1="Andoaa Earring",
     body="Ebers Bliaud +1", hands="Ebers Mitts +1", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
-    waist="Fi Follet Cape +1", waist="Olympus Sash", legs="Piety Pantaloons +1", feet="Ebers Duckbills +1"}
+    waist="Fi Follet Cape +1", waist="Olympus Sash", legs="Piety Pantaloons +1", feet="Ebers Duckbills +1"})
 
   sets.midcast.Blink = set_combine(sets.midcast.EnhancingDuration, {})
 
@@ -492,9 +504,9 @@ function init_gear_sets()
 
   sets.midcast.Regen = set_combine(sets.midcast.EnhancingDuration, {
     main="Bolelabunga", sub="Genbu's Shield",
-    head="Inyanga Tiara +1",
+    head="Inyanga Tiara +2",
     body="Piety Briault +3", hands="Ebers Mitts +1",
-    legs="Theophany Pantaloons +1", feet=gear.TelchinePigaches.Enh})
+    legs="Theophany Pantaloons +3", feet=gear.TelchinePigaches.Enh})
 
   sets.midcast.Shell = set_combine(sets.midcast.EnhancingDuration, {ring2="Sheltered Ring"})
   sets.midcast.Shellra = set_combine(sets.midcast.Shell, {})
@@ -632,7 +644,7 @@ function init_gear_sets()
     main="Yagrush", sub="Genmei Shield", ammo="Hasty Pinion +1",
     head=gear.KaykausMitraPlus1.B, neck="Debilis Medallion", ear1="Enchanter Earring +1", ear2="Loquacious Earring",
     body="Inyanga Jubbah +2", hands="Fanatic Gloves", ring1="Haoma's Ring", ring2="Menelaus's Ring",
-    back=gear.AlaunussCape.FC, waist="Witful Belt", legs="Theophany Pantaloons +1", feet="Gendewitha Galoshes +1"}
+    back=gear.AlaunussCape.FC, waist="Witful Belt", legs="Theophany Pantaloons +3", feet="Gendewitha Galoshes +1"}
 
   -- Most status cures: Divine Veil, Divine Benison, and general recast time.
   sets.midcast.StatusRemoval = set_combine(sets.midcast.FastRecast, {

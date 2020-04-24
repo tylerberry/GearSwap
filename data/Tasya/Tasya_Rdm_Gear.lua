@@ -67,7 +67,7 @@ function init_gear_sets()
        
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
-	sets.precast.WS = {ammo="Ginsen",
+	sets.precast.WS = {ammo="Aurgelmir Orb",
 		head="Aya. Zucchetto +2",neck="Asperity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
 		body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Petrov Ring",ring2="Ilabrat Ring",
 		back="Bleating Mantle",waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet="Carmine Greaves +1"}
@@ -77,7 +77,7 @@ function init_gear_sets()
 	
 	sets.precast.WS['Chant Du Cygne'] = set_combine(sets.precast.WS, {neck="Fotia Gorget",ear1="Moonshade Earring",ring1="Begrudging Ring",waist="Fotia Belt",feet="Thereoid Greaves"})
 
-	sets.precast.WS['Savage Blade'] = {ammo="Ginsen",
+	sets.precast.WS['Savage Blade'] = {ammo="Aurgelmir Orb",
 		head="Aya. Zucchetto +2",neck="Caro Necklace",ear1="Moonshade Earring",ear2="Brutal Earring",
 		body="Ayanmo Corazza +2",hands="Jhakri Cuffs +2",ring1="Ifrit Ring +1",ring2="Rufescent Ring",
 		back="Bleating Mantle",waist="Grunfeld Rope",legs="Carmine Cuisses +1",feet="Carmine Greaves +1"}
@@ -328,27 +328,27 @@ function init_gear_sets()
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 	
 	-- Normal melee group
---	sets.engaged = {ammo="Ginsen",
+--	sets.engaged = {ammo="Aurgelmir Orb",
 --		head="Aya. Zucchetto +2",neck="Asperity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
 --		body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Petrov Ring",ring2="Ilabrat Ring",
 --		back="Bleating Mantle",waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet="Carmine Greaves +1"}
 
-	sets.engaged = {ammo="Ginsen",
+	sets.engaged = {ammo="Aurgelmir Orb",
 		head="Aya. Zucchetto +2",neck="Asperity Necklace",ear1="Suppanomimi",ear2="Brutal Earring",
 		body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Petrov Ring",ring2="Ilabrat Ring",
 		back="Bleating Mantle",waist="Windbuffet Belt +1",legs="Jhakri Slops +2",feet="Carmine Greaves +1"}
 
-	sets.engaged.DW = {ammo="Ginsen",
+	sets.engaged.DW = {ammo="Aurgelmir Orb",
 		head="Aya. Zucchetto +2",neck="Asperity Necklace",ear1="Suppanomimi",ear2="Brutal Earring",
 		body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Petrov Ring",ring2="Ilabrat Ring",
 		back="Bleating Mantle",waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet="Carmine Greaves +1"}
 		
-	sets.engaged.PhysicalDef = {ammo="Ginsen",
+	sets.engaged.PhysicalDef = {ammo="Aurgelmir Orb",
 		head="Viti. Chapeau +1",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
 		body="Emet Harness +1",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Dark Ring",
 		back="Moonlight Cape",waist="Flume Belt",legs="Hagondes Pants +1",feet="Battlecast Gaiters"}
 		
-	sets.engaged.MagicalDef = {ammo="Ginsen",
+	sets.engaged.MagicalDef = {ammo="Aurgelmir Orb",
 		head="Viti. Chapeau +1",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
 		body="Vrikodara Jupon",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Dark Ring",
 		back="Moonlight Cape",waist="Flume Belt",legs="Hagondes Pants +1",feet="Battlecast Gaiters"}

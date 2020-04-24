@@ -12,7 +12,7 @@ function user_setup()
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'Knockback', 'Suppa', 'DWEarrings'}
 
   gear.ArtiosMantle = {}
-  gear.ArtiosMantle.PhysReady = {name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Acc.+20','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10'}}
+  gear.ArtiosMantle.PhysReady = {name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10'}}
 
 	-- Set up Jug Pet cycling and keybind Ctrl+F7
 	-- INPUT PREFERRED JUG PETS HERE
@@ -101,7 +101,7 @@ function init_gear_sets()
   sets.defense.PDT = {
     ammo="Staunch Tathlum +1",
     head="Genmei Kabuto", neck="Loricate Torque +1", ear1="Sanare Earring", ear2="Handler's Earring +1",
-    body="Jumalik Mail", hands="Macabre Gauntlets +1", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
+    body="Tartarus Platemail", hands="Macabre Gauntlets +1", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
     back="Moonlight Cape", waist="Flume Belt +1", legs="Tali'ah Seraweels +2", feet="Nukumi Ocreae +1"}
 
   sets.defense.PetPDT = {
@@ -157,81 +157,81 @@ function init_gear_sets()
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 
 	-- MELEE (SINGLE-WIELD) SETS
-	sets.engaged = {main="Izizoeksi", ammo="Ginsen",
+	sets.engaged = {main="Izizoeksi", ammo="Aurgelmir Orb",
 		head="Meghanada Visor +2", neck="Asperity Necklace", ear1="Brutal Earring", ear2="Sherida Earring",
-		body="Mes. Haubergeon", hands="Acro Gauntlets", ring1="Petrov Ring", ring2="Epona's Ring",
+		body="Tartarus Platemail", hands="Acro Gauntlets", ring1="Petrov Ring", ring2="Epona's Ring",
 		back="Ground. Mantle +1", waist="Windbuffet Belt +1", legs="Meghanada Chausses +2", feet="Valorous Greaves"}
 
 	sets.engaged.SomeAcc = {ammo="Falcon Eye",
 		head=gear.valorous_wsd_head, neck="Defiant Collar", ear1="Brutal Earring", ear2="Sherida Earring",
-		body="Mes. Haubergeon", hands="Leyline Gloves", ring1="Petrov Ring", ring2="Epona's Ring",
+		body="Tartarus Platemail", hands="Leyline Gloves", ring1="Petrov Ring", ring2="Epona's Ring",
 		back="Letalis Mantle", waist="Windbuffet Belt +1", legs="Meghanada Chausses +2", feet="Valorous Greaves"}
 
 	sets.engaged.Acc = {ammo="Falcon Eye",
 		head=gear.valorous_wsd_head, neck="Combatant's Torque", ear1="Zennaroi Earring", ear2="Brutal Earring",
-		body="Mes. Haubergeon", hands="Leyline Gloves", ring1="Petrov Ring", ring2="Epona's Ring",
+		body="Tartarus Platemail", hands="Leyline Gloves", ring1="Petrov Ring", ring2="Epona's Ring",
 		back="Letalis Mantle", waist="Olseni Belt", legs="Flamma Dirs +2", feet="Valorous Greaves"}
 
 	sets.engaged.FullAcc = {ammo="Falcon Eye",
 		head=gear.valorous_wsd_head, neck="Combatant's Torque", ear1="Zennaroi Earring", ear2="Telos Earring",
-		body="Mes. Haubergeon", hands="Leyline Gloves", ring1="Ramuh Ring +1", ring2="Ramuh Ring +1",
+		body="Tartarus Platemail", hands="Leyline Gloves", ring1="Ramuh Ring +1", ring2="Ramuh Ring +1",
 		back="Ground. Mantle +1", waist="Olseni Belt", legs="Flamma Dirs +2", feet="Valorous Greaves"}
 
-	sets.engaged.Fodder = {ammo="Ginsen",
+	sets.engaged.Fodder = {ammo="Aurgelmir Orb",
 		head=gear.valorous_wsd_head, neck="Asperity Necklace", ear1="Trux Earring", ear2="Brutal Earring",
-		body="Mes. Haubergeon", hands="Acro Gauntlets", ring1="Petrov Ring", ring2="Epona's Ring",
+		body="Tartarus Platemail", hands="Acro Gauntlets", ring1="Petrov Ring", ring2="Epona's Ring",
 		back="Bleating Mantle", waist="Windbuffet Belt +1", legs="Meghanada Chausses +2", feet="Valorous Greaves"}
 
 	-- MELEE (SINGLE-WIELD) HYBRID SETS
 	sets.engaged.PDT = {ammo="Staunch Tathlum +1",
 		head="Genmei Kabuto", neck="Loricate Torque +1", ear1="Brutal Earring", ear2="Sherida Earring",
-		body="Jumalik Mail", hands="Buremte Gloves", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
+		body="Tartarus Platemail", hands="Buremte Gloves", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
 		back="Moonlight Cape", waist="Flume Belt +1", legs="Meghanada Chausses +2", feet="Valorous Greaves"}
 
 	sets.engaged.SomeAcc.PDT = {ammo="Falcon Eye",
 		head="Genmei Kabuto", neck="Loricate Torque +1", ear1="Brutal Earring", ear2="Sherida Earring",
-		body="Jumalik Mail", hands="Buremte Gloves", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
+		body="Tartarus Platemail", hands="Buremte Gloves", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
 		back="Moonlight Cape", waist="Flume Belt +1", legs="Meghanada Chausses +2", feet="Valorous Greaves"}
 
 	sets.engaged.Acc.PDT = {ammo="Falcon Eye",
 		head=gear.valorous_wsd_head, neck="Loricate Torque +1", ear1="Brutal Earring", ear2="Sherida Earring",
-		body="Jumalik Mail", hands="Buremte Gloves", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
+		body="Tartarus Platemail", hands="Buremte Gloves", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
 		back="Moonlight Cape", waist="Flume Belt +1", legs="Meghanada Chausses +2", feet="Valorous Greaves"}
 
 	sets.engaged.FullAcc.PDT = {ammo="Falcon Eye",
 		head=gear.valorous_wsd_head, neck="Loricate Torque +1", ear1="Brutal Earring", ear2="Sherida Earring",
-		body="Jumalik Mail", hands="Buremte Gloves", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
+		body="Tartarus Platemail", hands="Buremte Gloves", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
 		back="Moonlight Cape", waist="Flume Belt +1", legs="Meghanada Chausses +2", feet="Valorous Greaves"}
 
 	sets.engaged.Fodder.PDT = {ammo="Staunch Tathlum +1",
 		head=gear.valorous_wsd_head, neck="Loricate Torque +1", ear1="Brutal Earring", ear2="Sherida Earring",
-		body="Jumalik Mail", hands="Buremte Gloves", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
+		body="Tartarus Platemail", hands="Buremte Gloves", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
 		back="Moonlight Cape", waist="Flume Belt +1", legs="Meghanada Chausses +2", feet="Valorous Greaves"}
 
 	-- MELEE (DUAL-WIELD) SETS FOR DNC AND NIN SUBJOB
-	sets.engaged.DW = {main="Izizoeksi", sub="Hunahpu", ammo="Ginsen",
+	sets.engaged.DW = {main="Izizoeksi", sub="Hunahpu", ammo="Aurgelmir Orb",
 		head="Gavialis Helm", neck="Combatant's Torque", ear1="Dudgeon Earring", ear2="Heartseeker Earring",
 		body="Tartarus Platemail", hands="Meg. Gloves +2", ring1="Petrov Ring", ring2="Epona's Ring",
 		back="Ground. Mantle +1", waist="Reiki Yotai", legs="Meghanada Chausses +2", feet="Meg. Jam. +2"}
 
 	sets.engaged.DW.SomeAcc = {ammo="Falcon Eye",
 		head=gear.valorous_wsd_head, neck="Defiant Collar", ear1="Dudgeon Earring", ear2="Heartseeker Earring",
-		body="Meg. Cuirie +2", hands="Leyline Gloves", ring1="Petrov Ring", ring2="Epona's Ring",
+		body="Tartarus Platemail", hands="Leyline Gloves", ring1="Petrov Ring", ring2="Epona's Ring",
 		back="Letalis Mantle", waist="Windbuffet Belt +1", legs="Meghanada Chausses +2", feet="Valorous Greaves"}
 
 	sets.engaged.DW.Acc = {ammo="Falcon Eye",
 		head="Meghanada Visor +2", neck="Combatant's Torque", ear1="Zennaroi Earring", ear2="Brutal Earring",
-		body="Mes. Haubergeon", hands="Leyline Gloves", ring1="Petrov Ring", ring2="Epona's Ring",
+		body="Tartarus Platemail", hands="Leyline Gloves", ring1="Petrov Ring", ring2="Epona's Ring",
 		back="Letalis Mantle", waist="Grunfeld Rope", legs="Flamma Dirs +2", feet="Valorous Greaves"}
 
 	sets.engaged.DW.FullAcc = {ammo="Falcon Eye",
 		head=gear.valorous_wsd_head, neck="Combatant's Torque", ear1="Zennaroi Earring", ear2="Telos Earring",
-		body="Mes. Haubergeon", hands="Leyline Gloves", ring1="Ramuh Ring +1", ring2="Ramuh Ring +1",
+		body="Tartarus Platemail", hands="Leyline Gloves", ring1="Ramuh Ring +1", ring2="Ramuh Ring +1",
 		back="Ground. Mantle +1", waist="Olseni Belt", legs="Flamma Dirs +2", feet="Valorous Greaves"}
 
-	sets.engaged.DW.Fodder = {ammo="Ginsen",
+	sets.engaged.DW.Fodder = {ammo="Aurgelmir Orb",
 		head=gear.valorous_wsd_head, neck="Asperity Necklace", ear1="Dudgeon Earring", ear2="Heartseeker Earring",
-		body="Mes. Haubergeon", hands="Acro Gauntlets", ring1="Petrov Ring", ring2="Epona's Ring",
+		body="Tartarus Platemail", hands="Acro Gauntlets", ring1="Petrov Ring", ring2="Epona's Ring",
 		back="Bleating Mantle", waist="Shetal Stone", legs="Meghanada Chausses +2", feet="Valorous Greaves"}
 
 	-- MELEE (DUAL-WIELD) HYBRID SETS
@@ -475,10 +475,10 @@ function init_gear_sets()
     main=gear.Kumbhakarna.Acc1, sub=gear.Kumbhakarna.Acc2, ammo="Demonry Core",
 		head=gear.EmichoCoronet.C, neck="Adad Amulet", ear1="Enmerkar Earring", ear2="Domesticator's Earring",
 		body=gear.EmichoHaubert.D, hands="Nukumi Manoplas +1", ring1="Varar Ring +1", ring2="Varar Ring +1",
-		back=gear.PastoralistsMantle.PetDT, waist="Incarnation Sash", legs=gear.ValorousHose.MagicReady, feet=gear.ValorousGreaves.PhysReady}
+		back="Pastoralist's Mantle", waist="Incarnation Sash", legs=gear.ValorousHose.MagicReady, feet=gear.ValorousGreaves.PhysReady}
 
 	sets.midcast.Pet.ReadyRecast = {legs="Desultor Tassets"}
-	sets.midcast.Pet.ReadyRecastDW = {sub="Charmer's Merlin", legs="Desultor Tassets"}
+	sets.midcast.Pet.ReadyRecastDW = {legs="Desultor Tassets"}
 
 	sets.midcast.Pet.Neutral = {head="Totemic Helm +1"}
 	sets.midcast.Pet.Favorable = {head="Nukumi Cabasset"}
