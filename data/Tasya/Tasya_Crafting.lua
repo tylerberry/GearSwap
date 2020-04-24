@@ -4,9 +4,9 @@
 --Add Gathering Sets
 
 sets.Fishing = {
-  range="Ebisu Fishing Rod",
+  range="Lu Shang's Fishing Rod",
   head="Tlahtlamah Glasses", neck="Fisher's Torque",
-  body="Fisherman's Smock", hands="Kachina Gloves", ring1="Noddy Ring", ring2=="Puffin Ring",
+  body="Fisherman's Smock", hands="Kachina Gloves", ring1="Noddy Ring", ring2="Puffin Ring",
   legs="Angler's Hose", feet="Waders"} -- waist="Fisher's Rope"
 
 --[[
