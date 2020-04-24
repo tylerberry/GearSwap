@@ -458,8 +458,8 @@ function init_gear_sets()
   sets.midcast.RA = {
     ammo=gear.Bullet.RA,
     head="Meghanada Visor +2", neck="Iskur Gorget", ear1="Telos Earring", ear2="Enervating Earring",
-    body="Mummu Jacket +2", hands=gear.CarmineFingerGauntletsPlus1.D, ring1="Dingir Ring", ring2="Ilabrat Ring",
-    back=gear.CamulussMantle.AGIWSD, waist="Yemaya Belt", legs="Malevolence Tights", feet="Meghanada Jambeaux +2"} -- back=gear.CamulussMantle.RangedTP
+    body="Malignance Tabard", hands=gear.CarmineFingerGauntletsPlus1.D, ring1="Dingir Ring", ring2="Ilabrat Ring",
+    back=gear.CamulussMantle.AGIWSD, waist="Yemaya Belt", legs="Malignance Tights", feet="Meghanada Jambeaux +2"} -- back=gear.CamulussMantle.RangedTP
 
   sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
     hands="Meghanada Gloves +2", -- body="Laksamana's Frac +3", ring1="Regal Ring"
