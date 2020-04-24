@@ -108,7 +108,7 @@ function init_gear_sets()
 	--------------------------------------
 
   sets.engaged = {
-    ammo="Ginsen",
+    ammo="Aurgelmir Orb",
     head="Flamma Zucchetto +2", neck="Asperity Necklace", ear1="Brutal Earring", ear2="Cessance Earring",
     body=gear.valorous_wsd_body, hands=gear.valorous_acc_hands, ring1="Petrov Ring", ring2="Niqmaddu Ring",
     back="Cichol's Mantle", waist="Ioskeha Belt", legs="Sulevia Cuisses +2", feet="Flamma Gambieras +2"}
