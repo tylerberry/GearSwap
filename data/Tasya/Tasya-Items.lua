@@ -42,12 +42,10 @@ gear.Vampirism = {}
 gear.Vampirism.High1 = {name="Vampirism", augments={'STR+8','INT+9','"Occult Acumen"+8','DMG:+14'}}
 gear.Vampirism.High2 = {name="Vampirism", augments={'STR+9','INT+8','"Occult Acumen"+9','DMG:+13'}}
 
----- Escha Zi'Tah weapons.
-
-gear.NibiruCudgel = {}
-gear.NibiruCudgel.B = {name="Nibiru Cudgel", augments={'MP+50','INT+10','"Mag.Atk.Bns."+15'}}
-
 ---- Escha Ru'Aun weapons.
+
+gear.Compensator = {}
+gear.Compensator.D = {name="Compensator", augments={'DMG:+15','Rng.Atk.+15','"Mag.Atk.Bns."+15'}}
 
 gear.Espiritus = {}
 gear.Espiritus.B = {name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%'}}
@@ -58,6 +56,9 @@ gear.Ichigohitofuri.B = {name="Ichigohitofuri", augments={'DMG:+30','STR+20','Ac
 gear.Kali = {}
 gear.Kali.A = {name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15'}}
 gear.Kali.C = {name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}}
+
+gear.Lathi = {}
+gear.Lathi.C = {name="Lathi", augments={'INT+15','"Mag.Atk.Bns."+15','Mag. Acc.+15'}}
 
 gear.Midnights = {}
 gear.Midnights.D = {name="Midnights", augments={'Pet: Attack+25','Pet: Accuracy+25','Pet: Damage taken -3%'}}
@@ -80,8 +81,9 @@ gear.Gada = {}
 gear.Gada.Enh = {name="Gada", augments={'Enh. Mag. eff. dur. +5','VIT+5','Mag. Acc.+9','DMG:+8'}}
 
 gear.Grioavolr = {}
+gear.Grioavolr.FC = {name="Grioavolr", augments={'"Fast Cast"+7','MND+4','"Mag.Atk.Bns."+15','Magic Damage +2'}}
 gear.Grioavolr.MAB = {name="Grioavolr", augments={'Magic burst dmg.+4%','INT+13','Mag. Acc.+30','"Mag.Atk.Bns."+26'}}
-gear.Grioavolr.MagicBP = {name="Grioavolr", augments={'Blood Pact Dmg.+6','Pet: Mag. Acc.+1','Pet: "Mag.Atk.Bns."+25','DMG:+3'}}
+gear.Grioavolr.MagicBP = {name="Grioavolr", augments={'Blood Pact Dmg.+10','Pet: "Mag.Atk.Bns."+24'}}
 
 gear.Holliday = {}
 gear.Holliday.MAB = {name="Holliday", augments={'"Mag.Atk.Bns."+20','MND+6','Rng.Atk.+22','DMG:+17'}}
@@ -206,6 +208,11 @@ gear.EschiteGreaves.A = {name="Eschite Greaves", augments={'HP+80','Enmity+7','P
 gear.PsyclothLappas = {}
 gear.PsyclothLappas.D = {name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7'}}
 
+-- Pursuers armor.
+
+gear.PursuersGaiters = {}
+gear.PursuersGaiters.D = {name="Pursuer's Gaiters", augments={'Rng.Acc.+10','"Rapid Shot"+10','"Recycle"+15'}}
+
 -- Rawhide armor.
 
 gear.RawhideMask = {}
@@ -218,7 +225,7 @@ gear.RawhideGloves = {}
 gear.RawhideGloves.A = {name="Rawhide Gloves", augments={'DEX+10','STR+7','INT+7'}}
 
 gear.RawhideTrousers = {}
-gear.RawhideTrousers.A = {name="Rawhide Trousers", augments={'DEX+10','STR+7','INT+7'}}
+gear.RawhideTrousers.D = {name="Rawhide Trousers", augments={'MP+50','"Fast Cast"+5','"Refresh"+1'}}
 
 gear.RawhideBoots = {}
 gear.RawhideBoots.D = {name="Rawhide Boots", augments={'STR+10','Attack+15','"Store TP"+5'}}
@@ -250,8 +257,8 @@ gear.AdhemarJacketPlus1.D = {name="Adhemar Jacket +1", augments={'HP+105','"Fast
 gear.AdhemarWristbandsPlus1 = {}
 gear.AdhemarWristbandsPlus1.B = {name="Adhemar Wristbands +1", augments={'STR+12','DEX+12','Attack+20'}}
 
-gear.AdhemarKecks = {}
-gear.AdhemarKecks.C = {name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15'}}
+gear.AdhemarKecksPlus1 = {}
+gear.AdhemarKecksPlus1.D = {name="Adhemar Kecks +1", augments={'AGI+12','"Rapid Shot"+13','Enmity-6'}}
 
 ---- Amalric armor.
 
@@ -290,6 +297,9 @@ gear.ArgosyCelata.A = {name="Argosy Celata", augments={'STR+10','DEX+10','Attack
 
 gear.CarmineMaskPlus1 = {}
 gear.CarmineMaskPlus1.D = {name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4'}}
+
+gear.CarmineFingerGauntletsPlus1 = {}
+gear.CarmineFingerGauntletsPlus1.D = {name="Carmine Finger Gauntlets +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6'}}
 
 gear.CarmineCuissesPlus1 = {}
 gear.CarmineCuissesPlus1.D = {name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}}
@@ -367,6 +377,7 @@ gear.HerculeanGloves.Refresh = {name="Herculean Gloves", augments={'"Mag.Atk.Bns
 gear.HerculeanGloves.Waltz = {name="Herculean Gloves", augments={'Accuracy+3','"Waltz" potency +11%','AGI+6'}}
 
 gear.HerculeanTrousers = {}
+gear.HerculeanTrousers.MagicWSD = {name="Herculean Trousers", augments={'"Mag.Atk.Bns."+4','Weapon skill damage +5%','MND+3','Mag. Acc.+11'}}
 gear.HerculeanTrousers.HybridWhy = {name="Herculean Trousers", augments={'Pet: Accuracy+21 Pet: Rng. Acc.+21','Accuracy+18','Accuracy+14 Attack+14','Mag. Acc.+20 "Mag.Atk.Bns."+20'}}
 
 gear.HerculeanBoots = {}
@@ -414,7 +425,9 @@ gear.ValorousMitts = {}
 gear.ValorousMitts.PhysReady = {name="Valorous Mitts", augments={'Pet: Attack+26 Pet: Rng.Atk.+26','Pet: Phys. dmg. taken -4%','Pet: Accuracy+12 Pet: Rng. Acc.+12'}}
 
 gear.ValorousHose = {}
-gear.ValorousHose.PhysReady = {name="Valorous Hose", augments={'Pet Attack+28 Pet Rng.Atk.+28','Pet Subtle Blow+10','Pet STR+12','Pet Accuracy+9 Pet Rng. Acc.+9'}}
+gear.ValorousHose.DA = {name="Valorous Hose", augments={'Attack+19','"Dbl.Atk."+5','STR+7'}}
+gear.ValorousHose.WSD = {name="Valorous Hose", augments={'Accuracy+27','Weapon skill damage +4%'}}
+gear.ValorousHose.PhysReady = {name="Valorous Hose", augments={'Pet: "Subtle Blow"+9','Pet: STR+14','Pet: Accuracy+15 Pet: Rng. Acc.+15','Pet: Attack+13 Pet: Rng.Atk.+13'}}
 gear.ValorousHose.MagicReady = {name="Valorous Hose", augments={'Pet Mag.Atk.Bns.+24','Pet Subtle Blow+10','Pet INT+15','Pet Accuracy+4 Pet Rng. Acc.+4','Pet Attack+6 Pet Rng.Atk.+6'}}
 
 gear.ValorousGreaves = {}
