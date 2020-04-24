@@ -4,10 +4,10 @@
 
 --[[
     gs c toggle LuzafRing -- Toggles use of Luzaf Ring on and off
-    
+
     Offense mode is melee or ranged.  Used ranged offense mode if you are engaged
     for ranged weaponskills, but not actually meleeing.
-    
+
     Weaponskill mode, if set to 'Normal', is handled separately for melee and ranged weaponskills.
 --]]
 
@@ -29,14 +29,14 @@ function job_setup()
 	state.LuzafRing = M(true, "Luzaf's Ring")
     -- Whether a warning has been given for low ammo
     state.warned = M(false)
-	
+
 	autows = 'Leaden Salute'
 	rangedautows = 'Last Stand'
 	autofood = 'Sublime Sushi'
 	ammostock = 198
 
     define_roll_values()
-	
+
 	init_job_states({"Capacity","AutoRuneMode","AutoTrustMode","AutoWSMode","AutoShadowMode","AutoFoodMode","RngHelper","AutoStunMode","AutoDefenseMode","LuzafRing","AutoBuffMode",},{"AutoSambaMode","Weapons","OffenseMode","RangedMode","WeaponskillMode","ElementalMode","IdleMode","Passive","RuneElement","CompensatorMode","TreasureMode",})
 end
 
@@ -70,7 +70,7 @@ function job_precast(spell, spellMap, eventArgs)
 			return
 		end
     end
-	
+
     if spell.action_type == 'Ranged Attack' or spell.type == 'WeaponSkill' or spell.type == 'CorsairShot' then
         do_bullet_checks(spell, spellMap, eventArgs)
     end
@@ -95,7 +95,7 @@ end
 function job_self_command(commandArgs, eventArgs)
 		if commandArgs[1]:lower() == 'elemental' and commandArgs[2]:lower() == 'quickdraw' then
 			windower.chat.input('/ja "'..elements.quickdraw[state.ElementalMode.Value]..' Shot" <t>')
-			eventArgs.handled = true			
+			eventArgs.handled = true
 		end
 end
 
@@ -114,7 +114,7 @@ function job_aftercast(spell, spellMap, eventArgs)
 		end
         display_roll_info(spell)
 	elseif spell.type == 'CorsairShot' then
-		equip({ammo=gear.RAbullet})
+		equip({ammo=gear.Bullet.RA})
     end
 end
 
@@ -153,7 +153,7 @@ function job_post_precast(spell, spellMap, eventArgs)
 	if spell.type == 'WeaponSkill' then
 		local WSset = standardize_set(get_precast_set(spell, spellMap))
 		local wsacc = check_ws_acc()
-		
+
 		if (WSset.ear1 == "Moonshade Earring" or WSset.ear2 == "Moonshade Earring") then
 			-- Replace Moonshade Earring if we're at cap TP
 			if get_effective_player_tp(spell, WSset) > 3200 then
@@ -267,37 +267,37 @@ end
 function do_bullet_checks(spell, spellMap, eventArgs)
     local bullet_name
     local bullet_min_count = 1
-    
+
     if spell.type == 'WeaponSkill' then
         if spell.skill == "Marksmanship" then
             if elemental_obi_weaponskills:contains(spell.name) then
                 -- magical weaponskills
-                bullet_name = gear.MAbullet
+                bullet_name = gear.Bullet.MagicWS
             else
 				-- physical weaponskills
-				bullet_name = gear.WSbullet
+				bullet_name = gear.Bullet.PhysWS
             end
         else
             -- Ignore non-ranged weaponskills
             return
         end
     elseif spell.type == 'CorsairShot' then
-        bullet_name = gear.QDbullet
+        bullet_name = gear.Bullet.QuickDraw
     elseif spell.action_type == 'Ranged Attack' then
-        bullet_name = gear.RAbullet
+        bullet_name = gear.Bullet.RA
         if buffactive['Triple Shot'] then
             bullet_min_count = 3
         end
     end
-  
+
 	local available_bullets = count_available_ammo(bullet_name)
-	
+
   -- If no ammo is available, give appropriate warning and cancel.
     if not (available_bullets > 0) then
         if spell.type == 'CorsairShot' and player.equipment.ammo ~= 'empty' then
             add_to_chat(217, 'No Quick Draw ammo available, using equipped ammo: ('..player.equipment.ammo..')')
             return
-        elseif spell.type == 'WeaponSkill' and (player.equipment.ammo == gear.RAbullet or player.equipment.ammo == gear.WSbullet or player.equipment.ammo == gear.MAbullet) then
+        elseif spell.type == 'WeaponSkill' and (player.equipment.ammo == gear.Bullet.RA or player.equipment.ammo == gear.Bullet.PhysWS or player.equipment.ammo == gear.Bullet.MagicWS) then
             add_to_chat(217, 'No weaponskill ammo available, using equipped ammo: ('..player.equipment.ammo..')')
             return
         else
@@ -306,14 +306,14 @@ function do_bullet_checks(spell, spellMap, eventArgs)
             return
         end
     end
-    
+
     -- Don't allow shooting or weaponskilling with ammo reserved for quick draw.
-    if spell.type ~= 'CorsairShot' and bullet_name == gear.QDbullet and (available_bullets <= bullet_min_count) then
+    if spell.type ~= 'CorsairShot' and bullet_name == gear.Bullet.QuickDraw and (available_bullets <= bullet_min_count) then
         add_to_chat(217, 'No ammo will be left for Quick Draw.  Cancelling.')
         eventArgs.cancel = true
         return
     end
-    
+
     -- Low ammo warning.
     if spell.type ~= 'CorsairShot' and (available_bullets > 0) and (available_bullets <= options.ammo_warning_limit) then
         local msg = '****  LOW AMMO WARNING: '..bullet_name..' ****'
@@ -322,7 +322,7 @@ function do_bullet_checks(spell, spellMap, eventArgs)
         for i = 1, #msg do
             border = border .. "*"
         end
-        
+
         add_to_chat(217, border)
         add_to_chat(217, msg)
         add_to_chat(217, border)
