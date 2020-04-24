@@ -1,8 +1,30 @@
-PLEASE DO NOT MESSAGE ME ABOUT ANYTHING THIRD PARTY IN GAME, however feel free to send me a way to contact you outside of game,
-	through	the game, and I'm happy to help, my preferred way of being contact is Discord, my Stream discord is here:
-	https://discord.gg/ug6xtvQ
+PLEASE DO NOT MESSAGE ME ABOUT ANYTHING THIRD PARTY IN GAME
+
+PLEASE DO NOT MESSAGE ME ABOUT ANYTHING THIRD PARTY IN GAME
+
+PLEASE DO NOT MESSAGE ME ABOUT ANYTHING THIRD PARTY IN GAME
+
+PLEASE DO NOT MESSAGE ME ABOUT ANYTHING THIRD PARTY IN GAME
+
+PLEASE DO NOT MESSAGE ME ABOUT ANYTHING THIRD PARTY IN GAME
+
+PLEASE DO NOT MESSAGE ME ABOUT ANYTHING THIRD PARTY IN GAME
+
+PLEASE DO NOT MESSAGE ME ABOUT ANYTHING THIRD PARTY IN GAME
+
+PLEASE DO NOT MESSAGE ME ABOUT ANYTHING THIRD PARTY IN GAME
+
+PLEASE DO NOT MESSAGE ME ABOUT ANYTHING THIRD PARTY IN GAME
+
+PLEASE DO NOT MESSAGE ME ABOUT ANYTHING THIRD PARTY IN GAME
+
+You will be either ignored or blacklisted if you message multiple times.
+
+Feel free to send me a way to contact you outside of game,and I'm happy to help, my preferred way of being contacted is Discord, my Stream discord is here: https://discord.gg/ug6xtvQ
 
 Setting up my Gearswaps and Github updating.
+
+0.) DO NOT MESSAGE ME ABOUT ANYTHING THIRD PARTY IN GAME.
 
 1.) Create a Github account if you don't already have one: https://github.com/join
 
@@ -23,11 +45,11 @@ Setting up my Gearswaps and Github updating.
 6.) Move your old Gearswap folder to the same directory as the new one to merge them,
     make sure not to overwrite any files, choose skip or "do not replace" for any common files.
 
-7.) If you don't have my style Character luas already, then Inside your Gearswap\Data\
+7.) If you don't have my style Character luas already, then inside your Gearswap\Data\
 	folder, first copy, then rename the "Selindrile" folder once for each of your
 	characters' names, you can click Rename.bat and for the first sequence enter:
 	Selindrile, then enter your character's name for new sequence. (If it doesn't work
-	you will have to rename these files namually, then delete Rename.bat in all folders
+	you will have to rename these files manually, then delete Rename.bat in all folders
 	except the Selindrile folder.
 	
 
@@ -46,7 +68,13 @@ Setting up my Gearswaps and Github updating.
 11.) Optional: For full functionality my gearswap and init files do depend on a few other addons that can
     be found in your launcher, I'll list them here: Addons: Shortcuts, Cancel, Itemizer. Plugins: Timers, Run
 
-12.) Semi Optional: For item usage commands to function, you'll likely need to set your time offset (Unless you happen to be in Central 	US time) instructions are found in charactername-globals.
+12.) Read the Cheat Sheet in your Data Folder, feel free to contact me if there's anything you don't understand but again:
+PLEASE DO NOT MESSAGE ME ABOUT ANYTHING THIRD PARTY IN GAME
 
-12.) Read the Cheat Sheet in your Data Folder, feel free to contact me if there's anything you don't understand but again
-	PLEASE DO NOT MESSAGE ME ABOUT ANYTHING THIRD PARTY IN GAME
+PLEASE DO NOT MESSAGE ME ABOUT ANYTHING THIRD PARTY IN GAME
+
+PLEASE DO NOT MESSAGE ME ABOUT ANYTHING THIRD PARTY IN GAME
+
+PLEASE DO NOT MESSAGE ME ABOUT ANYTHING THIRD PARTY IN GAME
+
+PLEASE DO NOT MESSAGE ME ABOUT ANYTHING THIRD PARTY IN GAME
