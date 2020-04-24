@@ -46,15 +46,30 @@ function init_gear_sets()
 	-- - Fix panic button sets to make sense.
 	-- - Look into HP changes on enhancing sets. (Probably largely unavoidable.)
 
+  --------------------------------------
+	-- Gear
+	--------------------------------------
+
   gear.EvasionistsCape = {}
-  gear.EvasionistsCape.Embolden = {name="Evasionist's Cape", augments={'Enmity+6','"Embolden"+14','"Dbl.Atk."+2','Damage taken-3%'}}
+  gear.EvasionistsCape.Embolden = {name="Evasionist's Cape", augments={'"Embolden"+15'}}
 
   gear.OgmasCape = {}
   gear.OgmasCape.Enm = {name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10'}}
   gear.OgmasCape.FC = {name="Ogma's Cape", augments={'HP+60','HP+20','"Fast Cast"+10'}}
 
-  sets.element.Dark = {head="Pixie Hairpin +1", ring2="Archon Ring"}
-  sets.element.Earth = {neck="Quanpur Necklace"}
+  --------------------------------------
+	-- Sets required by Gearswap rules
+	--------------------------------------
+
+	sets.Self_Healing = {neck="Phalaina Locket", hands="Buremte Gloves", ring2="Kunaji Ring", waist="Gishdubar Sash"}
+	sets.Cure_Received = {neck="Phalaina Locket", hands="Buremte Gloves", ring2="Kunaji Ring", waist="Gishdubar Sash"}
+	sets.Self_Refresh = {waist="Gishdubar Sash"}
+
+	sets.Kiting = {legs=gear.CarmineCuissesPlus1.D}
+
+	sets.latent_refresh = {waist="Fucho-no-Obi"}
+	sets.DayIdle = {}
+	sets.NightIdle = {}
 
   --------------------------------------
 	-- Base sets
@@ -100,16 +115,16 @@ function init_gear_sets()
 		ear2="Friomisi Earring", -- ear2="Trux Earring"
 		ring2={name="Supershear Ring", priority=6}})
 
-  -- Capped SIRD, assuming SIRD -10% merits. +50 enmity.
-  sets.Enmity.SIRD = set_combine(sets.Enmity, {
-    ammo="Staunch Tathlum +1",
-    neck="Moonlight Necklace",
-		ear1="Halasz Earring",
-    hands={name="Rawhide Gloves", augments={'DEX+10','STR+7','INT+7'}, priority=5},
-		ring1="Evanescence Ring",
-    waist="Rumination Sash",
-		legs={name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}, priority=2},
-		feet={name="Taeon Boots", augments={'Spell interruption rate down -10%','Phalanx +3'}, priority=1}})
+  -- Capped SIRD at 101%, assuming SIRD -10% merits. +50 enmity.
+  sets.Enmity.SIRD = set_combine(sets.Enmity, {                                                              -- Total: SIRD -91%
+    ammo="Staunch Tathlum +1",                                                                               -- SIRD -11%
+    neck="Moonlight Necklace",                                                                               -- SIRD -15%
+		ear1="Halasz Earring",                                                                                   -- SIRD -5%
+    hands={name="Rawhide Gloves", augments={'DEX+10','STR+7','INT+7'}, priority=5},                          -- SIRD -15%
+		ring1="Evanescence Ring",                                                                                -- SIRD -5%
+    waist="Rumination Sash",                                                                                 -- SIRD -10%
+		legs={name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}, priority=2},     -- SIRD -20%
+		feet={name="Taeon Boots", augments={'Spell interruption rate down -10%','Phalanx +3'}, priority=1}})     -- SIRD -10%
 
   sets.MagicAttack = {
     ammo="Seething Bomblet +1",
@@ -128,6 +143,13 @@ function init_gear_sets()
       body="Vrikodara Jupon", -- ring1="Menelaus's Ring"
       back="Tempered Cape +1", waist="Bishop's Sash", legs=gear.CarmineCuissesPlus1.D}) -- feet="Skaoi Boots"
   end
+
+	--------------------------------------
+	-- Elemental Affinity
+	--------------------------------------
+
+  sets.element.Dark = {head="Pixie Hairpin +1", ring2="Archon Ring"}
+  sets.element.Earth = {neck="Quanpur Necklace"}
 
 	--------------------------------------
 	-- Idle
@@ -243,7 +265,7 @@ function init_gear_sets()
 	--------------------------------------
 
   sets.engaged = {
-    ammo="Ginsen",
+    ammo="Aurgelmir Orb",
     head=gear.AdhemarBonnetPlus1.B, neck="Anu Torque", ear1="Brutal Earring", ear2="Sherida Earring",
     body=gear.AdhemarJacketPlus1.B, hands=gear.AdhemarWristbandsPlus1.B, ring1="Petrov Ring", ring2="Epona's Ring", -- ring1="Niqmaddu Ring"
     back="Bleating Mantle", waist="Windbuffet Belt +1", legs=gear.TaeonTights.TA, feet=gear.HerculeanBoots.TA} -- back=gear.OgmasCape.STP, legs="Samnuha Tights"
@@ -490,7 +512,7 @@ function init_gear_sets()
   sets.precast.FC = {
     range=empty,
     ammo="Sapience Orb",
-    head=gear.CarmineMaskPlus1.D, -- head={name="Runeist's Bandeau +3", priority=3}
+    head={name="Runeist's Bandeau +3", priority=3},
     neck="Orunmila's Torque",
     ear1={name="Etiolation Earring", priority=6},
     ear2={name="Odnowa Earring +1", priority=8},
@@ -568,7 +590,7 @@ function init_gear_sets()
   --------------------------------------
 
   sets.midcast['Enhancing Magic'] = set_combine(sets.midcast.FastRecast, {
-    head=gear.CarmineMaskPlus1.D, neck="Incanter's Torque", ear1="Andoaa Earring", ear2="Augmenting Earring",
+    head=gear.CarmineMaskPlus1.D, neck="Incanter's Torque", ear1="Andoaa Earring", ear2="Mimir Earring",
     body="Manasa Chasuble", hands="Runeist Mitons +1", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
     back="Merciful Cape", waist="Olympus Sash", legs=gear.CarmineCuissesPlus1.D})
 
@@ -625,20 +647,6 @@ function init_gear_sets()
 	sets.buff.Sleep = {head="Frenzy Sallet"}
 	sets.buff.Battuta = {}
 	sets.buff.Embolden = {back=gear.EvasionistsCape.Embolden}
-
-  --------------------------------------
-	-- Sets Used By Gearswap Rules
-	--------------------------------------
-
-	sets.Self_Healing = {neck="Phalaina Locket", hands="Buremte Gloves", ring2="Kunaji Ring", waist="Gishdubar Sash"}
-	sets.Cure_Received = {neck="Phalaina Locket", hands="Buremte Gloves", ring2="Kunaji Ring", waist="Gishdubar Sash"}
-	sets.Self_Refresh = {waist="Gishdubar Sash"}
-
-	sets.Kiting = {legs=gear.CarmineCuissesPlus1.D}
-
-	sets.latent_refresh = {waist="Fucho-no-Obi"}
-	sets.DayIdle = {}
-	sets.NightIdle = {}
 end
 
 -- Select default macro book on initial load or subjob change.
