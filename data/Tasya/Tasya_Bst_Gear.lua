@@ -102,7 +102,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",
     head="Genmei Kabuto", neck="Loricate Torque +1", ear1="Sanare Earring", ear2="Handler's Earring +1",
     body="Tartarus Platemail", hands="Macabre Gauntlets +1", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
-    back="Moonlight Cape", waist="Flume Belt +1", legs="Tali'ah Seraweels +2", feet="Nukumi Ocreae +1"}
+    back="Moonlight Cape", waist="Flume Belt +1", legs="Malignance Tights", feet="Nukumi Ocreae +1"}
 
   sets.defense.PetPDT = {
     ammo="Demonry Core",
