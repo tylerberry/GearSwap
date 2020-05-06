@@ -8,7 +8,7 @@ function user_setup()
 	state.MagicalDefenseMode:options('MDT', 'MDTReraise')
 	state.ResistDefenseMode:options('MEVA')
   state.IdleMode:options('Normal', 'Reraise')
-	state.Weapons:options('Ichigohitofuri', 'ProcWeapon', 'Bow')
+	state.Weapons:options('Ichigohitofuri', 'Masamune', 'Soboro')
 
   -- Additional local binds
   send_command('bind ^` input /ja "Hasso" <me>')
@@ -112,7 +112,8 @@ function init_gear_sets()
 	--------------------------------------
 
 	sets.weapons.Ichigohitofuri = {main="Ichigohitofuri", sub="Utu Grip"}
-	sets.weapons.ProcWeapon = {main="Soboro Sokehiro", sub="Utu Grip"}
+  sets.weapons.Masamune = {main="Donto", sub="Utu Grip"}
+	sets.weapons.Soboro = {main="Soboro Sokehiro", sub="Utu Grip"}
 	--sets.weapons.Bow = {main="Norifusa +1", sub="Utu Grip", range="Cibitshavore", ammo="Eminent Arrow"}
 
   --------------------------------------
@@ -155,10 +156,6 @@ function init_gear_sets()
     neck="Moonbeam Nodowa", ear1="Dedition Earring",
     ring1="Niqmaddu Ring",
     legs="Ryuo Hakama"}
-
-
-
-
 
   sets.engaged.PDT = {
     ammo="Staunch Tathlum +1",
@@ -418,7 +415,7 @@ function init_gear_sets()
   --------------------------------------
 
   sets.precast.FC = {
-    neck="Orunmila's Torque", ear1="Enchanter+ Earring +1", ear2="Loquacious Earring",
+    neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",
     hands="Leyline Gloves", ring1="Lebeche Ring", ring2="Prolix Ring"}
 
   --------------------------------------
@@ -428,12 +425,12 @@ function init_gear_sets()
   sets.midcast.RA = {
     head="Flamma Zucchetto +2", neck="Ocachi Gorget", ear1="Clearview Earring", ear2="Neritic Earring",
     body="Kyujutsugi", hands="Buremte Gloves", ring1="Ilabrat Ring", ring2="Regal Ring",
-    back="Buquwik Cape", waist="Flax Sash", legs="Wakido Haidate +3", feet="Waki. Sune-Ate +1"}
+    back="Buquwik Cape", waist="Flax Sash", legs="Wakido Haidate +3", feet="Wakido Sune-Ate +1"}
 
   sets.midcast.RA.Acc = {
     head="Flamma Zucchetto +2", neck="Combatant's Torque", ear1="Clearview Earring", ear2="Neritic Earring",
     body="Kyujutsugi", hands="Buremte Gloves", ring1="Ilabrat Ring", ring2="Regal Ring",
-    back="Buquwik Cape", waist="Flax Sash", legs="Wakido Haidate +3", feet="Waki. Sune-Ate +1"}
+    back="Buquwik Cape", waist="Flax Sash", legs="Wakido Haidate +3", feet="Wakido Sune-Ate +1"}
 
   --------------------------------------
   -- Midcast: Fast Recast
