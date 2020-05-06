@@ -55,7 +55,7 @@ function init_gear_sets()
     waist="Reiki Yotai", legs=gear.CarmineCuissesPlus1.D}
 
   sets.HPDown = {
-    head="Pixie Hairpin +1", ear1="Mendicant's Earring", ear2="Evans Earring",
+    head="Pixie Hairpin +1", ear1="Mendicant's Earring", -- ear2="Evans Earring",
     body="Jhakri Robe +2", hands="Jhakri Cuffs +2", -- ring1="Mephitas's Ring +1", ring2="Mephitas's Ring",
     back="Swith Cape +1", legs="Shedir Seraweels", feet="Jhakri Pigaches +1"}
 
@@ -86,7 +86,7 @@ function init_gear_sets()
 	sets.Healing_Club = {}
 	sets.Healing_DWClub = {}
 	sets.Cure_Received = {neck="Phalaina Locket", hands="Buremte Gloves", ring2="Kunaji Ring", waist="Gishdubar Sash"}
-	sets.Self_Refresh = {waist="Gishdubar Sash"} -- back="Grapevine Cape"
+	sets.Self_Refresh = {waist="Gishdubar Sash", back="Grapevine Cape"}
 
   --------------------------------------
   -- Base sets
@@ -913,6 +913,13 @@ function init_gear_sets()
   --sets.buff.Enchainment = {body="Luhlaza Jubbah +1"} -- Not currently merited
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
+
+	--------------------------------------
+	-- Consumables etc.
+	--------------------------------------
+
+  organizer_items = {
+    echos="Echo Drops"}
 
   -- FIXME: why does this need to be here? Why is it at bottom?
   sets.defense.NukeLock = sets.midcast['Blue Magic'].Magical
