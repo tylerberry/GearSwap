@@ -96,6 +96,12 @@ function init_gear_sets()
   -- Base sets
   --------------------------------------
 
+  sets.MagicAccuracy = {
+    ammo=gear.Bullet.MagicWS,
+    head=gear.CarmineMaskPlus1.D, neck="Sanctity Necklace", ear1="Dignitary's Earring", ear2="Gwati Earring",
+    body="Malignance Tabard", hands="Mummu Wrists +2", ring1="Stikini Ring +1", ring2="Stikini Ring +1",
+    back=gear.CamulussMantle.MagicWSD, waist="Eschan Stone", legs="Malignance Tights", feet="Mummu Gamashes +2"}
+
   sets.MagicAttackNW = {
     ammo=gear.Bullet.MagicWS,
     head=gear.HerculeanHelm.MAB, neck="Baetyl Pendant", ear1="Novio Earring", ear2="Friomisi Earring",
@@ -412,13 +418,8 @@ function init_gear_sets()
     body="Emet Harness +1", hands=gear.herculean_dt_hands, ring1="Defending Ring", ring2=gear.DarkRing.PDT,
     back="Moonlight Cape", waist="Flume Belt +1", legs=gear.CarmineCuissesPlus1.D, feet="Chasseur's Bottes +1"}
 
-  sets.precast.CorsairShot['Light Shot'] = {
-    ammo=gear.Bullet.QuickDraw,
-    head="Mummu Bonnet +2", neck="Sanctity Necklace", ear1="Dignitary's Earring", ear2="Gwati Earring", -- head="Laksamana Tricorne +3"
-    body="Mummu Jacket +2", hands="Mummu Wrists +2", ring1="Stikini Ring +1", ring2="Regal Ring", -- hands="Laksamana Gants +3",
-    back=gear.CamulussMantle.MagicWSD, waist="Eschan Stone", legs="Mummu Kecks +2", feet="Mummu Gamashes +2"} -- feet="Laksamana Boots +3"
-
-  sets.precast.CorsairShot['Dark Shot'] = set_combine(sets.precast.CorsairShot['Light Shot'], {feet="Chasseur's Bottes +1"})
+  sets.precast.CorsairShot['Light Shot'] = set_combine(sets.MagicAccuracy, {ammo=gear.Bullet.QuickDraw})
+  sets.precast.CorsairShot['Dark Shot'] = set_combine(sets.precast.CorsairShot['Light Shot'], {}) -- feet="Chasseur's Bottes +1"
 
   --------------------------------------
   -- Precast: Snapshot
