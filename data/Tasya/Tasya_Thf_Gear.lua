@@ -284,7 +284,7 @@ function init_gear_sets()
   sets.precast.WS.DEX.Crit.Fodder = set_combine(sets.precast.WS.DEX.Crit, {ring1="Mummu Ring"})
 
   sets.precast.WS.DEX.Crit.SA = set_combine(sets.precast.WS.DEX.Crit, {
-    body="Meghanada Cuirie +2", ring2="Ramuh Ring +1"}) -- ring2="Regal Ring", back=gear.ToutatissCape.WSD
+    body="Meghanada Cuirie +2", ring2="Regal Ring"}) -- back=gear.ToutatissCape.WSD
 
   sets.precast.WS.DEX.Crit.TA = set_combine(sets.precast.WS.DEX.Crit.SA, {})
   sets.precast.WS.DEX.Crit.SATA = set_combine(sets.precast.WS.DEX.Crit.SA, {})
@@ -508,33 +508,37 @@ function init_gear_sets()
   sets.precast.JA['Sneak Attack'] = {}
   sets.precast.JA['Trick Attack'] = {}
 
-  -- Actions we want to use to tag TH.
-  sets.precast.Step = {
-    ammo="Falcon Eye",
-    head="Dampening Tam", neck="Combatant's Torque", ear1="Telos Earring", ear2="Digni. Earring",
-    body="Mummu Jacket +2", hands=gear.AdhemarWristbandsPlus1.B, ring1="Ramuh Ring +1", ring2="Ramuh Ring +1",
-    back=gear.da_jse_back, waist="Olseni Belt", legs="Mummu Kecks +2", feet=gear.herculean_acc_feet}
+  if player.sub_job == 'DNC' then
+    sets.precast.Step = {
+      ammo="Falcon Eye",
+      head="Dampening Tam", neck="Combatant's Torque", ear1="Telos Earring", ear2="Dignitary's Earring",
+      body="Mummu Jacket +2", hands=gear.AdhemarWristbandsPlus1.B, ring1="Ramuh Ring +1", ring2="Ramuh Ring +1",
+      back=gear.da_jse_back, waist="Olseni Belt", legs="Mummu Kecks +2", feet=gear.herculean_acc_feet}
 
-  sets.precast.JA['Violent Flourish'] = {
-    ammo="Falcon Eye",
-    head="Dampening Tam", neck="Combatant's Torque", ear1="Telos Earring", ear2="Digni. Earring",
-    body="Mummu Jacket +2", hands=gear.AdhemarWristbandsPlus1.B, ring1="Ramuh Ring +1", ring2="Ramuh Ring +1",
-    back=gear.da_jse_back, waist="Olseni Belt", legs="Mummu Kecks +2", feet=gear.herculean_acc_feet}
+    sets.precast.JA['Violent Flourish'] = {
+      ammo="Falcon Eye",
+      head="Dampening Tam", neck="Combatant's Torque", ear1="Telos Earring", ear2="Dignitary's Earring",
+      body="Mummu Jacket +2", hands=gear.AdhemarWristbandsPlus1.B, ring1="Ramuh Ring +1", ring2="Ramuh Ring +1",
+      back=gear.da_jse_back, waist="Olseni Belt", legs="Mummu Kecks +2", feet=gear.herculean_acc_feet}
 
-	sets.precast.JA['Animated Flourish'] = set_combine(sets.TreasureHunter, {})
-	sets.precast.JA.Provoke = set_combine(sets.TreasureHunter, {})
+  	sets.precast.JA['Animated Flourish'] = set_combine(sets.TreasureHunter, {})
 
-  -- Waltz set (chr and vit)
-  sets.precast.Waltz = {
-    ammo="Yamarang",
-    head="Anwig Salade", neck="Unmoving Collar +1", ear1="Enchntr. Earring +1", ear2="Handler's Earring +1",
-    body=gear.herculean_waltz_body, hands=gear.HerculeanGloves.Waltz, ring1="Defending Ring", ring2="Valseur's Ring",
-    back="Moonlight Cape", waist="Chaac Belt", legs="Dashing Subligar", feet=gear.RawhideBoots.D}
+    -- Waltz set (chr and vit)
+    sets.precast.Waltz = {
+      ammo="Yamarang",
+      head="Anwig Salade", neck="Unmoving Collar +1", ear1="Enchntr. Earring +1", ear2="Handler's Earring +1",
+      body=gear.herculean_waltz_body, hands=gear.HerculeanGloves.Waltz, ring1="Defending Ring", ring2="Valseur's Ring",
+      back="Moonlight Cape", waist="Chaac Belt", legs="Dashing Subligar", feet=gear.RawhideBoots.D}
 
-	sets.Self_Waltz = {body="Passion Jacket", ring1="Asklepian Ring"}
+  	sets.Self_Waltz = {body="Passion Jacket", ring1="Asklepian Ring"}
 
-  -- Don't need any special gear for Healing Waltz.
-  sets.precast.Waltz['Healing Waltz'] = {head="Anwig Salade"}
+    -- Don't need any special gear for Healing Waltz.
+    sets.precast.Waltz['Healing Waltz'] = {head="Anwig Salade"}
+  end
+
+  if player.sub_job == 'WAR' then
+    sets.precast.JA.Provoke = set_combine(sets.TreasureHunter, {})
+  end
 
   --------------------------------------
   -- Precast: Snapshot
