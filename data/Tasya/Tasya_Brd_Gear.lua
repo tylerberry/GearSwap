@@ -65,11 +65,46 @@ function init_gear_sets()
 	-- Idle
 	--------------------------------------
 
-  sets.idle = {
-    main=gear.Kali.C, sub="Genmei Shield", range=gear.Linos.DT, ammo=empty,
-		head="Inyanga Tiara +2", neck="Loricate Torque +1", ear1="Etiolation Earring", ear2="Ethereal Earring",
-		body=gear.KaykausBliautPlus1.D, hands="Inyanga Dastanas +2", ring1="Defending Ring", ring2=gear.DarkRing.PDT,
-		back="Moonlight Cape", waist="Flume Belt +1", legs="Assiduity Pants +1", feet="Inyanga Crackows +2"}
+  if player.sub_job == 'WHM' or player.sub_job == 'RDM' or player.sub_job == 'SCH' then
+    -- Refresh jobs.
+    sets.idle = {
+      main="Daybreak", sub="Genmei Shield", range=gear.Linos.DT, ammo=empty,
+  		head="Inyanga Tiara +2", neck="Bathy Choker +1", ear1="Etiolation Earring", ear2="Hearty Earring",
+  		body=gear.KaykausBliautPlus1.D, hands="Inyanga Dastanas +2", ring1="Stikini Ring +1", ring2="Inyanga Ring",
+  		back="Moonlight Cape", waist="Carrier's Sash", legs="Inyanga Shalwar +2", feet="Inyanga Crackows +2"}
+
+    sets.idle.PDT = {
+      main="Daybreak", sub="Genmei Shield", range=gear.Linos.DT, ammo=empty,
+      head="Inyanga Tiara +2", neck="Loricate Torque +1", ear1="Etiolation Earring", ear2="Hearty Earring",
+      body=gear.KaykausBliautPlus1.D, hands="Inyanga Dastanas +2", ring1="Defending Ring", ring2="Inyanga Ring",
+      back="Moonlight Cape", waist="Carrier Sash", legs="Inyanga Shalwar +2", feet="Inyanga Crackows +2"}
+  elseif player.sub_job == 'NIN' or player.sub_job == 'DNC' then
+    -- Dual wield idle jobs.
+    sets.idle = {
+      main="Daybreak", sub="Odium", range=gear.Linos.DT, ammo=empty,
+      head="Inyanga Tiara +2", neck="Bathy Choker +1", ear1="Etiolation Earring", ear2="Hearty Earring",
+      body="Inyanga Jubbah +2", hands="Inyanga Dastanas +2", ring1="Defending Ring", ring2="Inyanga Ring",
+      back="Moonlight Cape", waist="Carrier's Sash", legs="Inyanga Shalwar +2", feet="Inyanga Crackows +2"}
+
+    sets.idle.PDT = {
+      main="Daybreak", sub="Odium", range=gear.Linos.DT, ammo=empty,
+      head="Inyanga Tiara +2", neck="Loricate Torque +1", ear1="Etiolation Earring", ear2="Hearty Earring",
+      body="Inyanga Jubbah +2", hands="Inyanga Dastanas +2", ring1="Defending Ring", ring2="Inyanga Ring",
+      back="Moonlight Cape", waist="Carrier's Sash", legs="Inyanga Shalwar +2", feet="Inyanga Crackows +2"}
+  else
+    -- Everything else.
+    sets.idle = {
+      main="Daybreak", sub="Genmei Shield", range=gear.Linos.DT, ammo=empty,
+      head="Inyanga Tiara +2", neck="Bathy Choker +1", ear1="Etiolation Earring", ear2="Hearty Earring",
+      body="Inyanga Jubbah +2", hands="Inyanga Dastanas +2", ring1="Defending Ring", ring2="Inyanga Ring",
+      back="Moonlight Cape", waist="Carrier's Sash", legs="Inyanga Shalwar +2", feet="Inyanga Crackows +2"}
+
+    sets.idle.PDT = {
+      main="Daybreak", sub="Genmei Shield", range=gear.Linos.DT, ammo=empty,
+      head="Inyanga Tiara +2", neck="Loricate Torque +1", ear1="Etiolation Earring", ear2="Hearty Earring",
+      body="Inyanga Jubbah +2", hands="Inyanga Dastanas +2", ring1="Defending Ring", ring2="Inyanga Ring",
+      back="Moonlight Cape", waist="Carrier's Sash", legs="Inyanga Shalwar +2", feet="Inyanga Crackows +2"}
+  end
 
 	--------------------------------------
 	-- Defense
@@ -278,24 +313,26 @@ function init_gear_sets()
   -- Precast: Fast Cast
   --------------------------------------
 
-  sets.precast.FC = {                                                                                             -- Total: 76 FC, 9 QC.
+  -- Fast Cast is intentionally overcapped for songs and cures to cover weapon locked casting and healing.
+
+  sets.precast.FC = {                                                                                             -- Total: 78 FC, 9 QC.
     main=gear.Grioavolr.FC, sub="Clerisy Strap +1", range=empty, ammo="Sapience Orb",                             -- 11,  3,    -,   2
-  	head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",      -- 10,  5,    2,   2
+  	head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Malignance Earring", ear2="Loquacious Earring",        -- 10,  5,    4,   2
   	body="Inyanga Jubbah +2", hands="Leyline Gloves", ring1="Lebeche Ring", ring2="Kishar Ring",                  -- 14,  8,    2QC, 4
   	back="Perimede Cape", waist="Witful Belt", legs=gear.KaykausTightsPlus1.B, feet="Chelona Boots +1"}           -- 4QC, 3+QC, 7,   5
 
   -- These Telchine Pigaches have -7% song casting time augment; Gendewitha Gages have -5% song casting time, and Gendewitha Spats have
   -- -4% song casting time.
-	sets.precast.FC.BardSong = {                                                                                    -- Total: 81 FC, 9 QC
+	sets.precast.FC.BardSong = {                                                                                    -- Total: 92 FC, 9 QC
     main=gear.Grioavolr.FC, sub="Clerisy Strap +1", range="Gjallarhorn", ammo=empty,                              -- 11,  3,    -,   -
-  	head=gear.VanyaHood.D, neck="Loricate Torque +1", ear1="Enchanter Earring +1", ear2="Loquacious Earring",     -- 10,  -,    2,   2
+  	head="Fili Calot +1", neck="Orunmila's Torque", ear1="Malignance Earring", ear2="Loquacious Earring",         -- 14,  5,    4,   2
   	body="Inyanga Jubbah +2", hands="Gendewitha Gages +1", ring1="Lebeche Ring", ring2="Kishar Ring",             -- 14,  12,   2QC, 4
   	back="Perimede Cape", waist="Witful Belt", legs="Gendewitha Spats +1", feet=gear.TelchinePigaches.Enh}        -- 4QC, 3+QC, 9,   13
 
   if player.sub_job == "WHM" or player.sub_job == "RDM" or player.sub_job == "SCH" or player.sub_job == "PLD" then
-    sets.precast.FC.Cure = {                                                                                      -- Total: 80 FC, 10 QC
+    sets.precast.FC.Cure = {                                                                                      -- Total: 87 FC, 10 QC
       main=gear.Kali.C, sub="Genmei Shield", range=empty, ammo="Impatiens",                                       -- 7,   -,    -,   2QC
-      head=gear.VanyaHood.D, neck="Loricate Torque +1", ear1="Enchanter Earring +1", ear2="Mendicant's Earring",  -- 10,  -,    2,   5
+      head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Malignance Earring", ear2="Mendicant's Earring",     -- 10,  5,    4,   5
   		body="Inyanga Jubbah +2", hands="Leyline Gloves", ring1="Lebeche Ring", ring2="Kishar Ring",                -- 14,  8,    2QC, 4
       back="Perimede Cape", waist="Witful Belt", legs="Doyen Pants", feet=gear.VanyaClogs.D}                      -- 4QC, 3+QC, 15,  15
   end
@@ -335,8 +372,8 @@ function init_gear_sets()
 
 	sets.midcast.FastRecast = {
     main=gear.Grioavolr.FC, sub="Clerisy Strap +1", range=empty, ammo="Hasty Pinion +1",
-		head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Enchanter Earring +1", ear2="Loquacious Earring",
-		body="Inyanga Jubbah +2", hands="Leyline Gloves", ring1="Defending Ring", ring2="Prolix Ring",
+		head=gear.VanyaHood.D, neck="Orunmila's Torque", ear1="Malignance Earring", ear2="Loquacious Earring",
+		body="Inyanga Jubbah +2", hands="Leyline Gloves", ring1="Prolix Ring", ring2="Kishar Ring",
 		back=gear.IntarabussCape.FC, waist="Witful Belt", legs="Ayanmo Cosciales +2", feet="Gendewitha Galoshes +1"}
 
   --------------------------------------
