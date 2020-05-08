@@ -136,12 +136,12 @@ function init_gear_sets()
     sets.Cure = set_combine(sets.Enmity, {
       neck="Phalaina Locket", ear1="Mendicant's Earring", ear2="Roundel Earring",
       body="Vrikodara Jupon", ring1="Menelaus's Ring", ring2="Stikini Ring +1",
-      back="Tempered Cape +1", waist="Bishop's Sash", legs=gear.CarmineCuissesPlus1.D}) -- feet="Skaoi Boots"
+      back="Tempered Cape +1", waist="Bishop's Sash", legs=gear.CarmineCuissesPlus1.D, feet="Skaoi Boots"})
 
     sets.Cure.DT = set_combine(sets.Enmity.DT, {
       neck="Phalaina Locket", ear1="Mendicant's Earring", ear2="Roundel Earring",
       body="Vrikodara Jupon", -- ring1="Menelaus's Ring"
-      back="Tempered Cape +1", waist="Bishop's Sash", legs=gear.CarmineCuissesPlus1.D}) -- feet="Skaoi Boots"
+      back="Tempered Cape +1", waist="Bishop's Sash", legs=gear.CarmineCuissesPlus1.D, feet="Skaoi Boots"})
   end
 
 	--------------------------------------
@@ -196,18 +196,18 @@ function init_gear_sets()
 
 	sets.defense.PDT_HP = set_combine (sets.defense.PDT, {
     ammo="Staunch Tathlum +1",
-    head="Futhark Bandeau +1", -- ear1="Odnowa Earring +1", ear2="Odnowa Earring"
+    head="Futhark Bandeau +1", ear1="Odnowa Earring", ear2="Odnowa Earring +1",
     back="Moonlight Cape", body="Runeist Coat +1"})
 
 	sets.defense.MDT = {
     ammo="Staunch Tathlum +1", --ammo="Yamarang",
-    head="Erilaz Galea +1", neck="Warder's Charm +1", ear1="Genmei Earring", ear2="Ethereal Earring", -- ear1="Odnowa Earring +1", ear2="Sanare Earring"
+    head="Erilaz Galea +1", neck="Warder's Charm +1", ear1="Odnowa Earring +1", ear2="Sanare Earring"
     body="Runeist Coat +1", hands=gear.HerculeanGloves.PDT, ring1="Defending Ring", ring2="Shadow Ring",
     back="Moonlight Cape", waist="Engraved Belt", legs="Erilaz Leg Guards +1", feet="Erilaz Greaves +1"}
 
 	sets.defense.MDT_HP = set_combine (sets.defense.MDT, {
-    neck="Loricate Torque +1", -- ear2="Odnowa Earring"
-    -- ring1="Moonbeam Ring", ring2="Moonbeam Ring",
+    neck="Loricate Torque +1", ear2="Odnowa Earring",
+    ring2="Moonlight Ring", -- ring1="Moonbeam Ring",
     legs="Erilaz Leg Guards +1"})
 
 	sets.defense.BDT = set_combine(sets.defense.MDT, {})
@@ -219,12 +219,12 @@ function init_gear_sets()
   -- There are options for ear1, as well.
 	sets.defense.MEVA = {
     ammo="Staunch Tathlum +1",
-    head="Turms Cap +1", neck="Warder's Charm +1", ear2="Eabani Earring", -- ear1="Odnowa Earring +1"
+    head="Turms Cap +1", neck="Warder's Charm +1", ear1="Odnowa Earring +1", ear2="Eabani Earring",
     body="Erilaz Surcoat +1", hands="Turms Mittens +1", -- ring1="Purity Ring", ring2="Vengeful Ring"
     back=gear.OgmasCape.Enm, waist="Engraved Belt", legs="Runeist Trousers +1", feet="Turms Leggings +1"}
 
 	sets.defense.MEVA_HP = set_combine (sets.defense.MEVA, {
-    back="Moonlight Cape"}) --ring1="Moonbeam Ring", ring2="Moonbeam Ring"
+    back="Moonlight Cape", ring2="Moonlight Ring"}) --ring1="Moonlight Ring"
 
 	sets.defense.Death = set_combine (sets.defense.MEVA, {
     body="Samnuha Coat", ring1="Eihwaz Ring", ring2="Shadow Ring"})
@@ -319,14 +319,14 @@ function init_gear_sets()
 	sets.precast.WS = {
     ammo="Seething Bomblet +1",
     head=gear.AdhemarBonnetPlus1.B, neck="Caro Necklace", ear1="Brutal Earring", ear2="Sherida Earring",
-    body=gear.AdhemarJacketPlus1.B, hands=gear.HerculeanGloves.TA, ring1="Shukuyu Ring", ring2="Ifrit Ring +1", -- ring1="Niqmaddu Ring", ring2="Regal Ring",
+    body=gear.AdhemarJacketPlus1.B, hands=gear.HerculeanGloves.TA, ring1="Shukuyu Ring", ring2="Regal Ring", -- ring1="Niqmaddu Ring",
     back="Bleating Mantle", waist="Prosilio Belt +1", legs="Meghanada Chausses +2", feet=gear.LustratioLeggingsPlus1.D} -- back=gear.OgmasCape.DA
 
 	sets.precast.WS.DEXWSD = {
     ammo="Knobkierrie",
     head="Lilitu Headpiece", neck="Caro Necklace", ear1="Ishvara Earring", ear2="Sherida Earring",
     body=gear.AdhemarJacketPlus1.B, hands="Meghanada Gloves +2", ring1="Ilabrat Ring", ring2="Ramuh Ring +1", -- ring2="Niqmaddu Ring"
-    back="Bleating Mantle", waist="Grunfeld Rope", feet=gear.LustratioSubligarPlus1.B, feet=gear.HerculeanBoots.WSD} -- legs="Plunderer's Culottes +3"
+    back="Bleating Mantle", waist="Grunfeld Rope", feet=gear.LustratioSubligarPlus1.B, feet=gear.HerculeanBoots.WSD}
 
   --[[
 	sets.precast.WS.SomeAcc = set_combine (sets.precast.WS, {
@@ -636,7 +636,7 @@ function init_gear_sets()
   --------------------------------------
 
   if player.sub_job == "NIN" then
-    sets.midcast['Ninjutsu'] = sets.midcast.FastRecast
+    sets.midcast['Ninjutsu'] = set_combine(sets.midcast.FastRecast. {})
   end
 
 	--------------------------------------
